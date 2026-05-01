@@ -131,95 +131,84 @@ i.e:
 print(object(s), sep=separator, end=end, file=file, flush=flush) 
 
 ## 6. Other Parameters of Print Statement: 
-a. objects(s): Any object, and as many as you like, will be converted to string 
+**a. objects(s):** Any object, and as many as you like, will be converted to string 
 before printed. <br />
-b. sep=’seperator’: Specify how to separate the objects, if there is more than 
+**b. sep=’seperator’:** Specify how to separate the objects, if there is more than 
 one. Default is ‘ ‘ <br />
-c. end=’end’: Specify what to print at the end. Default is \n (line feed) <br />
-d. file: An object with a write method. Default is sys.stdout <br />
+**c. end=’end’:** Specify what to print at the end. Default is \n (line feed) <br />
+**d. file:** An object with a write method. Default is sys.stdout <br />
 Parameter 2 to 4 are optional.
 
 ## 7. Variables and Data Types: 
 Variables is like a container that holds data. Very similar to how our container in 
 kitchen holds sugar, salt etc Creating a variable is like creating a placeholder in memory 
-and assigning it some value. In Python its as easy as writing. 
-a = 1 
-b = True 
-c = “Marry” 
-d = None 
+and assigning it some value. In Python its as easy as writing. <br />
+a = 1 <br />
+b = True <br />
+c = “Marry” <br />
+d = None <br />
 These are four variables of different data types. 
-9. What is a Data Type? 
+## 9. What is a Data Type? 
 Data Type specifies the type of value a variable holds. This is required in 
-programming to do various operations without causing an error. 
-2 of 17 
-Practiced by Fahim Ullah 
- 
-3 of 17 
-In python, we can print the type of any operator using type function: 
- 
+programming to do various operations without causing an error. <br />
+In python, we can print the type of any operator using type function: <br />
+ ```
  a = 1 
  print(type(a)) 
  b = “1” 
- print(type(b)) 
+ print(type(b))
+```
  By default python provides the following built-in types: 
-  
- a. Numeric data: int, float, complex 
-   
+ 
+ ### a. Numeric data: int, float, complex
+```   
   int: 3, -8, 0 
   float: 7.349, -9.0, 0.00000001 
-  complex: 6 =2i 
+  complex: 6 =2i
+```
  
- b. Text data: Str 
+ ### b. Text data: Str 
  
   Str: “Hello World!!!!!”, “Python Programming” 
  
- c. Boolean data: 
+### c. Boolean data: 
  
   Boolean data consists of values True or False 
  
-e. Sequenced data: list, tuple 
-List: A list is an ordered collection of data with elements separated by a 
+### e. Sequenced data: list, tuple 
+**List:** A list is an ordered collection of data with elements separated by a 
 comma and enclosed within square brackets. Lists are  
 mutable (changeable) and can be modified after creation 
  
 i.e  
+```
  list1 = [8, 2.3, [-4, 5], [“apple”, “banana”]] 
  print(list1) 
+ output: 
+ [8, 2, 3, [-4, 5]], [“apple”, ‘banana’’]]
+```
  
-output: 
- [8, 2, 3, [-4, 5]], [“apple”, ‘banana’’]] 
- 
-Tuple: A tuple is an ordered collection of data with elements separated by 
-a comma and enclosed within parentheses. Tuples are  
-immutable (non changeable) and cannot be modified after creation.  
+**Tuple:** A tuple is an ordered collection of data with elements separated by 
+a comma and enclosed within parentheses. Tuples are immutable (non changeable) and cannot be modified after creation.  
  
 i.e 
  tuple1 = ((“parrot”, “sparrow”), (“Lion”, “Tiger”)) 
  
-10. Mapped data: dict (Dictionary) 
+## 10. Mapped data: dict (Dictionary) 
 dict: A dictionary is an unordered collection of data containing a key:value pair. The 
 key:value pairs are enclosed within curly brackets. 
  i.e 
-  dict1 = {“name”: “Gull”, “age”: 28, “canVote”: True} 
+ ``` dict1 = {“name”: “Gull”, “age”: 28, “canVote”: True} 
   Print(dict1) 
  Output 
-  {‘name’: ‘Gull’, ‘age’: 28, ‘canVote’: True} 
-11. Operators: 
-Practiced by Fahim Ullah 
- 
-4 of 17 
+  {‘name’: ‘Gull’, ‘age’: 28, ‘canVote’: True}
+```
+## 11. Operators: 
 Python has different types of operators for different operations. To create a calculation 
 we require arithmetic operators. 
  
- Arithmetic operators:   
-  
- 
- 
- 
- 
- 
-  
- 
+ **Arithmetic operators:**   
+| Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 |
  
 Exercise 
 My first code "Fahim Ullah" 
