@@ -209,6 +209,7 @@ we require arithmetic operators.
  
  **Arithmetic operators:**   
 | Operators | #Operators Name | #Example |
+| :---: | :---: | :---: |
 | + | Addition | 15+7 |
 | - | Subtraction | 15-7 |
 | * | Multiplication | 15*7 |
@@ -218,7 +219,8 @@ we require arithmetic operators.
 | % | Modulus | 15%7 |
 | // | Floor Division | 15//7 |
 
-Exercise 
+**Exercise** 
+```
 My first code "Fahim Ullah" 
 a = 25 
 b = 7 
@@ -244,63 +246,54 @@ Multiplication of 25 and 7 is 175
 Division of 25 and 7 is 3.5714285714285716 
 Exponent of 25 and 7 is 6103515625 
 Modulus of 25 and 7 is 4 
-Floor Division of 25 and 7 is 3 
+Floor Division of 25 and 7 is 3
+```
  
-12. Typecasting in Python: 
+## 12. Typecasting in Python: 
 The conversion of one data type into the other data type is known as type casting in 
-python or type conversion in python. 
+python or type conversion in python. <br />
 Python supports a wide variety of functions or methods like: int(), float(), str(), ord(), 
 hex(), oct(), tuple(), set(), list(), dict() etc for the type casting in python. 
  
  Two types of Typecasting: 
-a. Explicit conversion (Explicit type casting in python) 
-Operators Operators Name Example 
-+ Addition 15+7 - Subtraction 15-7 
-* Multiplication 15*7 
-** Exponential 15**7 
-/ Division 15/7 
-% Modulus 15%7 
-// Floor Division 15//7 
-b. 
-Practiced by Fahim Ullah 
-Implicit conversion (implicit type casting in python) 
-a. 
-Explicit typecasting: 
+a. Explicit conversion (Explicit type casting in python) <br />
+b. Implicit conversion (implicit type casting in python) <br />
+# a. Explicit typecasting: 
 The conversion of one data type into another data type, done via developer or 
 programmer’s intervention or manually as per the requirement, is known as 
 explicit type conversion. 
 It can be achieved with the help of Python’s built-in type conversion functions 
-such as int(), float(), hex(), oct(), str() etc. 
+such as int(), float(), hex(), oct(), str() etc. <br />
 Example 1 of explicit typecasting: 
+```
 a = "15" 
 b = 8 
 tcastingofstr = int(a) 
 sum = tcastingofstr + b 
 print("The Sum of both the numbers is: ", sum) 
 Output 
-The Sum of both the numbers is:  23 
+The Sum of both the numbers is:  23
+```
 Example 2 of explicit typecasting: 
+```
 a = "15" 
 b = 8 
 print("The Sum of both the numbers is: ", int(a) + b) 
 output 
-The Sum of both the numbers is:  23 
-b. 
-Implicit typecasting: 
+The Sum of both the numbers is:  23
+```
+# b. Implicit typecasting: 
 Data types in Python do not have the same i.e ordering of data types in not the 
 same in Python. Some of the data types of higher-order and same in Python. 
 Some of the data types have higher-order, and some have lower order. While 
 performing any operations on variables with different data types in Python, one of 
 the variable’s data types will changed to the higher data type. According to the 
 level, one data type is converted into other by Python interpreter itself 
-(automatically). This is called, implicit typecasting in python. 
-Python converts a smaller data type to a higher data type of prevent data loss. 
-5 of 17 
-Practiced by Fahim Ullah 
- 
-6 of 17 
+(automatically). This is called, implicit typecasting in python. <br />
+Python converts a smaller data type to a higher data type of prevent data loss. <br />
+
 Example of implicit typecasting: 
- 
+``` 
 a = 15 
 b = 8 
 c = a + b 
@@ -325,14 +318,9 @@ output:
 23.8 
 <class 'float'> 
 107.9 
-<class 'float'> 
- 
-  
-  
-Practiced by Fahim Ullah 
- 
-7 of 17 
-Taking User Input in Python: 
+<class 'float'>
+```
+## Taking User Input in Python: 
  
 In python, we can take user input directly by using input() function. This input function 
 gives a return value as string / character hence we have to pass that into a variable. 
