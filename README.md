@@ -30,9 +30,9 @@ along with quantitative and qualitative analysis.
 ## Modules in python 
 Module is like a code library which can be used to borrow the code written by somebody 
 else in our python program. There are two types of modules in python: 
-1. Built in modules: These modules are ready to import and use and ships with the 
+**1. Built in modules:** These modules are ready to import and use and ships with the 
 python interpreter, there is no need to install such modules explicitly. 
-2. External modules: These modules are imported from a third party file or can be 
+**2. External modules:** These modules are imported from a third party file or can be 
 installed using a package manager like pip or conda. Since this code is written by 
 someone else, we can install different versions of a same module with time. 
 ```
@@ -132,11 +132,11 @@ print(object(s), sep=separator, end=end, file=file, flush=flush)
 
 ## 6. Other Parameters of Print Statement: 
 a. objects(s): Any object, and as many as you like, will be converted to string 
-before printed. 
+before printed. <br />
 b. sep=’seperator’: Specify how to separate the objects, if there is more than 
-one. Default is ‘ ‘ 
-c. end=’end’: Specify what to print at the end. Default is \n (line feed)
-d. file: An object with a write method. Default is sys.stdout 
+one. Default is ‘ ‘ <br />
+c. end=’end’: Specify what to print at the end. Default is \n (line feed) <br />
+d. file: An object with a write method. Default is sys.stdout <br />
 Parameter 2 to 4 are optional.
 
 ## 7. Variables and Data Types: 
