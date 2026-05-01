@@ -177,8 +177,7 @@ In python, we can print the type of any operator using type function: <br />
  
 ### d. Sequenced data: list, tuple 
 **List:** A list is an ordered collection of data with elements separated by a 
-comma and enclosed within square brackets. Lists are  
-mutable (changeable) and can be modified after creation 
+comma and enclosed within square brackets. Lists are mutable (changeable) and can be modified after creation </br>
  
 i.e  
 ```
