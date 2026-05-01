@@ -35,23 +35,23 @@ python interpreter, there is no need to install such modules explicitly.
 2. External modules: These modules are imported from a third party file or can be 
 installed using a package manager like pip or conda. Since this code is written by 
 someone else, we can install different versions of a same module with time. 
-'''
+```
 The pip command
- '''
+ ```
 It can be used as a package manager pip to install a python module. Lets install a 
 module called pandas using the following command. 
 i.e  
-'''
+```
 pip install pandas
- '''
+```
 Using a module in Python (Usage) 
 We use the import sytaz to import a module in Python. Here is an example code: 
 i.e  
-'''
+```
 import pandas 
  #Read and work with a file named “words.csv” 
 pandas. Read-csv(‘words.csv’)
-'''
+```
 Similarly we can install other modules and look into their documentations for 
 usage instructions. We will find ourselved doing this often in the later part of this 
 course. 
