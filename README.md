@@ -56,11 +56,11 @@ Similarly we can install other modules and look into their documentations for
 usage instructions. We will find ourselved doing this often in the later part of this 
 course. 
 
-# 1. Comments, Escape sequence & Print in Python: 
+# Comments, Escape sequence & Print in Python: 
 Escape sequences and little bit more about print statement in python. We will 
 also throw some light on Escape Sequences. 
  
-## 2. Python Comments: 
+## 1. Python Comments: 
  
  A comment is a part of the coding file that the programmer does not want to 
 execute, rather the programmer uses it to either explain a block of code or to avoid the 
@@ -68,7 +68,7 @@ execution of a specific part of code while testing. (Shortcut key comment and
 Uncomment is Ctrl + /), (We can also comment our text when we write it into triple 
 quotes (“”” Python is a high level language “””)) 
  
-## 3. Single-Line Comments: 
+## 2. Single-Line Comments: 
  
  To write a comment just adds a ‘#’ at the start of the line. 
  
@@ -79,7 +79,7 @@ quotes (“”” Python is a high level language “””))
  Output: 
   This is a print statement 
  ```
-## 4. Multi-Line Comments: 
+## 3. Multi-Line Comments: 
  
  To write multi-line comments you can use ‘#’ at each line or you can use the 
 multiline string. 
@@ -88,7 +88,7 @@ multiline string.
   #It will execute a block of code if a specified condition is true. 
   #If the condition is false then it will execute another block of code. 
    
-  '''
+  ```
   P=7 
   if (P>5); 
      print(“P is greater than 5.”) 
@@ -96,9 +96,9 @@ multiline string.
      print(“P is not greater than 5”) 
   Output: 
  P is greater than 5. 
- '''
+ ```
  
-## 5. Escape Sequence Characters 
+## 4. Escape Sequence Characters 
  
  To insert characters that cannot be directly used in a string, we use an escape 
 sequence character. An escape sequence character is a backlash \ followed by the 
@@ -108,27 +108,29 @@ character you want to insert.
 quote inside a string that is surrounded by double quotes:  
 If we want make a new line in the text of our program then we can use \n. 
 i.e 
-'''
+```
 Print (“This boy is working very hard may \n Almighty Allah blessed him 
 long life and prosperity”) 
 output: 
 This boy is working very hard may  
 Almighty Allah blessed him long life and prosperity
-'''
+```
 Moreover if we want to add a specific text in double colon in the text of our 
 program. For example: 
 i.e 
+```
 Print(“This boy is working very hard may \”Almighty Allah\” blessed him 
 long life and prosperity”) 
 output: 
 This boy is working very hard may “Almighty Allah” blessed him long life 
 and prosperity 
-'''
-## 6. More on Print statement 
+```
+## 5. More on Print statement 
 The syntax of a print statement looks something like this: 
 i.e: 
 print(object(s), sep=separator, end=end, file=file, flush=flush) 
-## 7. Other Parameters of Print Statement: 
+
+## 6. Other Parameters of Print Statement: 
 a. objects(s): Any object, and as many as you like, will be converted to string 
 before printed. 
 b. sep=’seperator’: Specify how to separate the objects, if there is more than 
@@ -137,10 +139,7 @@ c. end=’end’: Specify what to print at the end. Default is \n (line feed)
 d. file: An object with a write method. Default is sys.stdout 
 Parameter 2 to 4 are optional.
 
-
-
- 
-## 8. Variables and Data Types: 
+## 7. Variables and Data Types: 
 Variables is like a container that holds data. Very similar to how our container in 
 kitchen holds sugar, salt etc Creating a variable is like creating a placeholder in memory 
 and assigning it some value. In Python its as easy as writing. 
