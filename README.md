@@ -42,26 +42,19 @@ i.e
 pip install pandas 
 Using a module in Python (Usage) 
 We use the import sytaz to import a module in Python. Here is an example code: 
-1 of 2 
 i.e  
 import pandas 
-Practiced by Fahim Ullah 
-# Read and work with a file named “words.csv” 
+ #Read and work with a file named “words.csv” 
 pandas. Read-csv(‘words.csv’) 
 Similarly we can install other modules and look into their documentations for 
 usage instructions. We will find ourselved doing this often in the later part of this 
 course. 
-2 of 2 
-Practiced by Fahim Ullah 
- 
-1 of 17 
-PYTHON PROGRAMMING  
- 
+
 # 1. Comments, Escape sequence & Print in Python: 
 Escape sequences and little bit more about print statement in python. We will 
 also throw some light on Escape Sequences. 
  
-##v 2. Python Comments: 
+## 2. Python Comments: 
  
  A comment is a part of the coding file that the programmer does not want to 
 execute, rather the programmer uses it to either explain a block of code or to avoid the 
@@ -80,7 +73,7 @@ quotes (“”” Python is a high level language “””))
  Output: 
   This is a print statement 
  ```
-4. Multi-Line Comments: 
+## 4. Multi-Line Comments: 
  
  To write multi-line comments you can use ‘#’ at each line or you can use the 
 multiline string. 
@@ -89,31 +82,33 @@ multiline string.
   #It will execute a block of code if a specified condition is true. 
   #If the condition is false then it will execute another block of code. 
    
+  '''
   P=7 
   if (P>5); 
      print(“P is greater than 5.”) 
   else; 
-     print(“P is not greater than 5”)  
- 
-Output: 
+     print(“P is not greater than 5”) 
+  Output: 
  P is greater than 5. 
+ '''
  
-5. Escape Sequence Characters 
+## 5. Escape Sequence Characters 
  
  To insert characters that cannot be directly used in a string, we use an escape 
 sequence character. An escape sequence character is a backlash \ followed by the 
 character you want to insert. 
  
  An example of a character that cannot be directly used in a string is a double 
-quote inside a string that is surrounded by double quotes: 
-Practiced by Fahim Ullah 
+quote inside a string that is surrounded by double quotes:  
 If we want make a new line in the text of our program then we can use \n. 
 i.e 
+'''
 Print (“This boy is working very hard may \n Almighty Allah blessed him 
 long life and prosperity”) 
 output: 
 This boy is working very hard may  
-Almighty Allah blessed him long life and prosperity 
+Almighty Allah blessed him long life and prosperity
+'''
 Moreover if we want to add a specific text in double colon in the text of our 
 program. For example: 
 i.e 
@@ -122,26 +117,24 @@ long life and prosperity”)
 output: 
 This boy is working very hard may “Almighty Allah” blessed him long life 
 and prosperity 
-6. 
-7. 
-8. 
-More on Print statement 
+'''
+## 6. More on Print statement 
 The syntax of a print statement looks something like this: 
 i.e: 
 print(object(s), sep=separator, end=end, file=file, flush=flush) 
-Other Parameters of Print Statement: 
-a. 
-b. 
-c. 
-d. 
-objects(s): Any object, and as many as you like, will be converted to string 
+## 7. Other Parameters of Print Statement: 
+a. objects(s): Any object, and as many as you like, will be converted to string 
 before printed. 
-sep=’seperator’: Specify how to separate the objects, if there is more than 
+b. sep=’seperator’: Specify how to separate the objects, if there is more than 
 one. Default is ‘ ‘ 
-end=’end’: Specify what to print at the end. Default is \n (line feed) 
-file: An object with a write method. Default is sys.stdout 
-Parameter 2 to 4 are optional. 
-Variables and Data Types: 
+c. end=’end’: Specify what to print at the end. Default is \n (line feed)
+d. file: An object with a write method. Default is sys.stdout 
+Parameter 2 to 4 are optional.
+
+
+
+ 
+## 8. Variables and Data Types: 
 Variables is like a container that holds data. Very similar to how our container in 
 kitchen holds sugar, salt etc Creating a variable is like creating a placeholder in memory 
 and assigning it some value. In Python its as easy as writing. 
@@ -150,8 +143,7 @@ b = True
 c = “Marry” 
 d = None 
 These are four variables of different data types. 
-9. 
-What is a Data Type? 
+9. What is a Data Type? 
 Data Type specifies the type of value a variable holds. This is required in 
 programming to do various operations without causing an error. 
 2 of 17 
