@@ -175,7 +175,7 @@ In python, we can print the type of any operator using type function: <br />
  
   Boolean data consists of values True or False 
  
-### e. Sequenced data: list, tuple 
+### d. Sequenced data: list, tuple 
 **List:** A list is an ordered collection of data with elements separated by a 
 comma and enclosed within square brackets. Lists are  
 mutable (changeable) and can be modified after creation 
