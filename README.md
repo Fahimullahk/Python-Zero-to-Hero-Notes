@@ -209,21 +209,13 @@ we require arithmetic operators.
  
  **Arithmetic operators:**   
 | Operators | #Operators Name | #Example |
-| :---: | :---: | :---: |
 | + | Addition | 15+7 |
-| :---: | :---: | :---: |
 | - | Subtraction | 15-7 |
-| :---: | :---: | :---: |
 | * | Multiplication | 15*7 |
-| :---: | :---: | :---: |
 | ** | Exponential | 15**7 |
-| :---: | :---: | :---: |
 | / | Exponential | 15**7 |
-| :---: | :---: | :---: |
 | ** | Division | 15/7 |
-| :---: | :---: | :---: |
 | % | Modulus | 15%7 |
-| :---: | :---: | :---: |
 | // | Floor Division | 15//7 |
 
 Exercise 
