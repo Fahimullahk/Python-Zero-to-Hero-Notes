@@ -1,7 +1,7 @@
-# Python-Zero-to-Hero-Notes
+<h1 align="center">Python-Zero-to-Hero-Notes </h1>
+<h1 align="center"> PYTHON PROGRAMMING </h1>
+<h3 align="right"> Practiced by Fahim Ullah </h3>
 
-# PYTHON PROGRAMMING 
-# Practiced by Fahim Ullah 
 ## What is Programming? 
 Programming is a way for us to tell computer what to do. So computer is a dumb 
 machine and it only does what we tell it to do. 
@@ -29,9 +29,9 @@ It is used in business and accounting to perform complex mathematical operations
 along with quantitative and qualitative analysis. 
 ## Modules in python 
 Module is like a code library which can be used to borrow the code written by somebody 
-else in our python program. There are two types of modules in python: 
+else in our python program. There are two types of modules in python: </br>
 **1. Built in modules:** These modules are ready to import and use and ships with the 
-python interpreter, there is no need to install such modules explicitly. 
+python interpreter, there is no need to install such modules explicitly. </br> 
 **2. External modules:** These modules are imported from a third party file or can be 
 installed using a package manager like pip or conda. Since this code is written by 
 someone else, we can install different versions of a same module with time. 
@@ -258,7 +258,7 @@ hex(), oct(), tuple(), set(), list(), dict() etc for the type casting in python.
  Two types of Typecasting: 
 a. Explicit conversion (Explicit type casting in python) <br />
 b. Implicit conversion (implicit type casting in python) <br />
-# a. Explicit typecasting: 
+### a. Explicit typecasting: 
 The conversion of one data type into another data type, done via developer or 
 programmer’s intervention or manually as per the requirement, is known as 
 explicit type conversion. 
@@ -282,7 +282,7 @@ print("The Sum of both the numbers is: ", int(a) + b)
 output 
 The Sum of both the numbers is:  23
 ```
-# b. Implicit typecasting: 
+### b. Implicit typecasting: 
 Data types in Python do not have the same i.e ordering of data types in not the 
 same in Python. Some of the data types of higher-order and same in Python. 
 Some of the data types have higher-order, and some have lower order. While 
@@ -324,21 +324,24 @@ output:
  
 In python, we can take user input directly by using input() function. This input function 
 gives a return value as string / character hence we have to pass that into a variable. 
- 
+``` 
  Syntax: 
-  Variable=input() 
+  Variable=input()
+```
  
 But input function returns the value as string. Hence we have to typecast them 
-whenever required to another datatype. 
- 
- Example: 
-  Variable=int(input()) 
-  Variable=float(input()) 
+whenever required to another datatype. <br />
+**Example:** 
+ ```
+ Variable=int(input()) 
+ Variable=float(input())
+```
  
 We can also display a text using input function This will make input() function take user 
 input and display a message as well. 
  
  Example: 
+ ```
 a = input("Enter the first number:" ) 
 b = input ("Enter the second number:" ) 
 c = int(a) + int(b) 
@@ -361,33 +364,35 @@ The subtraction of your two numbers is: 309
 The multiplication of your two numbers is: 127062 
 The division of your two numbers is: 2.3205128205128207 
 The exponential of your two numbers is: 75 
-The floor division of your two numbers is: 2 
- 
+The floor division of your two numbers is: 2
+```
   
-What are strings ? 
-Practiced by Fahim Ullah 
+## What are strings ? 
 In Python, anything that you enclosed between single or double quotation marks is 
 considered a string. A string is essentially a sequence or array of textual data. Strings 
-are used when working with Unicode characters. 
-Example 
-Name = “Harry” 
+are used when working with Unicode characters. </br>
+**Example** 
+```
+Name = “Fahim” 
 Print(“Hello, ” + Name) 
 Output 
-Hello, Harry 
-Note: It does not matter whether you enclose your strings in single or double quotes, the 
-output remains the same. 
+Hello, Fahim
+```
+**Note:** It does not matter whether you enclose your strings in single or double quotes, the 
+output remains the same. </br>
 Sometimes, the user might need to put quotation marks in between the strings. 
-Example, consider the sentence: He said, “I want to eat an apple”. 
-How will you print this statement in python?: He said, “I want to eat an apple”. We will 
+Example, consider the sentence: He said, “I want to eat an apple”. </br>
+How we can print this statement in python?: He said, “I want to eat an apple”. We will 
 definitely use single quotes for convenience.  
-Multiline strings : 
-If our strings has multiple lines, we can create them like this: 
-Example: 
+## Multiline strings : 
+If our strings has multiple lines, we can create them like this: </br>
+**Example:** </br>
 Assalamualaikum, Everybody my name is FahimUllah. I am a permanent dweller of 
 Distt Peshawar. In fact I am a Muslim, and being a Muslim I pray to Almighty Allah to 
 forgive all my sins, moreover may Almighty Allah makes me as just like he wants. May 
 Almighty Allah blessed me to worship Him, and I intend myself to obey all the principles 
 of Islam whether my heart and brain accepts or not. 
+```
 a="""Assalamualaikum,  
 Everybody my name is FahimUllah.  
 I am a permanent dweller of Distt Peshawar.  
@@ -408,46 +413,50 @@ In fact I am a "Muslim", and being a Muslim I pray to
 May Almighty Allah blessed me to worship Him, and  
 I intend myself to obey all the principles of Islam  
 whether my heart and brain accepts or not. 
-8 of 17 
-Practiced by Fahim Ullah 
- 
-9 of 17 
- Accessing Characters of a string: 
+```
+## Accessing Characters of a string: 
 In Python, string is like an array of characters. We can access parts of string by 
-using its index which starts from 0.  
+using its index which starts from 0. <br /> 
 Square brackets can be used to acces elements of the string. 
  
- i.e 
+ **i.e** 
+ ```
   print(name[0]) 
-  print(name[1]) 
+  print(name[1])
+```
  
-Looping through the string 
-We can loop through strings using a for loop like this: 
+## Looping through the string 
+We can loop through strings using a for loop like this: </br>
  
- i.e 
+ **i.e** 
+ ```
   for character in name: 
-   print(character) 
+   print(character)
+```
  
  The above code prints all the characters in the string name one by one 
  
-String slicing & Operations on String: 
+## String slicing & Operations on String: 
  
-Length of a String: We can find the length of string using len() function. 
+**Length of a String:** We can find the length of string using len() function. 
  
-Example: 
-  fruit= “Mango” 
+**Example:** 
+```
+fruit= “Mango” 
 len1= len(fruit) 
 print(“Mango is a”, len1, “letter word.”) 
  
  Output: 
-  Mango is a 5 letter word. 
+  Mango is a 5 letter word.
+```
  
- String as an array 
+## String as an array 
   
  A string is essentially a sequence of characters also called an array, thus we can   
- access the elements of this array. 
+ access the elements of this array. </br>
  
- Example:  
+ **Example:**  
+ ```
   Pie = “ApplePie” 
   print(pie[:5]) 
   print(pie[6]) #returns character at specified index 
@@ -455,18 +464,12 @@ print(“Mango is a”, len1, “letter word.”)
  Output: 
   Apple 
   i 
- 
-Note: This method of specifying the start and end index to specify a part of a 
+ ```
+**Note:** This method of specifying the start and end index to specify a part of a 
 string s called slicing. 
  
- 
- 
- 
-Practiced by Fahim Ullah 
- 
-10 of 17 
-Slicing Example: 
- 
+**Slicing Example:** 
+``` 
 Pie = “ApplePie” 
 print(pie[:5])  #Slicing from the start  
 print(pie[5:])  #slicing till end 
@@ -477,10 +480,11 @@ Output;
  Apple 
  Pie 
  pleP 
- ApplePie 
+ ApplePie
+``` 
  
-Example 2: 
- 
+**Example 2:** 
+``` 
 a = "ghaazi" 
 print(a[0:6]) 
 print(a[:6]) 
@@ -506,17 +510,13 @@ Fahim
 khan 
 himk 
 a 
+``` 
+## Loop through a String: 
  
+Strings are arrays and arrays are iterable. Thus we can loop through strings. </br>
  
-  
-Practiced by Fahim Ullah 
- 
-11 of 17 
-Loop through a String: 
- 
-Strings are arrays and arrays are iterable. Thus we can loop through strings. 
- 
-Example: 
+**Example:**
+```
  alphabets = “ABCDE” 
  for i in alphabets: 
   print(i) 
@@ -527,83 +527,89 @@ B
 C 
 D 
 E 
- 
-String Methods: 
+``` 
+## String Methods: 
  
 Python provides a set of built-in methods that we can use to alter and modify the 
 strings. 
  
- upper(): 
-  The upper() method converts string to upper case. 
+ **upper():** </br> 
+  The upper() method converts string to upper case. </br>
  
- Example: 
+ Example:
+ ```
   Str1 = “AbcDef” 
   print(str1.upper()) 
  
  Output: 
-  ABCDEF 
+  ABCDEF
+``` 
  
- lower() 
+ **lower()** </br>
   The lower() method convert a string to lower case 
   
  Example: 
+ ```
   str1 = “AbcDef” 
-  print(str1.lower()) 
+  print(str1.lower())
+```
  
-rstrip() : 
+**rstrip() :** </br> 
  
 The rstrip() removes any trailing characters. It will removes only the characters after out 
-text in our program not before characters. 
+text in our program not before characters. </br>
  
  i.e 
+``` 
   str3 = “Hello !!!!” 
   print(str3.rstrip(“!”))    
 Output: 
- Hello 
+ Hello
+```
+**replace() :** </br> 
  
-  
-Practiced by Fahim Ullah 
- 
-12 of 17 
-replace() : 
- 
-The replace() method replaces all occurrences of a string with another string. 
+The replace() method replaces all occurrences of a string with another string. </br>
  
  i.e 
+ ```
   str2 = “Silver Spoon” 
   print(str2.replace(“Sp” , “M”)) 
  
  Output: 
   Silver Moon 
- 
-split() : 
+ ```
+**split() :** </br> 
  
 The split() method splits the given string at the specified instance and returns the 
-separated strings as list items. 
+separated strings as list items. </br>
  
  Example : 
+ ```
    str2 = “Silver Spoon” 
    print(str2.split(“ “)) #Its splits the string at the whitespace. 
  
  Output: 
-   [‘Silver’, ‘Spoon’] 
+   [‘Silver’, ‘Spoon’]
+```
 There are various other string methods that we can use to modify 
-our strings. 
+our strings. </br>
  
-capitalize() : 
+**capitalize() :** </br>
  
 The capitalize() method turns only the first character of the string to uppercase and the 
 rest other characters of the string are turned to lowercase. The string has no effect if the 
-first character is already uppercase. 
+first character is already uppercase. </br>
  
- i.e 1 
+ i.e 
+ ```
   str1 = “hello” 
   print(str1.capitalize()) 
  
  Output : 
   Hello 
- 
+ ```
  i.e  
+ ```
   str1 = “hello” 
   capstr1 = str1.capitalize() 
   print(capstr) 
@@ -613,40 +619,39 @@ first character is already uppercase.
  
  Output : 
   Hello 
-  Hello world 
- 
-Practiced by Fahim Ullah 
- 
-13 of 17 
- 
-center() : 
+  Hello world
+``` 
+**center() :** </br> 
   
 The center() method aligns the string to the center as per the parameters given by the 
-user. 
+user. </br>
  
  i.e 1 : 
+ ```
   str1 = “welcome to the console!!!” 
   print(str1.center(50)) 
  
  Output : 
    Welcome to the console!!! 
-  
+```  
 We can also provide padding character. It will fill the rest of the fill characters 
-provided by the user. 
+provided by the user. </br>
  
 i.e 2 : 
+```
   str1 = “welcome to the console!!!” 
   print(str1.center(50, “.”)) 
  
 Output : 
   …………….welcome to the console!!!............... 
- 
-count() : 
+ ```
+**count() :** </br> 
  
 The count() method returns the number of times the given value has occurred within the 
-given string. 
+given string. </br>
  
- i.e 
+ i.e
+ ```
   str2 = “AbdulSalam” 
   countStr = str2.count(“a”) 
   print(countStr) 
@@ -654,135 +659,138 @@ given string.
  Output : 
  
   3 
- 
-endswith() : 
+``` 
+**endswith() :** </br> 
  
 The endswith() method checks if the string ends with a given value. If yes then return 
-True, else return False. 
+True, else return False. </br>
  
  i.e 
+ ```
   str1 = “welcome to the Console !!!” 
   print(str1.endswith(“!!!”)) 
   
 Output : 
  True 
+``` 
  
-Practiced by Fahim Ullah 
- 
-14 of 17 
 We can even also check for a value in-between the string by providing start and 
-end index positions. 
+end index positions. </br>
  
 i.e 
+```
  str2 = “welcome to the console !!!” 
  print(str2.endswith(“to”, 4, 10)) 
  
 Output: 
  True 
- 
-find() :  
+ ```
+**find() :**  </br>
  
 The find() method searches for the first occurrence of the given value and returns the 
-index where it is present. It given value is absent from the string then return -1. 
+index where it is present. It given value is absent from the string then return -1. </br>
  
  i.e 
+ ```
   str1 = “He’s name is Dan. He is an honest man.” 
   Print(str1.find(“is”))  
  
  Output : 
    10 
- 
-Index() : 
+``` 
+**Index() :** </br> 
  
 The index() method searches for the first occurrence of the given value and returns the 
 index where it is present. If given value is absent from the string then it raise and 
-exception. 
+exception. </br>
  
  i.e : 
+ ```
   str1 = “He’s name is Dan. Dan is an honest man.” 
   Print(str1.index(“Dan”)) 
  
  Output: 
   13 
- 
+``` 
 As we can see, this method is somewhat similar to the find() method. The major 
 difference being that index() raises an exception if value is absent whereas find() 
-does not.  
+does not.  </br>
  
 i.e: 
+```
   str1 = “He’s name is Dan. Dan is an honest man.” 
   Print(str1.index(“Daniel”)) 
  
  Output: 
   ValueError: substring not found 
- 
-  
-Practiced by Fahim Ullah 
- 
-15 of 17 
-isalnum() : 
+``` 
+**isalnum() :** </br> 
  
 The isalnum() method returns True only if the entire string only consists of A-Z, a-z, 0-9. 
-If any other characters or punctuations are present, then it returns False. 
+If any other characters or punctuations are present, then it returns False. </br>
  
- i.e : 
+ i.e :
+ ```
   str1 = “WelcomeToTheConsole” 
   print(str1.isalnum()) 
  
  Output: 
   True 
- 
-isalpha(): 
+``` 
+**isalpha():** </br> 
  
 The isalpha() method returns True only if the entire string only consists of A-Z, a-z. If 
-any other characters or punctuation or number (0-9) are present, then it returns False. 
+any other characters or punctuation or number (0-9) are present, then it returns False. </br>
  
  i.e: 
+ ```
   str1 = “Welcome” 
   print(str1.isalpha()) 
   
  Output: 
    True 
- 
-islower() : 
+``` 
+**islower() :** </br> 
  
 The islower() method returns True if all the characters in the string are in lower case, 
-else it returns False. 
+else it returns False. </br>
  
  i.e: 
+ ```
   str1 = “hello world” 
   print(str1.islower()) 
  
  Output : 
    True 
- 
-Isprintable() : 
+``` 
+**Isprintable() :** </br> 
  
 The isprintable() method returns True if all the values whithin the given string are 
-printable, if not then returns False. 
+printable, if not then returns False. </br>
  
- i.e 1: 
+ i.e 1:
+ ```
   str1 = “We wish you a happy Eid Mubarrak” 
   print(str1, isprintable()) 
  
  Output: 
-   True 
+   True
+```
  i.e 2 : 
+ ```
   str1 = “We wish you a happy Eid Mubarrak \n” 
   print(str1, isprintable()) 
   
  Output: 
    False  
-  
-Practiced by Fahim Ullah 
- 
-16 of 17 
-Isspace() : 
+```   
+**Isspace() :** </br> 
  
 The isspace() method returns True only and only if the string contains white spaces, 
-else returns False. 
+else returns False. </br>
  
- i.e : 
+ i.e :
+ ```
   str1 = “          ”  #Using spacebar 
   print(str1.isspace()) 
   str2 = “ ”  #Using Tab 
@@ -791,62 +799,70 @@ else returns False.
  Output : 
    True 
    True 
- 
-Istitle() : 
+``` 
+**Istitle() :** </br> 
  
 The istitle() returns True only if the first letter of each word of the string is captalized, 
-else it returns False. 
+else it returns False. </br>
  
  i.e : 
+ ```
   str1 = “World Health Organization” 
   print(str1.istitle()) 
  
  Output : 
    True 
- 
+ ```
  i.e 2 : 
+ ```
   str2 = “To kill a Mocking bird” 
   print(str2.istitle()) 
  
  Output : 
    False           
- 
-Isupper() : 
+``` 
+**Isupper() :** </br> 
  
 The isupper() method returns True if all the characters in the string are upper case, else 
-it returns False. 
+it returns False. </br>
  
- i.e: 
+ i.e:
+ ```
   str1 = “WORLD HEALTH ORGANIZATION” 
   print(str1.isupper()) 
  
  Output: 
    True 
- 
+ ```
   
-Startswith() : 
-Practiced by Fahim Ullah 
+**Startswith() :** </br>  
 The startswith() method checks if the string starts with a given value. If yes then return 
-True, else return False. 
+True, else return False. </br>
 i.e. 
+```
 str1 = “Python is a Interpreted Language” 
 print(str1.startwith(“Python”)) 
 Output : 
-swapcase()  
-True 
+True
+```
+**swapcase()** </br>
 The swapcase() method changes the character casing of the string, Upper case and 
-converted to lower case to upper case. 
+converted to lower case to upper case. </br>
 i.e : 
+```
 str1 = “Python is a Interpreted Language” 
 print(str1.swapcase()) 
-Output: 
-title() : 
-pYTHON IS A iNTERPRETED lANGUAGE 
-The title() method captalizes each letter of the word within the string. 
+Output:
+pYTHON IS A iNTERPRETED lANGUAGE
+```
+**title() :**  </br>
+ 
+The title() method captalizes each letter of the word within the string. </br>
 i.e: 
+```
 str1 = “He’s name is Dan. Dan is an honest man.” 
 Print(str1.title()) 
 Output : 
-He’s Name Is Dan. Dan Is an Honest Man. 
-17 of 17 
+He’s Name Is Dan. Dan Is an Honest Man.
+```
 
