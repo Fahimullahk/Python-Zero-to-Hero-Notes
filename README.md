@@ -2130,3 +2130,328 @@ Output:
 13  
 ```
 # Python Sets, Joining Sets (Union, Intersection & Update), Sets Methods (isdisjoint, issuperset, issubset, add, update, remove discard, pop, del, clear methods):
+### 1.	Python Sets:
+Sets are unordered collection of data items. They store multiple items in a single variable. Set items are separated by commas and enclosed within curly brackets {}. Sets are unchangeable / replaceable, meaning you cannot change / replace items of the set once created. However, we do everything with sets as we do with list (like we can add etc). Sets do not contain duplicate items, but can put items having different data types and the result will unordered, means there is no order of items in the sets. </br>
+**Example:**
+```
+			info = {“Carla”, 19, False, 5.9, 19}
+			print(info)
+	Output:
+			{“Carla”, 19, False, 5.9}
+```
+Here, we see that the items of set occur in random order and hence they cannot be accessed using index numbers. Also sets do not allow duplicate values.</br> </br>
+
+**Quick Quiz:** Try to create an empty set. Check using the type() function whether the type of you variable is a set. i.e
+```
+set = { }
+print(type(set))
+
+Output:
+        <class 'dict'>
+```
+As we see in the above program when we checks an empty set with type() function, its show us its type as dictionary data type. Because the syntax of sets and dictionary data types are same, so { } is an empty dictionary not an empty set. The empty set is set = set( ). </br>
+But when we add some items in it shows us a set mentioned in below example.
+```
+set = {1,2,3,4,3}
+print(type(set))
+
+Output:
+        <class 'set'>
+```
+**Accessing sets items:** </br>
+We can access items of set using a for loop. </br>
+**Example:**
+```
+			info = {“Carla”, 19, False, 5.9}
+			for item in info:
+				print(item)
+	Output:
+			Carla
+			19
+			False
+			5.9
+```
+### 2.	Joining Sets:
+Sets in python more or less work in the same way as sets in mathematics. We can perform operations like union and intersection on the sets just like in mathematics.	</br> </br>
+
+**a.	union() and update():** </br>
+The union() and update() methods prints all items that are present in the two sets. The union() method returns a new set whereas update() method adds item into the existing set from another set.</br>
+**Example:** 
+```
+				cities = {“Tokyo”, “Istanbul”, “Berlin”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities3 = cities.union(cities2)
+				print(cities3)
+		Output:
+
+		{“Tokyo”, “Istanbul”, “Berlin”, “Peshawar”, “Islamabad”, “Rawalpindi”, “Karachi’}
+```	
+So, if we use **update()** function then all the items of one variable will comes in another variable. i.e in above example if we want make changes in cities, then we have to write **cities.update(cities2)**. By this all the items of **cities2** will comes in **cities**. On the other hand if we want to update **cities2** then we have to write **cities2.update(cities)**. As we can the **update()** function in below example. </br> </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Berlin”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities.update(cities2)
+				print(cities)
+		Output:
+
+		{“Tokyo”, “Istanbul”, “Berlin”, “Peshawar”, “Islamabad”, “Rawalpindi”, “Karachi’}
+```
+**b.	intersection and intersection_update():** </br>
+The intersection() and intersection_update() methods prints only items that are similar to both the sets. The intersection() method returns a new set whereas intersection_update() method updates into the existing set from another set. </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities3 = cities.intersection(cities2)
+				print(cities3)
+		Output:
+				{“Tokyo”, “Islamabad”}
+```	
+Hence, in **intersection_update()** it will add only the common items of both variables, means if we want to change cities variable then we have to write **cities.intersection_update(cities2)** and if we want to change **cities2** then we have to write **cities2.intersection_update(cities)**. As we can see in the below example: </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities.intersection_update(cities2)
+				print(cities)
+	Output:
+				{“Tokyo”, “Islamabad”}
+```
+**c.	symmetric_difference and symmetric_difference_update():** </br>
+The symmetric_difference() and symmetric_difference_update() methods prints only items that are not similar to both the sets. The symmetric_difference() method returns a new set whereas the symmetric_difference_update() method updates into the existing set from another set. </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities3 = cities.symmetric_difference(cities2)
+				print(cities3)
+		Output: 
+			{“Istanbul”, “Peshawar”, “Rawalpindi”, “Karachi’}
+```
+Similarly the **symmetric_difference_update()** is used to change the set. So when we write the **cities.symmetric_difference_update(cities2)** it will change the cities variable and stores all the uncommon items of **cities** and **cities2** in **cities** in it and vice versa. As we can see in below example. </br> </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities.symmetric_difference_update(cities2)
+				print(cities)
+		Output: 
+			{“Istanbul”, “Peshawar”, “Rawalpindi”, “Karachi’}
+```
+**d.	difference() and difference_update():** </br>
+The difference() and difference_update() methods prints only items that are only present in the original set and not in both the sets. The difference() method returns a new set whereas difference_update() method updates into the existing set from another set. </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+				cities3 = cities.difference(cities2)
+				print(cities3)
+		Output: 
+			{“Istanbul”, “Peshawar’}
+```
+
+### 3.	Sets Methods:
+There are several in-built methods used for the manipulation of set. They are explained below. </br> </br>
+
+**a.	isdisjoint():** </br>
+The isdisjoint() method checks if items of given set are present in another set. This method returns False if items are present, else it returns True. </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’} 
+				print(cities.isdisjoint(cities2))
+		Output:
+				False
+```	
+**b.	issuperset():** </br>
+The issuperset() method checks if all the items of a particular set are present in the original set. It returns True if all the items are present, else it returns False. </br>
+**Example:**
+```
+			cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+			cities2 = {“Tokyo”, “Islamabad”, “Rawalpindi”, “Karachi’}
+			print(cities.issuperset(cities2))
+			cities3 = {“Tokyo”, “Istanbul”, “Islamabad”}
+			print(cities.issuperset(cities3))
+	Output:
+			False
+			True
+```
+**c.	issubset():** </br>
+The issubset() method checks if all the items of the original set are present in the particular set. It returns True if all the items are present, else it returns False. </br>
+**Example:**
+```
+			cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+			cities2 = {“Tokyo”, “Islamabad”}
+			print(cities2.issubset(cities))
+	Output:
+			True
+```		
+**d.	add():** </br>
+If we want to add a single item to the set use the add() method. </br>
+**Example:**
+```
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities.add(“Kabul”)
+				print(cities)
+		Output:
+				{“Tokyo”, “Istanbul”, “Kabul”, “Islamabad”, “Peshawar”}
+```
+	5.	update():
+If we want to add more than one item, then we have to simply create another set or any other iterable object (i.e list, tuple, dictionary), and use the update() method to add it into the existing set.
+		
+		Example:	
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+			cities2 = {“Karachi”, “Kabul”, “Multan”}
+			cities.update(cities2)
+			print(cities)
+	Output:
+			{“Tokyo”, “Istanbul”, “Karachi”, “Islamabad”, “Kabul”, “Peshawar”, “Multan”}
+
+	6.	remove() / discard():
+We can remove() and discard() methods to remove items from the list.
+		Example:
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+			cities2 = {“Karachi”, “Kabul”, “Multan”}
+				cities.remove(“Tokyo”)
+				cities2.remove(“Islamabad”)
+				print(cities)
+				print(cities2)
+
+		Output:
+				{“Istanbul”, “Islamabad”, “Peshawar”}
+				KeyError:’Islamabad’
+	
+The main difference between remove and discard is that, if we try to delete and item which is not present in set, then remove() raises an error, where discard() dies not raise any error.
+
+7.	pop():
+			This method removes the last item of the set but the catch is that we don’t know which item gets popped as sets are unordered. However, you can access the popped item if you assigned the pop() method to a variable.
+
+	Example:
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				item = cities.pop()
+				print(cities)
+				print(item)
+		Output:
+				{“Istanbul”, “Islamabad”, “Peshawar”} 
+Tokyo     # This is the random popped / removed item
+
+
+
+
+
+	8.	del:
+			del is not a method, rather it is a keyword which deletes the set entirely.
+
+		Example:
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				del.cities
+				print(cities)
+		Output:
+			NameError: name ‘cities’ is not defined.
+
+We get and error because our entire set has been deleted and there is no variable called cities which contains a set.
+
+What if we don’t want to delete the entire set, we just want to delete all items within that set? Then here we have a clear() method explained below.
+
+9.	clear():
+		This method clears all items in the set and prints an empty set.
+
+	Example:
+				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+				cities.clear()
+				print(cities)
+		Output:
+				set()
+
+10.	Check if item exists:
+We can also check if an item exists in the set or not.
+
+Example:
+				info = {“Carla”, 19, False, 5.9, 19}
+				if “Carla” in info:
+					print(“Carla is present.”)
+				else:
+					print(“Carla is absent.”)
+		Output:
+				Carla is present.
+		
+ 
+Practice 1 :
+
+cities = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
+cities2 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
+cities3 = {"Tokyo", "Berlin", "Kabul", "Multan"}
+cities4 = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
+cities5 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
+cities6 = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
+cities7 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
+union1 = cities.union(cities2)
+cities.update(cities2)
+Intersect1 = cities2.intersection(cities3)
+cities2.intersection_update(cities3)
+symdif = cities4.symmetric_difference(cities5)
+cities4.symmetric_difference_update(cities5)
+dif = cities6.difference(cities7)
+cities6.difference_update(cities7)
+print("The union of cities and cities2 is :", union1)
+print("When we write cities.update(cities2) the update method applied on cities set i.e:", cities)
+print("The intersection between cities2 and cities3 is :", Intersect1)
+print("The intersection_update changes the cities2 items when we write cities2.intersection_update(cities3)", cities2)
+print("The symetric_difference of cities4 and cities5 is :", symdif)
+print("When we write cities4.symmetric_difference_update(cities5) is changes cities4 :", cities4)
+print("The difference method between cities6 and cities7 is :", dif)
+print("The difference_update method applied on cities6 when we write cities6.difference_update(cities7):", cities6)
+
+Output:
+
+The union of cities and cities2 is : {'Istanbul', 'Tokyo', 'Peshawar', 'Rawalpindi', 'Berlin', 'Karachi', 'Islamabad'}
+When we write cities.update(cities2) the update method applied on cities set i.e: {'Istanbul', 'Tokyo', 'Peshawar', 'Rawalpindi', 'Berlin', 'Karachi', 'Islamabad'}
+The intersection between cities2 and cities3 is : {'Tokyo'}
+The intersection_update changes the cities2 items when we write cities2.intersection_update(cities3) {'Tokyo'}
+The symetric_difference of cities4 and cities5 is : {'Istanbul', 'Peshawar', 'Rawalpindi', 'Karachi', 'Berlin', 'Islamabad'}
+When we write cities4.symmetric_difference_update(cities5) is changes cities4 : {'Istanbul', 'Peshawar', 'Rawalpindi', 'Berlin', 'Karachi', 'Islamabad'}
+The difference method between cities6 and cities7 is : {'Istanbul', 'Berlin', 'Peshawar'}
+The difference_update method applied on cities6 when we write cities6.difference_update(cities7): {'Istanbul', 'Berlin', 'Peshawar'}
+ 
+Practice 2:
+
+cities = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
+cities2 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
+cities3 = {"Multan", "Lahore", "Karachi", "Faisalabad"}
+cities4 = {"Tokyo", "Istanbul", "Peshawar"}
+cities5 = {"Charsadda", "Wah", "Sawabi"}
+cities6 = {"Charsadda", "Wah", "Sawabi"}
+cities7 = {"Charsadda", "Wah", "Sawabi"}
+isdisjoint1 = cities.isdisjoint(cities2)
+isdisjoint2 = cities.isdisjoint(cities3)
+issuperset1 = cities.issuperset(cities2)
+issuperset2 = cities.issuperset(cities4)
+issubset1 = cities4.issubset(cities)
+cities4.add("Kabul")
+cities5.update(cities)
+cities3.remove("Multan")
+popi = cities6.pop()
+cities7.clear()
+print("When we apply isdisjoint method and write cities.isdisjoint(cities2) :", isdisjoint1)
+print("When we apply isdisjoint method and write cities.isdisjoint(cities3) :", isdisjoint2)
+print("when we apply issuperset method and write cities.issuperset(cities2): ", issuperset1)
+print("When we apply issuperset method and write cities.issuperset(cities4): ",issuperset2)
+print("When we apply issubset method and write cities4.issubset(cities) :",issubset1)
+print("When we add Kabul in cities4 with add method :", cities4)
+print("When we apply update method and write cities5.update(cities): ", cities5)
+print("""When we apply remove method and write cities3.remove("Multan") : """, cities3)
+print("When we apply pop method on cities6 it removes the last item : ", popi)
+print("when we apply clear method on cities7 it wil clear all the set and return an empty set : ", cities7)
+
+Output:
+When we apply isdisjoint method and write cities.isdisjoint(cities2) : False
+When we apply isdisjoint method and write cities.isdisjoint(cities3) : True
+when we apply issuperset method and write cities.issuperset(cities2):  False
+When we apply issuperset method and write cities.issuperset(cities4):  True
+When we apply issubset method and write cities4.issubset(cities) : True
+When we add Kabul in cities4 with add method : {'Istanbul', 'Kabul', 'Tokyo', 'Peshawar'}
+When we apply update method and write cities5.update(cities):  {'Istanbul', 'Berlin', 'Sawabi', 'Charsadda', 'Tokyo', 'Wah', 'Peshawar'}
+When we apply remove method and write cities3.remove("Multan") :  {'Faisalabad', 'Karachi', 'Lahore'}
+When we apply pop method on cities6 it removes the last item :  Sawabi
+when we apply clear method on cities7 it wil clear all the set and return an empty set :  set()
