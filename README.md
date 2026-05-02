@@ -2028,3 +2028,105 @@ Namespaces are one honking great idea –lets do more of those! </br>
 
 		Import this	
 ```
+# Recursion in python, Python Recursive Functions:
+### Recursion in python:
+Recursion is the process of defining something in terms of itself. A physical world example would be to place two parallel mirrors facing each other. Any object in between them would be reflected recursively. </br> </br>
+**Python Recursive Functions:**
+In Python, we know that a function can call other functions. It is even possible for the function to call itself. These types of construct are termed as recursive functions. </br>
+**Example:** </br>
+```
+		def factorial(num):
+			if (num ==1 or num == 0):
+				return 1
+		else:
+			return(num * factorial(num - 1))
+		# Driver Code
+		num = 7;
+		print(“Number: ”, num)
+		print(“Factorial: ”, factorial(num))
+Output:
+		Number: 7
+		Factorial: 5040
+```
+Here, we have to know that the factorial is a recursion (repeated) process of defining something in terms of itself. As we can see below:
+```
+factorial(7) = 7*6*5*4*3*2*1
+factorial(6) = 6*5*4*3*2*1
+factorial(5) = 5*4*3*2*1
+factorial(4) = 4*3*2*1
+factorial(3) = 3*2*1
+factorial(2) = 2*1
+factorial(1) = 1		#Here, in this case both factorial(1) = 1 and factorial(0) =1
+factorial(0) = 1		#Here, in this case both factorial(1) = 1 and factorial(0) =1
+```
+**Practice:**
+```
+def factorial(n):
+    if (n == 0) or (n==1):
+        return 1
+    else:
+        return (n * factorial(n-1))
+n = int(input("Enter the number for finding factorial"))
+print("Number : ", n)
+print("Factorial of Number is :", factorial(n))
+
+Output:
+        Number :  5
+        Factorial of Number is : 120
+```		
+**Practice of finding the Fibonacci series of any number:** </br>
+```
+def fabonacci(n):
+    if n<=1:
+        return n
+    else:
+        return fabonacci(n-1) + fabonacci(n-2)
+n = int(input("Enter the number for finding fabonacci"))
+print("Number : ", n)
+print("fabonacci of Number is :", fabonacci(n))
+
+Output:
+        Number :  6
+        fabonacci of Number is : 8
+```
+As, we know that the Fibonacci series is:	
+	
+**f(n) = f(n-1) + f(n-2)** </br> </br>
+f(0) = 0 </br>
+f(1) = 1 </br>
+f(2) = 1 	f(1) + f(0) = 1 (because value of  f(1) is 0 and f(0) is 0) </br>
+f(3) = 2	f(2) + f(1) = 2 (because value of f(2) is 1 and f(1) is 1) </br>
+f(4) = 3	f(3) + f(2) = 3 (because of value of f(3) is 2 and f(2) is 1) </br>
+f(5) =5		f(4)+ f(3) = 5 (because value of f(4) is 3 and f(3) is 2) </br>
+f(6) =	8	f(5) + f(4) = 8 (because value of f(5) is 5 and f(4) is 3) </br>
+f(7) =13 	f(6) + f(5) = 13 (because value of f(6) is 8 and f(5) is 5) </br>
+	. </br>
+	. </br>
+	. </br>
+	and so on… </br> </br>
+
+Hence, the fabonacci series is the addition of previous two numbers which becomes the next coming number. </br> </br>
+	i.e    0,     1,    1,     2,    3,    5,    8,    13,   21….. </br>
+	      f(0),  f(1), f(2),  f(3), f(4), f(5), f(6), f(7),  f(8)….. </br> </br>
+**Practice** </br>
+```
+def f(n):
+    if n<=1:
+        return n
+    else:
+        return f(n-1)+f(n-2)
+n=8
+for i in range(n):
+    print(f(i))
+
+Output:
+0
+1
+1
+2
+3
+5
+8
+13  
+```
+# Python Sets, Joining Sets (Union, Intersection & Update), Sets Methods (isdisjoint, issuperset, issubset, add, update, remove discard, pop, del, clear methods):
