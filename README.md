@@ -962,14 +962,14 @@ num = 18
 if (num < 0):
   print(“Number is negative.”)
 elif (num > 0):
-  if (num <= 10):
-					print(“Number is between 1 to 10.”)
-  elif (num > 10 and num <= 20):
-					print(“Number is between 11 to 20.”)
-  else:
-					print(“Number is greater than 20.”)
+	if (num <= 10):
+		print(“Number is between 1 to 10.”)
+	elif (num > 10 and num <= 20):
+		print(“Number is between 11 to 20.”)
+ 	else:
+		print(“Number is greater than 20.”)
 else:
-  print(“Number is zero.”)
+	print(“Number is zero.”)
 print(Python Programming)
 
 		Output:
@@ -1378,3 +1378,216 @@ Here continue statement starts its working
 2 x 15 = 30
 Here break statement starts its working
 ```
+# Python Functions, Arguments:
+### 1.	Python Functions:
+A function is a block of code that performs a specific task whenever it is called. In bigger programs, where we have large amounts of code, it is advisable to create or use existing functions that make the program flow organized and neat. </br>
+There are two types of functions: </br>
+1.	Built-in functions </br>
+2.	User-defined functions </br>
+
+**1.	Built-in functions:** </br>
+These functions are defined and pre-coded in python. Some examples of built-in functions are as follows. </br>
+		min(), max(), len(), sum(), type(), range(), dict(), list(), tuple(),
+		set(), print(), etc.
+
+**2.	User-defined functions:** </br>
+We can create functions to perform specific tasks as per out needs. Such functions are called user-defined functions. </br>		Syntax: </br>
+```
+def function_name(parameters):
+	pass
+# Code and statements
+```
+(a)	Create a function using the def keyword, followed by a function name, followed by a parenthesis (()) and a colon(:). </br>
+(b)	Any parameters and arguments should be placed within the parentheses. </br>
+(c)	Rules to naming function are similar to that of naming variables. </br>
+(d)	Any statements and other code within the function should be indented. </br>
+
+### Calling a function:
+We call a function by giving the function name, followed by parameters (if any), in the parenthesis.	
+
+**i.e**
+```
+			def name(fname, lname):
+				print(“Hello, ”, fname, lname)	
+			name(“Abdul”, “Salam”)
+
+		Output:
+			Hello, Abdul Salam		
+```
+**Example:** 
+```
+def solutionof(name, obtmarks, Totalmarks):
+    solution = (obtmarks/Totalmarks) * 100
+    print(name, "got percentage =", solution,"% Marks")
+
+a = input("Enter the name of Student")
+b = int(input("Enter the total marks obtained by :"))
+c = int(input("Enter the total marks"))
+solutionof(a,b,c)
+
+Output:
+Fahim Ullah got percentage = 79.52380952380952 % Marks
+```
+
+### 2.	Function Arguments and return Statement:
+Here are four types of arguments that we can provide in a function: </br>
+	(a).	Default Arguments </br>
+	(b).	Keyword Arguments </br>
+	(c).	Required Arguments </br>
+	(d).	Variable length Arguments </br>
+		
+**(a).	Default Arguments:**
+We can provide a default value while creating a function. This way the function assumes a default value even if a value is not provided in the function call for that argument. </br>
+
+**Example:**
+```
+def name(fname, mname = “Fahim”, lname=”Ullah”):
+	print(“Hello,”, fname, mname, lname)
+			
+name(“Muhammad”)
+
+Output:
+
+	Hello, Muhammad Fahim Ullah
+```
+**(b).	Keyword Arguments:** </br>
+We can provide arguments with key=value, this way the Interpreter recognizes the arguments by the parameter name. Hence, the order in which the arguments are passed does not matter. </br>
+**Example:**
+```
+def name(fname, mname, lname):
+	print(“Hello,”, fname, mname, lname)
+			
+	name(mname=”Muhammad”, lname=”Ullah”, fname=”Fahim”)
+	
+Output:
+	Hello, Muhammad Fahim Ullah
+```
+**(c).	Required Arguments:** </br>
+In case we don’t pass the arguments with a key = value syntax, then it is necessary to pass the arguments in the correct positional order and the number of arguments passed should match with actual function definition. </br>
+**Example 1:** </br>
+When number of arguments passed does not match to the actual function definition. 
+```				
+		def name(fname, mname, lname):
+			print(“Hello,”, fname, mname, lname)
+		name(“Fahim”, “Ullah”)
+
+		Output:
+		name(“Fahim”, “Ullah”)\
+		TypeError: name() missing 1 required positional
+		argument: “lname” 
+```
+**Example 2:** </br>
+When number of arguments passed matches to the actual function definition.		
+```
+		def name(fname, mname, lname):
+			print(“Hello,”, fname, mname, lname)
+		name(“Muhammad”, “Fahim”, “Ullah”)
+
+		Output:
+		
+		Hello, Muhammad Fahim Ullah
+```
+**(d).	Variable-length Arguments:** </br>
+Sometimes we may need to pass more arguments than those defined in the actual function. This can be done using variable-length arguments. </br>
+There are two ways to achieve this: </br>
+**(i).	Arbitrary Arguments:** </br>
+While creating a function, pass a * before the parameter name while defining the function. The function access the arguments by processing them in the form of tuple. </br>
+**Example:**
+```
+def name(*name):
+	print(“Hello,”, name[0], name[1], name[2])
+name(“Muhammad”, “Fahim”, “Ullah”)
+
+Output:
+	Hello, Muhammad Fahim Ullah
+```
+**(ii).	Keyword Arbitrary Arguments:** </br>
+While creating a function, pass a * before the parameter name while defining the function. The function accesses the arguments by processing them in the form of dictionary. </br>
+**Example:**
+```
+def name(**name):
+	print(“Hello,”, name[“fname”], name[“mname”], name[“lname”])
+name(mname=”Fahim”, lname=”Ullah”, fname=”Muhammad”)
+
+Output:
+
+Hello, Muhammad Fahim Ullah
+```
+### 3.	return Statement:
+The return statement is used to return the value of the expression back to the calling function. </br>
+**Example:**
+```
+def name(fname, mname, lname):
+	return”Hello, ” + fname + “ “ + mname + “ “ + lname
+print(name(“Muhammad”, “Fahim”, “Ullah”))
+
+Output:
+
+Hello, Muhammad Fahim Ullah
+```
+**Example 1:**
+```
+def average(*numbers):
+    num = 0
+    for i in numbers:
+        num=num+i
+    print("The average of numbers is:", num/len(numbers))
+average(16, 17, 18)
+
+Output:
+
+The average of numbers is: 17.0
+```
+**Example 2:**
+```
+def name(fname,mname,lname):
+    print("Salam", fname, mname, lname, "Bhai")
+a = input("Enter your first name")
+b = input("Enter your middle name")
+c = input("Enter your last name")
+name(a, b, c)
+
+Output:
+
+Salam Muhammad Fahim Ullah Bhai
+```
+**Example 3:**
+```
+def fc(food,color):
+    for food, color in zip(food, color):
+        print(food,"color is", color)
+a = ["Apple", "Banana", "Carrot"]
+b = ["Red", "Yellow", "Orange"]
+fc(a,b)
+
+Output:
+
+Apple color is Red
+Banana color is Yellow
+Carrot color is Orange
+``` 
+**Example 4:**
+```
+def fc(food,color):
+    lu=[]
+    for food, color in zip(food, color):
+        lu.append((food,"color is", color))
+    return(lu)
+a = "Apple", "Banana", "Carrot"
+b = "Red", "Yellow", "Orange"
+print(fc(a, b))
+
+Output:
+
+[('Apple', 'color is', 'Red'), ('Banana', 'color is', 'Yellow'), ('Carrot', 'color is', 'Orange')]
+```
+**Example 5:**
+```
+def name(fname, mname, lname):
+    return"Hello" +" "+ fname + " " + mname + " " + lname + " "+ "Bhai"
+print(name("Muhammad", "Fahim", "Ullah"))
+
+Output:
+
+Hello Muhammad Fahim Ullah Bhai
+``` 
