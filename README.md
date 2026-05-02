@@ -1017,7 +1017,7 @@ Output:
 
  
 ### Practicing Python Programming 2:
-						Create a python program capable of greeting you with Good Morning, Good Afternoon and Good Evening. Your program should use time module to get the current hour. Here is a sample program and documentation link for you: </br>
+Create a python program capable of greeting you with Good Morning, Good Afternoon and Good Evening. Your program should use time module to get the current hour. Here is a sample program and documentation link for you: </br>
 import time </br>
 timestamp = time.strftime(‘%H:%M:%S’) </br>
 print(timestamp) </br>
