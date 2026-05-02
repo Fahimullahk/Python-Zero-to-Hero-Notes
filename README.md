@@ -516,12 +516,12 @@ Strings are arrays and arrays are iterable. Thus we can loop through strings. </
  
 **Example:**
 ```
- alphabets = “ABCDE” 
- for i in alphabets: 
+alphabets = “ABCDE” 
+  for i in alphabets: 
   print(i) 
  
 Output: 
- A 
+A 
 B 
 C 
 D 
@@ -864,4 +864,27 @@ Print(str1.title())
 Output : 
 He’s Name Is Dan. Dan Is an Honest Man.
 ```
+# Operators, if-else - elif Statements:
+### 1.	Logical Operators:
+| Category | Operator | Keyword/Symbol | Function | Primary Use Case |
+| :---: | :---: | :---: | :---: | :---: |
+| **Boolean Logical Operators** |
+| Boolean Logic | AND | and | Returns True if both operands are True. | Program control flow 
+(e.g., if statements). |
+| Boolean Logic | OR | or | Returns True if at least one operand is True. | Program control flow (e.g., if statements). |
+| Boolean Logic | NOT | not | Inverts the truth value of the operand (True becomes False). | Program control flow (e.g., if statements). |
+| **Bitwise Logical Operators** |
+| Bitwise Logic | Bitwise AND | & | Performs logical AND on the individual bits of the integers. | Low-level manipulation, setting/clearing bits, masking. |
+| Bitwise Logic | Bitwise OR | ∣ | Performs logical OR on the individual bits of the integers. | Low-level manipulation, combining flags. |
+| Bitwise Logic | Bitwise XOR | ^ | Performs logical Exclusive OR on the individual bits. | Swapping numbers without a temporary variable, encryption. |
+| Bitwise Logic | Bitwise NOT | ~ | Inverts all the bits of the integer (unary operator). | Advanced number manipulation (less common). |
 
+### 2.	Comparison Operators:
+| Operator | Meaning | Example | Result | Analogy |
+| :---: | :---: | :---: | :---: | :---: |
+| > | Greater than | 10>5 | TRUE | Is your age more than 18? |
+| < | Less than | 10<5 | FALSE | Is the temperature less than freezing? |
+| == | Equal to | 10==10 | TRUE | Does this key exactly match that lock? |
+| != | Not equal to | 10!=5 | TRUE | Is this door different from that window? |
+| >= | Greater than or equal to | 10>=10 | TRUE | Can you attend if you are 18 or older? |
+| <= | Less than or equal to | 10<=9 | FALSE | Can you carry a bag 5 kg or lighter? |
