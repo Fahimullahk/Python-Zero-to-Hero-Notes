@@ -2350,7 +2350,7 @@ del is not a method, rather it is a keyword which deletes the set entirely. </br
 We get and error because our entire set has been deleted and there is no variable called cities which contains a set. </br>
 
 What if we don’t want to delete the entire set, we just want to delete all items within that set? Then here we have a clear() method explained below. </br> </br>
-**h.	clear():** </br>
+**j.	clear():** </br>
 This method clears all items in the set and prints an empty set. </br>
 **Example:**
 ```
@@ -2360,7 +2360,7 @@ This method clears all items in the set and prints an empty set. </br>
 		Output:
 				set()
 ```
-**j.	Check if item exists:** </br>
+**k.	Check if item exists:** </br>
 We can also check if an item exists in the set or not. </br>
 **Example:**
 ```
