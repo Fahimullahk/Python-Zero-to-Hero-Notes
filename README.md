@@ -3006,4 +3006,146 @@ else:
       nwords.append(word[::-1])
   print(" ".join(nwords))
 ```
+# Short hand if else statements, if….Else in One line, Enumerate function in python, Changing the start index:
+### 1.	if….Else in One line:
+There is also a shorthand syntax for the if-else statement that can be used when the condition being tested is simple and the code blocks to be executed are short. Here’s an example: </br>
+**Example:**
+```
+				a = 2
+				b = 330
+				print(“A”) if a > b else print(“B”)
+		Output:
+				B
+```
+We can also have multiple else statements on the same line:</br>
+**Example:** </br>
+One line if else statement, with 3 conditions:
+```		
+				a = 330
+				b = 330
+				print(“A”) if a > b else print(“=”) if a==b else print(“B”)
+		Output:
+				=
+```
+In the above example its gives us the output as **=**, if the **a** variable is greater than **b** then it will prints us **A** in capital as output, because it’s written in double quotes. And if it’s not written in double quotes its will not give us the value of **a** but it gives us a syntax error because it is case sensitive. </br>
+**Another Example:**
+```			
+			#result = value_if_true if condition else value_if_false
 
+			#This syntax is equivalent to the following if-else statement:
+
+			if condition:
+				result = value_if_true
+			else:
+				result = value_if_false
+```
+**Conclusion:** </br>
+The shorthand syntax can be a convenient way to write simple if-else statements, especially when you want to assign a value to a variable based on a condition. However, it’s not suitable for more complex situations where you need to execute multiple statements or perform more complex logic. In those cases, it’s best to use the full if-else syntax. </br> </br>
+### 2.	Enumerate function in python:
+The enumerate function is a built-in function in Python that allows you to loop over a sequence (such as a list, tuple, or string) and get the index and value of each element in the sequence at the same time. Here’s a basic example of how it works: </br>
+**Example:**
+```
+			#loop over a list and print the index and value of each statement.
+			fruit = [‘apple’, ‘banana’, ‘mango’]
+			for index, fruits in enumerate(fruit):
+				print(index, fruits)
+	Output:
+			0 apple
+			1 banana
+			2 mango
+```
+We can see, the enumerate function returns a tuple containing the index and value of each element in the sequence. We can use the for loop to unpack these tuples and assign them to variables, as shown in the example above. </br>
+**Example:**
+```
+			marks = [32, 98, 42, 96, 54, 82, 80]
+			for index, mark in enumerate(marks):
+				if(index == 3):
+				print(“owesome…!”)
+	Output:
+			32
+			98
+			42
+			96
+			owesome…!
+			54
+			82
+			80
+```
+### 3.	Changing the start index:
+By default, the enumerate function starts the index at 0, but you can specify a different starting index by passing it as an argument to the enumerate function: </br>
+**Example:**
+```
+			#Loop over a list and print the index (starting at 1)
+			fruits = [‘apple’, ‘banana’, ‘mango’]
+			for index, fruit in enumerate(fruits, start=1):
+				print(index, fruit)
+	Output:
+			1 apple
+			2 banana
+			3 mango
+```
+The enumerate function is often used when we need to loop over a sequence and perform some action with both the index and value of each element. For example, you might use it to loop over a list of strings and print the index and value of each string in a formatted way: </br>
+**Example:1**
+```
+			fruits = [‘apple’, ‘banana’, ‘mango’]
+			for index, fruit in enumerate(fruits):
+				print(f’{index+1}: {fruit}’)
+	Output:
+			1: apple
+			2: banana
+			3: mango
+```
+**Example:2**
+```
+fruit = ['apple', 'banana', 'mango']
+for index, fruits in enumerate(fruit):
+    print(f"{index+1} delicious fruit is : {fruits}")
+    
+Output:
+          1 delicious fruit is : apple
+          2 delicious fruit is : banana
+          3 delicious fruit is : mango
+```
+In addition to lists, you can use the enumerate function with any other sequence type in Python such as tuples and strings. </br> Here’s an example with a tuple: </br>
+**Example:**
+```
+			#Loop over a tuple and print the index and value of each element.
+			colors = (‘red’, ‘green’, ‘blue’)
+			for index, color in enumerate(colors):
+				print(index, color)
+```
+**Example with tuples:**
+```
+fruit = ('apple', 'banana', 'mango')
+for index, fruits in enumerate(fruit):
+    print(f"{index+1} delicious fruit is : {fruits}")
+    
+Output:
+          1 delicious fruit is : apple
+          2 delicious fruit is : banana
+          3 delicious fruit is : mango
+```
+**And here’s an example with a string:** </br>
+**Example:1**
+```
+			# loop over a string and print the index and value of each character
+			s = 'hello'
+			for index, c in enumerate(s):
+    			print(index+1, c)
+
+			Output:
+		        1 h
+		        2 e
+		        3 l
+		        4 l
+		        5 o
+```
+**Example:2**
+```
+s = 'hello'
+for index, c in enumerate(s):
+    print(index+1, c, end=", ")
+
+Output:
+        1 h, 2 e, 3 l, 4 l, 5 o,
+```
