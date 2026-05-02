@@ -2452,3 +2452,185 @@ When we apply remove method and write cities3.remove("Multan") :  {'Faisalabad',
 When we apply pop method on cities6 it removes the last item :  Sawabi
 when we apply clear method on cities7 it wil clear all the set and return an empty set :  set()
 ```
+# Python Dictionaries, Dictionary Methods(update, Clear, pop, popitem):
+### Python Dictionaries:
+Dictionaries are ordered collection of data items. They store multiple items in a single variable. Dictionary items are key-value pairs that are separated by commas and enclosed within curly brackets {}. </br>
+**Example:** 
+```
+			info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+			print(info)
+
+ 	Output:
+			{‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+```
+### 1.	Accessing Dictionary items: </br> </br>
+	
+**a.	Accessing single values:** </br>
+Values in a dictionary can be accessed using keys. We can access dictionary values by mentioned keys either in square brackets or by using get method. </br>
+**Example:**
+```
+				info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+				print(info[‘name’])
+				print(info.get(‘eligible’))
+		Output:
+				Tahir
+				True
+```
+Here, in the above example we print the name and eligibility of Tahir. So we used to print the values by using their keys in [ ] bracket i.e we write “print(info[‘name’])” and also using get method i.e we write “print(info.get(‘eligible’))”. Both the usage is valid but if we used to print [ ] and we writes wrong key name then its throw an error, whereas if we use get method and writes wrong key name its prints the output as “none” and does’nt throws any error. So its depends upon our use case that whether we wants to throw an error or not by writing wrong key name.
+
+**b.	Accessing multiple values:** </br>
+We can print all the values in the dictionary using values() method. </br>
+**Example:**
+```
+				info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+				print(info.values())
+		Output:
+				dict_values([‘Tahir, 19, True’])
+```
+ 
+Here, we can also access the key or values by using the for loop. as we can see in the below example.
+
+**Example:**
+```
+				info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+				for key in info.keys():
+					print(info[key])
+Output:
+		Tahir
+		19
+		True
+```	
+And, we can also write it in below form for finding its values by using for loop.
+```
+info = {'name' : 'Tahir', 'age' : 19, 'eligible' : True}
+for i in info.values():
+   print(i)
+
+Output:
+        Tahir
+        19
+        True
+```
+And, we can also write it in below form for finding its keys by using for loop.
+```
+info = {'name' : 'Tahir', 'age' : 19, 'eligible' : True}
+for i in info.keys():
+   print(i)
+
+Output:
+        name
+        age
+        eligible
+```
+And, we can also write it in below form by finding its keys by using for loop in f-strings.
+```
+info = {'name' : 'Tahir', 'age' : 19, 'eligible' : True}
+for i in info.keys():
+   print(f"The values corresponding to the key {i} is :", info[i])
+
+Output:
+        The values corresponding to the key name is : Tahir
+        The values corresponding to the key age is : 19
+        The values corresponding to the key eligible is : True
+```
+**c.	Accessing keys:** </br>
+We can print all the keys in the dictionary using keys() method. </br>
+**Example:**
+```
+				info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+				print(info.keys())
+		Output:
+				dict_keys([‘’name], ‘age’, ‘eligible’)
+```
+**d.	Accessing key-value pairs:** </br>
+We can print all the key-value pairs in the dictionary using item() method. </br>
+**Example:**
+```
+				info = {‘name’ : ‘Tahir’, ‘age’ : 19, ‘eligible’ : True}
+				print(info.item())
+		Output:
+				dict_items([(‘name’, ‘Tahir’), (‘age’, 19), (‘eligible’, True)])
+```
+Here we can also print it in the below mentioned way also.
+```
+info = {'name' : 'Tahir', 'age' : 19, 'eligible' : True}
+for key, values in info.items():
+    print(f"The corresponding value of key {key} is :", values)
+
+Output:
+        The corresponding value of key name is : Tahir
+        The corresponding value of key age is : 19
+        The corresponding value of key eligible is : True
+```
+### 3.	Dictionary Methods:
+Dictionary uses several built-in methods for manipulation. They are listed below. </br> </br>
+**a.	update():** </br>
+The update() method updates the value of the key provided to it if the item already exists in thedictionary, elseit creates a new key-value pair. </br>
+**Example:**
+```
+			info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True}
+			print(info)
+			info.update(‘age’ : 20)
+			info.update(‘DOB’ : 2001)
+			print(info)
+	Output:
+			{‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True}
+			{‘name’ : ‘Tahir, ‘age’ : 20, ‘eligible’ : True, ‘DOB’ : 2001}
+```
+**b.	Removing items from dictionary :** </br>
+There are few methods that we can use to remove items from dictionary. </br> </br>
+
+**i.	Clear():** </br>
+The clear() method removes all the items from the list. </br>
+**Example:**
+```
+			Info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True}
+			info.clear()
+			Print(info)
+	Output:
+			{ }
+```
+**ii.	pop():** </br>
+The pop() method removes the key-value pair whose key is passed as a parameter. </br>
+**Example:**
+```
+			info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True}
+			info.pop(‘eligible’)
+			print(info)
+	Output:
+			{‘name’ : ‘Tahir, ‘age’ : 19}
+```
+**iii.	popitem():** </br>
+The popitem() method removes the last key-value pair from the dictionary. </br>
+**Example:**
+```
+		info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True, ‘DOB’ : 2003}
+		info.popitem()
+		print(info)
+	
+	Output:
+		{‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True}
+```
+**iv.	del:** </br>
+We can use the del keyword to remove a dictionary item. </br>
+**Example:**
+```
+		info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True, ‘DOB’ : 2003}
+		del info[‘age’]
+		print(info) 
+
+	Output:
+			{‘name’ : ‘Tahir, ‘eligible’ : True, ‘DOB’ : 2003}
+```
+If key is not provided, then the del keyword will delete the dictionary entirely and it will throws us an error. </br>
+As we can see in the below example. </br>
+**Example:**
+```
+		info = {‘name’ : ‘Tahir, ‘age’ : 19, ‘eligible’ : True, ‘DOB’ : 2003}
+		del info
+		print(info)
+
+	Output:
+		NameError:name ‘info’ is not defined.
+```
+**Note: We have to go through the latest documentation of python in which we can see the difference types of methods etc. that we didn’t see or used yet. This documentation can be seen in “docs.python.org”.**
