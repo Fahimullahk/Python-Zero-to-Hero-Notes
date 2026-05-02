@@ -1915,3 +1915,4 @@ We can simply concatenate two lists to join two lists. </br>
 		Output:
 				[‘voilet’, ‘indigo’, ‘blue’, ‘green’, ‘yellow’, ‘orange’, ‘red’]
 ```
+# String formatting, f-strings in python:
