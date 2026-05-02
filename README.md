@@ -1994,7 +1994,7 @@ Whenever string literals are present just after the definition of a function, mo
 				25
 				Takes in a number n, returns the square of n
 ```	
-	So, here in the above example we saw that docstring, that we wrote just after the function def will show in our output. And this will show by running “__doc__” function. So it’s a docstring not a comment because the docstring is written just after the function def or above the function body. If we write it below then it will not remain docstring. It will be a comment.
+So, here in the above example we saw that docstring, that we wrote just after the function def will show in our output. And this will show by running “__doc__” function. So it’s a docstring not a comment because the docstring is written just after the function def or above the function body. If we write it below then it will not remain docstring. It will be a comment.
 
 ### 2.	PEP 8 (Python Enhancement Proposal):
 PEP 8 is a document that provides guidelines and best practices on how to write Python code. It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan. The primary focus of PEP 8 is to improve the readability and consistency of Python code. </br>
