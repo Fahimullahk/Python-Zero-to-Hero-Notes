@@ -148,7 +148,7 @@ b = True <br />
 c = “Marry” <br />
 d = None <br />
 These are four variables of different data types. 
-### 9. What is a Data Type? 
+### 8. What is a Data Type? 
 Data Type specifies the type of value a variable holds. This is required in 
 programming to do various operations without causing an error. <br />
 In python, we can print the type of any operator using type function: <br />
@@ -193,7 +193,7 @@ a comma and enclosed within parentheses. Tuples are immutable (non changeable) a
 i.e 
  tuple1 = ((“parrot”, “sparrow”), (“Lion”, “Tiger”)) 
  
-### 10. Mapped data: dict (Dictionary) 
+### 9. Mapped data: dict (Dictionary) 
 dict: A dictionary is an unordered collection of data containing a key:value pair. The 
 key:value pairs are enclosed within curly brackets. 
  i.e 
@@ -202,7 +202,7 @@ key:value pairs are enclosed within curly brackets.
  Output 
   {‘name’: ‘Gull’, ‘age’: 28, ‘canVote’: True}
 ```
-### 11. Operators: 
+### 10. Operators: 
 Python has different types of operators for different operations. To create a calculation 
 we require arithmetic operators. 
  
@@ -247,7 +247,7 @@ Modulus of 25 and 7 is 4
 Floor Division of 25 and 7 is 3
 ```
  
-## 12. Typecasting in Python: 
+## 11. Typecasting in Python: 
 The conversion of one data type into the other data type is known as type casting in 
 python or type conversion in python. <br />
 Python supports a wide variety of functions or methods like: int(), float(), str(), ord(), 
