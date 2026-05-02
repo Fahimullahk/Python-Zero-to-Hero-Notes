@@ -2297,22 +2297,23 @@ If we want to add a single item to the set use the add() method. </br>
 		Output:
 				{“Tokyo”, “Istanbul”, “Kabul”, “Islamabad”, “Peshawar”}
 ```
-	5.	update():
-If we want to add more than one item, then we have to simply create another set or any other iterable object (i.e list, tuple, dictionary), and use the update() method to add it into the existing set.
-		
-		Example:	
-				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
+**e.	update():** </br>
+If we want to add more than one item, then we have to simply create another set or any other iterable object (i.e list, tuple, dictionary), and use the update() method to add it into the existing set. </br>
+**Example:**
+```
+			cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
 			cities2 = {“Karachi”, “Kabul”, “Multan”}
 			cities.update(cities2)
 			print(cities)
 	Output:
 			{“Tokyo”, “Istanbul”, “Karachi”, “Islamabad”, “Kabul”, “Peshawar”, “Multan”}
-
-	6.	remove() / discard():
-We can remove() and discard() methods to remove items from the list.
-		Example:
+```
+**f.	remove() / discard():** </br>
+We can remove() and discard() methods to remove items from the list. </br>
+**Example:**
+```
 				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
-			cities2 = {“Karachi”, “Kabul”, “Multan”}
+				cities2 = {“Karachi”, “Kabul”, “Multan”}
 				cities.remove(“Tokyo”)
 				cities2.remove(“Islamabad”)
 				print(cities)
@@ -2321,53 +2322,48 @@ We can remove() and discard() methods to remove items from the list.
 		Output:
 				{“Istanbul”, “Islamabad”, “Peshawar”}
 				KeyError:’Islamabad’
-	
-The main difference between remove and discard is that, if we try to delete and item which is not present in set, then remove() raises an error, where discard() dies not raise any error.
+```	
+The main difference between remove and discard is that, if we try to delete and item which is not present in set, then remove() raises an error, where discard() dies not raise any error. </br>
 
-7.	pop():
-			This method removes the last item of the set but the catch is that we don’t know which item gets popped as sets are unordered. However, you can access the popped item if you assigned the pop() method to a variable.
-
-	Example:
+**g.	pop():** </br>
+This method removes the last item of the set but the catch is that we don’t know which item gets popped as sets are unordered. However, you can access the popped item if you assigned the pop() method to a variable. </br>
+**Example:** </br>
+```
 				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
 				item = cities.pop()
 				print(cities)
 				print(item)
 		Output:
 				{“Istanbul”, “Islamabad”, “Peshawar”} 
-Tokyo     # This is the random popped / removed item
-
-
-
-
-
-	8.	del:
-			del is not a method, rather it is a keyword which deletes the set entirely.
-
-		Example:
+				Tokyo     # This is the random popped / removed item
+```
+**h.	del:** </br>
+del is not a method, rather it is a keyword which deletes the set entirely. </br>
+**Example:**
+```
 				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
 				del.cities
 				print(cities)
 		Output:
 			NameError: name ‘cities’ is not defined.
+```
+We get and error because our entire set has been deleted and there is no variable called cities which contains a set. </br>
 
-We get and error because our entire set has been deleted and there is no variable called cities which contains a set.
-
-What if we don’t want to delete the entire set, we just want to delete all items within that set? Then here we have a clear() method explained below.
-
-9.	clear():
-		This method clears all items in the set and prints an empty set.
-
-	Example:
+What if we don’t want to delete the entire set, we just want to delete all items within that set? Then here we have a clear() method explained below. </br> </br>
+**h.	clear():** </br>
+This method clears all items in the set and prints an empty set. </br>
+**Example:**
+```
 				cities = {“Tokyo”, “Istanbul”, “Islamabad”, “Peshawar”}
 				cities.clear()
 				print(cities)
 		Output:
 				set()
-
-10.	Check if item exists:
-We can also check if an item exists in the set or not.
-
-Example:
+```
+**j.	Check if item exists:** </br>
+We can also check if an item exists in the set or not. </br>
+**Example:**
+```
 				info = {“Carla”, 19, False, 5.9, 19}
 				if “Carla” in info:
 					print(“Carla is present.”)
@@ -2375,10 +2371,10 @@ Example:
 					print(“Carla is absent.”)
 		Output:
 				Carla is present.
-		
+```		
  
-Practice 1 :
-
+**Practice 1 :** </br>
+```
 cities = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
 cities2 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
 cities3 = {"Tokyo", "Berlin", "Kabul", "Multan"}
@@ -2413,9 +2409,9 @@ The symetric_difference of cities4 and cities5 is : {'Istanbul', 'Peshawar', 'Ra
 When we write cities4.symmetric_difference_update(cities5) is changes cities4 : {'Istanbul', 'Peshawar', 'Rawalpindi', 'Berlin', 'Karachi', 'Islamabad'}
 The difference method between cities6 and cities7 is : {'Istanbul', 'Berlin', 'Peshawar'}
 The difference_update method applied on cities6 when we write cities6.difference_update(cities7): {'Istanbul', 'Berlin', 'Peshawar'}
- 
-Practice 2:
-
+```
+**Practice 2:**
+```
 cities = {"Tokyo", "Istanbul", "Berlin", "Peshawar"}
 cities2 = {"Tokyo", "Islamabad", "Rawalpindi", "Karachi"}
 cities3 = {"Multan", "Lahore", "Karachi", "Faisalabad"}
@@ -2455,3 +2451,4 @@ When we apply update method and write cities5.update(cities):  {'Istanbul', 'Ber
 When we apply remove method and write cities3.remove("Multan") :  {'Faisalabad', 'Karachi', 'Lahore'}
 When we apply pop method on cities6 it removes the last item :  Sawabi
 when we apply clear method on cities7 it wil clear all the set and return an empty set :  set()
+```
