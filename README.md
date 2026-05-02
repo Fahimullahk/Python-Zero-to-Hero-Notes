@@ -213,8 +213,7 @@ we require arithmetic operators.
 | - | Subtraction | 15-7 |
 | * | Multiplication | 15*7 |
 | ** | Exponential | 15**7 |
-| / | Exponential | 15**7 |
-| ** | Division | 15/7 |
+| / | Division | 15/7 |
 | % | Modulus | 15%7 |
 | // | Floor Division | 15//7 |
 
