@@ -60,7 +60,7 @@ course.
 Escape sequences and little bit more about print statement in python. We will 
 also throw some light on Escape Sequences. 
  
-## 1. Python Comments: 
+### 1. Python Comments: 
  
  A comment is a part of the coding file that the programmer does not want to 
 execute, rather the programmer uses it to either explain a block of code or to avoid the 
@@ -68,7 +68,7 @@ execution of a specific part of code while testing. (Shortcut key comment and
 Uncomment is Ctrl + /), (We can also comment our text when we write it into triple 
 quotes (“”” Python is a high level language “””)) 
  
-## 2. Single-Line Comments: 
+### 2. Single-Line Comments: 
  
  To write a comment just adds a ‘#’ at the start of the line. 
  
@@ -79,7 +79,7 @@ quotes (“”” Python is a high level language “””))
  Output: 
   This is a print statement 
  ```
-## 3. Multi-Line Comments: 
+### 3. Multi-Line Comments: 
  
  To write multi-line comments you can use ‘#’ at each line or you can use the 
 multiline string. 
@@ -98,7 +98,7 @@ multiline string.
  P is greater than 5. 
  ```
  
-## 4. Escape Sequence Characters 
+### 4. Escape Sequence Characters 
  
  To insert characters that cannot be directly used in a string, we use an escape 
 sequence character. An escape sequence character is a backlash \ followed by the 
@@ -125,12 +125,12 @@ output:
 This boy is working very hard may “Almighty Allah” blessed him long life 
 and prosperity 
 ```
-## 5. More on Print statement 
+### 5. More on Print statement 
 The syntax of a print statement looks something like this: 
 i.e: 
 print(object(s), sep=separator, end=end, file=file, flush=flush) 
 
-## 6. Other Parameters of Print Statement: 
+### 6. Other Parameters of Print Statement: 
 **a. objects(s):** Any object, and as many as you like, will be converted to string 
 before printed. <br />
 **b. sep=’seperator’:** Specify how to separate the objects, if there is more than 
@@ -139,7 +139,7 @@ one. Default is ‘ ‘ <br />
 **d. file:** An object with a write method. Default is sys.stdout <br />
 Parameter 2 to 4 are optional.
 
-## 7. Variables and Data Types: 
+### 7. Variables and Data Types: 
 Variables is like a container that holds data. Very similar to how our container in 
 kitchen holds sugar, salt etc Creating a variable is like creating a placeholder in memory 
 and assigning it some value. In Python its as easy as writing. <br />
@@ -148,7 +148,7 @@ b = True <br />
 c = “Marry” <br />
 d = None <br />
 These are four variables of different data types. 
-## 9. What is a Data Type? 
+### 9. What is a Data Type? 
 Data Type specifies the type of value a variable holds. This is required in 
 programming to do various operations without causing an error. <br />
 In python, we can print the type of any operator using type function: <br />
@@ -193,7 +193,7 @@ a comma and enclosed within parentheses. Tuples are immutable (non changeable) a
 i.e 
  tuple1 = ((“parrot”, “sparrow”), (“Lion”, “Tiger”)) 
  
-## 10. Mapped data: dict (Dictionary) 
+### 10. Mapped data: dict (Dictionary) 
 dict: A dictionary is an unordered collection of data containing a key:value pair. The 
 key:value pairs are enclosed within curly brackets. 
  i.e 
@@ -202,12 +202,12 @@ key:value pairs are enclosed within curly brackets.
  Output 
   {‘name’: ‘Gull’, ‘age’: 28, ‘canVote’: True}
 ```
-## 11. Operators: 
+### 11. Operators: 
 Python has different types of operators for different operations. To create a calculation 
 we require arithmetic operators. 
  
  **Arithmetic operators:**   
-| Operators | #Operators Name | #Example |
+| Operators | Operators Name | Example |
 | :---: | :---: | :---: |
 | + | Addition | 15+7 |
 | - | Subtraction | 15-7 |
@@ -382,7 +382,7 @@ Sometimes, the user might need to put quotation marks in between the strings.
 Example, consider the sentence: He said, “I want to eat an apple”. </br>
 How we can print this statement in python?: He said, “I want to eat an apple”. We will 
 definitely use single quotes for convenience.  
-## Multiline strings : 
+### Multiline strings : 
 If our strings has multiple lines, we can create them like this: </br>
 **Example:** </br>
 Assalamualaikum, Everybody my name is FahimUllah. I am a permanent dweller of 
@@ -412,7 +412,7 @@ May Almighty Allah blessed me to worship Him, and
 I intend myself to obey all the principles of Islam  
 whether my heart and brain accepts or not. 
 ```
-## Accessing Characters of a string: 
+### Accessing Characters of a string: 
 In Python, string is like an array of characters. We can access parts of string by 
 using its index which starts from 0. <br /> 
 Square brackets can be used to acces elements of the string. 
@@ -423,7 +423,7 @@ Square brackets can be used to acces elements of the string.
   print(name[1])
 ```
  
-## Looping through the string 
+### Looping through the string 
 We can loop through strings using a for loop like this: </br>
  
  **i.e** 
@@ -434,7 +434,7 @@ We can loop through strings using a for loop like this: </br>
  
  The above code prints all the characters in the string name one by one 
  
-## String slicing & Operations on String: 
+### String slicing & Operations on String: 
  
 **Length of a String:** We can find the length of string using len() function. 
  
@@ -448,7 +448,7 @@ print(“Mango is a”, len1, “letter word.”)
   Mango is a 5 letter word.
 ```
  
-## String as an array 
+### String as an array 
   
  A string is essentially a sequence of characters also called an array, thus we can   
  access the elements of this array. </br>
@@ -509,7 +509,7 @@ khan
 himk 
 a 
 ``` 
-## Loop through a String: 
+### Loop through a String: 
  
 Strings are arrays and arrays are iterable. Thus we can loop through strings. </br>
  
@@ -526,7 +526,7 @@ C
 D 
 E 
 ``` 
-## String Methods: 
+### String Methods: 
  
 Python provides a set of built-in methods that we can use to alter and modify the 
 strings. 
