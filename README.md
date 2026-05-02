@@ -2699,4 +2699,311 @@ Output:
 		Sorry no i
 ```
 # Exception Handling, Python try… except, Finally Clause, Raising Custom errors, Custom exceptions:
+### Exception Handling:
+Exception handling is the process of responding to unwanted or unexpected events when a computer program runs. Exception handling deals with these events to avoid the program or system crashing, an without this process, exceptions would disrupt the normal operation of a program. </br> </br>
+**1.	Exceptions in Python:** </br>
+Python has many built-in exceptions that are raised when your program encounters an error (something in the program goes wrong). </br>
+When these exceptions occur, the Python interpreter stops the current process and   passes it to the calling process until it is handled. If not handled, the program will crash. </br> </br>
+**2.	Python try… except:** </br>
+		    try….. except blocks are used in python to handle errors and exceptions. The code in try block runs when there is no error. If the try block catches the error, then the except block is executed. </br>
+**Syntax:**
+```
+			try:
+				#statements which could generate 
+				#exception
+			except:
+				#Solution of generated exception
+```
+**Example:**
+```
+			try:
+				num = int(input(“Enter an integer: ”))
+				except ValueError:
+					print(“Number entered is not an integer. ”)
+	Output:
+			Enter an integer: 6.022
+			Number entered is not an integer.
+```
+Here, in the above example when we the input as integer then the output will become valid and the try block will executes, whereas when we input any string then the except block will executes. Here below some more examples. </br>
+**Example 1: (While executing try block)**
+```
+try:
+    a = int(input("Enter the Number for finding its table :"))
+    for i in range(1, 11):
+        print(a, "x", i, "=", a*i)
+except:
+    print("You entered and invalid number")
+
+Output:
+        123 x 1 = 123
+        123 x 2 = 246
+        123 x 3 = 369
+        123 x 4 = 492
+        123 x 5 = 615
+        123 x 6 = 738
+        123 x 7 = 861
+        123 x 8 = 984
+        123 x 9 = 1107
+        123 x 10 = 1230
+```
+**Example 2: (While executing except block)**
+```
+try:
+    a = int(input("Enter the Number for finding its table :"))
+    for i in range(1, 11):
+        print(a, "x", i, "=", a*i)
+except:
+    print("You entered an invalid number")
+
+Output:
+        You entered an invalid number
+```
+**3.	Finally Clause:** </br>
+The finally code block is also a part of exception handling. When we handle exception using the try and except block, we can include a finally block at the end. The finally block is always executed, so it is generally used for doing the concluding tasks like closing the resources or closing database connection or may be ending the program execution with a delightful message. </br>
+**Syntax:**
+```
+			try:
+				#Statement which could generate
+				#exception
+			except:
+				#solution of generated exception
+			finally:
+				#block of code which is going to 
+				#execute in any situation
+```
+The finally block is executed irrespective of the outcome of try…..except…..else blocks. </br>
+One of the important use cases of finally block is in a function which returns a value. </br> </br>
+**Example 1: (When the user entered valid input)**
+```
+try:
+    a = int(input("Enter the Number for finding its table :"))
+    for i in range(1, 11):
+        print(a, "x", i, "=", a*i)
+except:
+    print("You entered an invalid number")
+finally:
+    print("All weather thundering, i will be executed..")
+
+Output:
+        5 x 1 = 5
+        5 x 2 = 10
+        5 x 3 = 15
+        5 x 4 = 20
+        5 x 5 = 25
+        5 x 6 = 30
+        5 x 7 = 35
+        5 x 8 = 40
+        5 x 9 = 45
+        5 x 10 = 50
+        All weather thundering, i will be executed..
+```
+Here, in the above example we saw that the finally block will executed and similarly when the error occurs its always be executes. But here a question arises that if we didn’t uses finally block the code inside it will also be executed whether the error occurs or not, then what is its use case. The answer is that, when we define any function then inside the function the code written without finally block will not be executed. However, if the finally block used then the code inside it will be executed. As we can see in the below example. </br> </br>
+**Example 2: (When the user put invalid input)**
+```
+def func():
+    try:
+        a = int(input("Enter the Number for finding its table :"))
+        for i in range(1, 11):
+            print(a, "x", i, "=", a*i)
+    except:
+        print("You entered an invalid number")
+    finally:
+        print("All weather thundering, i will be executed..")
+func()
+
+Output:
+        You entered an invalid number
+        All weather thundering, i will be executed..
+```
+**Note:** Here some misconception is arises the execution of code without finally block while using the function will be executed whether the user input is valid or not, however the concept of not showing the code became valid in that case when we use the return function in our code. </br> </br>
+**Example 3: (When the user put valid input while using return function without finally block)**
+```
+def func():
+    try:
+        a = int(input("Enter the Number for finding its table :"))
+        for i in range(1, 11):
+            print(a, "x", i, "=", a*i)
+            return 
+    except:
+        print("You entered an invalid number")
+    print("All weather thundering, i will be executed..")
+func()
+
+Output:
+        5 x 1 = 5
+```
+**Example 4: (When the user put valid input while using return function with finally block)**
+```
+def func():
+    try:
+        a = int(input("Enter the Number for finding its table :"))
+        for i in range(1, 11):
+            print(a, "x", i, "=", a*i)
+            return 
+    except:
+        print("You entered an invalid number")
+    finally:
+        print("All weather thundering, i will be executed..")
+func()
+
+Output:
+        5 x 1 = 5
+        All weather thundering, i will be executed..
+```
+The same case is with the invalid input by the user while using return function. </br>
+**4.	Raising Custom errors:** </br>
+In python, we can raise custom errors by using the raise keyword. </br>
+**Syntax:**
+```
+				salary = int(input(“Enter salary amount”))
+				if not 2000 < salary < 5000:
+					raise Value Error(“Not a valid salary”)
+```
+In the previous topics, we learned about different built-in exceptions in Python and why it is important to handle exceptions. However, sometimes we may need to create our own custom exceptions that serve our purpose. </br> </br>
+**5.	Defining Custom exceptions:**
+In Python, we can define custom exceptions by creating a new class that is derived from the built-in Exception class. </br>
+Here below the syntax to define custom exceptions. </br>
+**Syntax:**
+```
+		class CustomError(Exception):
+			#Code….
+			Pass
+		Try:
+			#Code…
+
+		except CustomError:
+			#Code…
+```
+This is useful because sometimes we might want to do something when a particular exception is raised. For example, sending an error report to the admin, calling an API, etc.	</br> </br>
+```
+salary = int(input("Enter salary amount"))
+if not 80000 < salary:
+    raise ValueError("Wife : Shutup its not true, tell me your actual income")
+else:
+    print("Yes you are write husband give me all the money. hurry up...")
+
+Output:
+        ValueError                                Traceback (most recent call last)
+        Cell In[61], line 3
+      1 salary = int(input("Enter salary amount"))
+      2 if not 80000 < salary:
+----> 3     raise ValueError("Wife : Shutup its not true, tell me your actual income")
+      4 else:
+      5     print("Yes you are write husband give me all the money. hurry up...")
+
+        ValueError: Wife : Shutup its not true, tell me your actual income
+```
+
+Here, in the below example we did’nt used raise custom error unless for a practice only. </br>
+```
+a = input("Enter your obtained Marks percentage or write quit to leave...")
+if a.lower() == "quit":
+    print("Good bye....")
+else:
+    try:
+        a = int(a)
+        if a > 70 and a < 100:
+            print("You are eligible for the job")
+        else:
+            print("You are not eligible for job")
+    except:
+        print("Invalid Entry: enter your total obtained marks between 70 and 100")
+
+Output:
+        Invalid Entry: enter your total obtained marks between 70 and 100
+```
+## Here, in the below example we again wrote a program, just for practice purpose. </br> </br>
+**Task:** </br>
+Write a python program to translate a message into secret code language. Use the rules below to translate normal English into secret code language. </br> </br>
+**Rules:** </br>
+Encoding:
+i. if the word contains at least 3 characters, remove the first letter and append it at the end. </br>
+ii. now append three random characters at the starting and the end. </br>
+else: </br>
+iii. simply reverse the string. </br> </br>
+Decoding: </br>
+i. if the word contains less than 3 characters, reverse it. </br>
+else: </br>
+ii. remove 3 random characters from start and end. Now remove the    last letter and append it to the beginning. </br>
+ 
+### Practice program for ENCODING of word:
+```
+print("======== Encoding ========")
+word = input("Enter your secret word...")
+word1 = list(word)
+word3 = word1[0]
+word1.pop(0)
+word1.append(word3)
+word4 = input("Enter any three random words....")
+word5 = list(word4)
+if ((len(word5)) == 3):
+    word1.extend(word5)
+    word5.extend(word1)
+    for i in word5:
+        print(i, end="")
+else:
+    word1.reverse()
+    for i in word1:
+        print(i, end="")
+
+Output:
+        ======== Encoding ========
+        EFGBCDAEFG
+```
+### Practice program for DECODING of word:
+```
+print("======== Decoding ========")
+word = input("Enter your Encoded words...")
+word_ = input("Enter your three Random encoded words...")
+wordn = list(word_)
+word1 = list(word)
+if (len(wordn) == 3):
+    del word1[0:3]
+    del word1[-3: ]
+    word2 = list(word1[-1])
+    word1.pop(-1)
+    word2.extend(word1)
+    for i in word2:
+        print(i, end="")
+else:
+    word1.reverse()
+    word3 = list(word1[-1])
+    word1.pop(-1)
+    word3.extend(word1)
+    for i in word3: 
+       print(i, end="")
+
+Output:
+        ======== Decoding ========
+                  ABCD
+```		
+### Practice program for ENCODING and DECODING of word:
+```
+st = input("Enter message")
+words = st.split(" ")
+coding = input("1 for Coding or 0 for Decoding")
+coding = True if (coding=="1") else False
+print(coding)
+if(coding):
+  nwords = []
+  for word in words:
+    if(len(word)>=3):
+      r1 = "dsf"
+      r2 = "jkr"
+      stnew = r1+ word[1:] + word[0] + r2
+      nwords.append(stnew)
+    else:
+      nwords.append(word[::-1])
+  print(" ".join(nwords))
+else:
+  nwords = []
+  for word in words:
+    if(len(word)>=3): 
+      stnew = word[3:-3] # Remove the 3 random letters from start and end
+      stnew = stnew[-1] + stnew[:-1] # Take the last letter and move it to the front
+      nwords.append(stnew)
+    else:
+      nwords.append(word[::-1])
+  print(" ".join(nwords))
+```
 
