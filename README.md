@@ -2633,6 +2633,6 @@ As we can see in the below example. </br>
 	Output:
 		NameError:name ‘info’ is not defined.
 ```
-**Note: We have to go through the latest documentation of python in which we can see the difference types of methods etc. that we didn’t see or used yet. This documentation can be seen in “(https://docs.python.org/3/)”.**
+**Note: We have to go through the latest documentation of python in which we can see the difference types of methods etc. that we didn’t see or used yet. This documentation can be seen in “[docs.python.org](https://docs.python.org/3/)”.**
 
 
