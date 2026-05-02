@@ -502,8 +502,9 @@ ghaazi
 ghaazi 
 ghaazi 
 haazi 
-zi 
-ghaa ------------------- 
+zi
+ghaa
+------------------- 
 Fahim 
 khan 
 himk 
