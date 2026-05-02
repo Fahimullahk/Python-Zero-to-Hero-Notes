@@ -3149,3 +3149,4 @@ for index, c in enumerate(s):
 Output:
         1 h, 2 e, 3 l, 4 l, 5 o,
 ```
+# Virtual Environment, How importing in python works, if __name__ == “__main__” in Python:
