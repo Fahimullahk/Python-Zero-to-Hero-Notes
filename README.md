@@ -1591,3 +1591,327 @@ Output:
 
 Hello Muhammad Fahim Ullah Bhai
 ``` 
+# Python Lists, List Index, List Methods (list.sort(), reverse(), index(), count(), copy(), append(), insert(), extend()):
+### 1.	Python Lists:
+Lists are ordered collection of data items. </br>
+They store multiple items in a single variable. </br>
+List items are separated by commas and enclosed within square brackets [ ]. </br>
+Lists are changeable meaning we can alter them after creation. </br>
+**Example 1:**
+```
+			list1 = [1, 2 ,2, 3, 5, 4, 6]
+			list2 = [“Red”, “Green”, “Blue”]
+			print(list1)
+			print(list2)
+
+	Output:
+
+			[1, 2 ,2, 3, 5, 4, 6]
+			[‘Red’, ‘Green’, ‘Blue’]
+```
+**Example 2:**
+```
+			details = [“Khan”, 18, “Gul”, 9, 8]
+			print(details)
+
+	Output:
+			[‘Khan’, 18, ‘Gul’, 8]
+```
+As we can see, a single list can contain items of different data types.
+
+### 2.	List Index:
+Each item / element in a list has its own unique index. This index can be used to access any particular item from the list. </br> The first item has index [0], second item has index [1], third item has index [2] and so on.
+	
+**Example:**
+```
+			Colors = [“Red”, “Green”, “Blue”, “Yellow”, “Green”]
+				     #[0]         [1]         [2]           [3]          [4]
+```
+**Accessing list items** </br>
+We can access list items by using its index with the square bracket syntax [ ]. For example colors[0] will give “Red”, color[1] will give “Green” and so on… </br> </br>
+ 
+**Positive Indexing:** </br>
+As we have seen that list items have index, as such we can access items using these indexes. </br>
+**Example:**
+```
+			Colors = [“Red”, “Green”, “Blue”, “Yellow”, “Green”]
+			print(colors[2])
+			print(colors[4])
+			print(colors[0])
+
+	Output:
+			Blue
+			Green
+			Red
+```
+**Negative Indexing:** </br>
+Similar to positive indexing, negative indexing is also used to access items, but from the end of the list. The last item has index[-1], second last item has index [-2], third last item has index [-3] and so on. </br>	
+**Example:**
+```
+			Colors = [“Red”, “Green”, “Blue”, “Yellow”, “Green”]
+			print(colors[-1])
+			print(colors[-3])
+			print(colors[-5])
+
+	Output:
+			Green
+			Blue
+			Red
+```
+**Note:** We can convert negative index into positive index in the following way: </br> </br>
+	
+**Example:**
+```
+			Colors = [“Red”, “Green”, “Blue”, “Yellow”, “Green”]
+			print(colors[len(colors)-1])		#This is equal to print(colors[4])
+			print(colors[len(colors)-3])		#This is equal to print(colors[2])
+			print(colors[len(colors)-5]) 		#This is equal to print(colors[0])
+
+		Output:
+				Green
+				Blue
+				Red
+```	
+ 
+
+**We can check whether an item is present in the list?** </br>
+We can check if a given item in the list. This is done using the “in” keyword. </br>
+**Example:**
+```
+			colors = [“Red”, “Green”, “Blue”, “Yellow”, “Green”]
+			if “Yellow” in colors:
+				print(“Yellow is present.”)
+			else:
+				print(“Yellow is absent.”)
+
+	Output:
+			Yellow is present.
+```
+**Range of Index:** </br>
+We can print a range of list items by specifying where you want to start, where do we want to end and if we want to skip elements in between the range. 
+**Syntax:**
+```
+			listName[start : end : jumpIndex]
+```
+**Note:**	jump Index is optional. We will see this in later examples. </br> </br>
+
+**Example: printing elements within a particular range:**
+```	
+		animals = [“cat”, “dog”, “bat”, “mouse”, “horse”, “buffalo”, “donkey”, “goat”, “cow”]
+		print(animals[3:7])			#Using positive indexing
+		print(animals[-7:-2])		#Using negative indexing
+
+	Output:
+		[‘mouse’, ‘horse’, ‘buffalo’, ‘donkey’, ‘goat’]
+		[‘bat’, ’mouse’, ‘horse’, ‘buffalo’, ‘donkey’]
+```
+Here, we provide index of the element from where we want to start and the index of the element till which we want to print the values. </br>
+
+**Note:** The element of the end index provided will not be included. </br> </br>
+
+**Example: printing all element from a given index till the end:**
+```
+		animals = [“cat”, “dog”, “bat”, “mouse”, “horse”, “buffalo”, “donkey”, “goat”, “cow”]
+		print(animals[4: ])			#Using positive indexing
+		print(animals[-4: ])		#Using negative indexing 
+
+	Output:
+		[‘horse’, ‘buffalo’, ‘donkey’, ‘goat’, ‘cow’]
+		[‘buffalo’, ‘donkey’, ‘goat’, ‘cow’]
+```
+When no end index is provided, the interpreter prints all the values till the end. </br> </br>
+ 
+**Example: printing alternate values:** 
+```
+		animals = [“cat”, “dog”, “bat”, “mouse”, “horse”, “buffalo”, “donkey”, “goat”, “cow”]
+		print(animals[ : : 2])		
+		print(animals[-8:-1:2])	 
+
+	Output:
+		[‘cat’, ‘bat’, ‘horse’, ‘donkey’, ‘cow’]
+		[‘dog’, ‘mouse’, ‘buffalo’, ‘goat’]
+```
+Here, we have not provided start and index, which means all the values will be considered. But as we have provided a jump index of 2 only alternate values will be printed. </br> </br>
+
+**Example: printing every 3rd consecutive value within a given range:**
+```
+		animals = [“cat”, “dog”, “bat”, “mouse”, “horse”, “buffalo”, “donkey”, “goat”, “cow”]
+		print(animals[1:8:3])
+
+	Output:
+		[‘dog’, ‘horse’, ‘goat’]
+```
+Here, jump index is 3. Hence it prints every 3rd element within given index.	 
+
+### 3.	List Comprehension:
+List comprehension are used for creating new lists from other iterables like lists, tuples, dictionaries, sets, and even in arrays and strings.
+**Syntax:**
+```
+	List = [Expression(item) for item in iterable if Condition]
+	Expression: It is the item which is being iterated.
+	Iterable: It can be list, tuples, dictionaries, sets and even in arrays and strings.
+	Condition: Condition checks if the item should be added to the new list or not.
+```	
+**Example 1: Accepts items with the small letter “a” in the new list:**
+```
+  	 names = [“AbdulSalam, “Fahimullah”, “MuhammadYousaf”, “Waqar”, “Aziz”, “Habib”]
+	 namesWith_0 = [item for item in names if “a” in items]
+	 print(namesWith_0)
+
+	Output:
+		[‘AbdulSalam’ ‘Fahimullah’, ‘MuhammadYousaf’, ‘Waqar’, ‘Habib’]
+```
+ 
+**Example 2: Accepts items which have more than 4 letters:**
+```		
+	  names = [“AbdulSalam, “Fahimullah”, “MuhammadYousaf”, “Waqar”, “Aziz”, “Habib”]
+	  namesWith_0 = [item for item in names if (len(item) > 4]
+	  print(namesWith_0)
+
+	Output:
+	 
+	[‘AbdulSalam’ ‘Fahimullah’, ‘MuhammadYousaf’, ‘Waqar’, ‘Habib’]
+```
+### 4. 	List Methods:
+**(a).	list.sort():** </br>
+This method sorts the list in ascending order. The original list is updated.
+**Example 1:**
+```
+				colors = [“voilet”, “indigo”, “blue”, “green”]
+				colors.sort()
+				print(colors)
+
+				num=[4,2,5,3,6,1,2,1,2,8,9,7]
+				num.sort()
+				print(num)
+
+		Output:
+				[‘blue’, ‘green’, ‘indigo’, ‘voilet’]\
+				[1,1,2,2,2,3,4,5,6,7,8,9]
+```
+What if we want to print the list in descending order ? We must give reverse-True as a parameter in the sort method. </br>
+
+**Example:**
+```
+			Colors = [“voilet”, “indigo”, “blue”, “green”]
+			Colors.sort(reverse=True)
+			Print(colors)
+
+			num = [4,2,5,3,6,1,2,1,2,8,9,7]
+			num.sort(reverse=True)
+			print(num)
+
+	Output:
+			[‘voilet’, ‘indigo’, ‘green’, ‘blue’]
+			[9,8,7,6,5,4,3,2,2,2,1,1]
+```
+The reverse parameter is set to False by default. </br>
+**Note:** Do not mistake the reverse parameter with the reverse method. </br> </br>
+ 
+**(b).	reverse()** </br>
+This method reverses the order of the list. </br>
+**Example:**
+```
+			colors = [“violet”, “indigo”, “blue”, “green”]
+			colors.reverse()
+			print(colors)
+
+			num = [4,2,5,3,6,1,2,1,2,8,9,7]
+			num.reverse()
+			print(num)
+
+	Output:
+			[‘green’, ‘blue’, ‘indigo’, ‘voilet’]
+			[7,9,8,2,1,2,1,6,3,5,2,4]	.
+```
+**(c).	index()** </br>
+This method returns the index of the first occurrence of the list item. </br>
+**Example:**
+```
+			colors = [“voilet”, “green”, ‘indigo’, “blue”, “green”]
+			print(colors.index(“green”))
+
+			num = [4,2,5,4,6,1,2,1,3,2,8,9,7]
+			print(num.index(3))
+
+	Output:
+			1
+			4	
+```	
+**(d).	count()** </br>
+Returns the count of the number of items with the given value. </br>
+**Example:**
+```
+			colors = [“voilet”, “green”, ‘indigo’, “blue”, “green”]
+			print(colors.count(“green”))
+			num = [4,2,5,3,6,1,2,1,3,2,8,9,7]
+			print(num.count(3))
+		
+		
+		Output:
+				2
+				3
+```
+**(e)	copy():** </br>
+Returns copy of the list. This can be done to perform operations on thelist without modifying the original list. </br>
+**Example:**
+```
+			colors = [“voilet”, “green”, ‘indigo’, “blue”, “green”]
+			newlist = colors.copy()
+			print(colors)
+			print(newlist)
+		
+		Output:
+				[‘voilet’, ‘green’, ‘indigo’, ‘blue’]
+				[‘voilet’, ‘green’, ‘indigo’, ‘blue’]
+```
+**(f)	append():** </br>
+This method appends items to the end of the existing list. </br>
+**Example:**
+```
+				colors = [“voilet”, “indigo”, “blue”]
+				colors.append(“green”)
+				print(colors)
+
+		Output:
+				[‘voilet’, ‘indigo’, ‘blue’, ‘green’]
+```
+**(g)	insert():** </br>
+This method inserts an item at the given index. User has to specify index and the item to be inserted within the insert() method. </br>
+**Example:**
+```
+				colors = [“voilet”, “indigo”, “blue”]
+				   #	     [0]      [1]       [2]
+
+				colors.insert(“green”)		#inserts item at index 1
+				# updated list colors = [“voilet”, “green”, “indigo”, “blue”]	
+			
+				print(colors)
+
+		Output:
+				[‘voilet’, ‘green, ‘indigo, ‘blue]
+```
+**(h)	extend():** </br>
+This method adds and entire list or any other collection datatype (set, tuple, dictionary) to the existing list. </br>
+**Example 1:**
+```
+				# add a list in a list
+				colors = [“voilet”, “indigo”, “blue”]
+				rainbow = [“green”, “yellow”, “orange”, “red”]
+				colors.extend(rainbow)
+				print(colors)
+
+		Output:
+				[‘voilet’, ‘indigo’, ‘blue’, ‘green’, ‘yellow’, ‘orange’, ‘red’]
+```
+**(j)	Concatenating two lists:** </br>
+We can simply concatenate two lists to join two lists. </br>
+**Example:**
+```
+				colors = [“voilet”, “indigo”, “blue”, “green”]
+				color2 = [“yellow”, “orange”, “red”]
+				print(colors + colors2)
+
+		Output:
+				[‘voilet’, ‘indigo’, ‘blue’, ‘green’, ‘yellow’, ‘orange’, ‘red’]
+```
