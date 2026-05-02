@@ -1048,4 +1048,333 @@ Output:
 
 Good Night Sir: Abdul Salam
 ```
+# Match Cases, Loops, range(), break & Continue Statements:
+### 1.	Match Cases:
+To implement switch-case like characteristics very similar to if-else functionality, we use a match case in python. It’s like a C, C#, C++ or Java like language, you must have heard of switch-case statements. </br>
+A match statement will compare a given variable’s value to different shapes, also referred to as the pattern. The main idea is to keep on comparing the variable with all the present pattern until it fits into one. </br>
+The match case consists of three main entities: </br>
+	
+1.	The match keyword </br>
+2.	One or more case clauses </br>
+3.	Expression for each case </br>
 
+The case clause consists of a pattern to be matched to the variable, a condition to be evaluated if the pattern matches, and a set of statements to be executed if the pattern matches. </br>
+
+**i.e 1:**
+```
+	x = 4								# x is the variable to match
+	match x:
+		case 0:							#if x is 0
+			print(“x is zero”)
+		case 4 if x % 2 == 0:
+			print(“x % 2 == 0 and case is 4”)	
+		case_ if x < 10:
+			print(“x is < 10”)			#default case will only be matched if the above cases were not matched. So its basically just like else statement.
+		case_:							
+			print(x)
+	Output:
+			x % 2 == 0 and case is 4
+```			
+**i.e 2:**
+```
+x = int(input("Write your number.."))
+match x:
+     case _ if x == 0:
+        print("x value is equal to :", x)
+     case _ if x > 50:
+        print("x value is smaller than :", x+1)
+     case _ if x == 49:
+        print("x value is equal to :", x)
+     case _:
+        print(x)
+
+Output:
+
+    x value is smaller than : 12135465647
+```
+### 2.	Loops in python:
+Sometimes a programmer wants to execute a group of statements a certain number of times. This can be done using loops. Based on this loops are further classified into following types; for loop, while loop, nested loops. 
+
+**1.	for Loop:**
+for loops can iterate over a sequence of iterable ojects in python. Iterating over a sequence is nothing but iterating over strings, lists, tuples, sets and dictionaries. </br>
+
+**Example: iterating over a string:**
+```		
+name = “Gulkhan”
+for i in name:
+	print(I, end=”, “)
+
+Output:
+	G,u,l,k,h,a,n,
+```
+**Example: iterating over a list:**
+```	
+Colors = [“Red”, “Green”, “Blue”, “Yellow”]
+for x in colors:
+	print(x)
+
+Output:
+		Red
+		Green	
+		Blue
+		Yellow
+```		
+Similarly we can use loops for list, sets and dictionaries. </br>
+**i.e**
+```
+name = ["Red", "Blue", "Green", "Yellow"]
+for i in name:
+    print(i)
+    for x in i:
+        print(x,end="\n")
+
+Output:
+
+Red
+R
+e
+d
+Blue
+B
+l
+u
+e
+Green
+G
+r
+e
+e
+n
+Yellow
+Y
+e
+l
+l
+o
+w
+```
+### 2.	while loop in python:
+As the name suggests, while loops execute statements while the condition is True. As soon as the condition becomes False, the interpreter comes out of the while loop. </br>
+		
+**Example 1:**
+```
+Count = 5			
+While (count > 0):
+	Print(count)
+	Count = count -1
+
+Output:
+		5
+		4
+		3
+		2
+		1 
+```
+Here, the count variable is set to 5 which decrements after each iteration. Depending upon the while loop condition, we need to either increment or decrement the counter variable (the variable count, in our case) or the loop will continue forever.
+
+**Example 2:**
+```
+x=int(input("Write the Number.."))
+while (x <= 7):
+    print(x)
+    x=x+1
+
+Output:
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+```
+
+**4.	Else with While loop:**
+We can even use the else statement with the while loop. Essentially what the else statement does is that as soon as the while loop condition becomes False, the interpreter comes out of the while loop and the else statement is executed.
+
+**Example:**
+```
+x = 5
+while (x > 0):
+	print(x)
+	x = x-1
+else:
+	print(“I am inside else statement”)
+	
+Output:
+		5
+		4
+		3	
+		2
+		1
+		I am inside else statement
+```
+
+### 5.	Do-While loop in python:
+do-while is a loop in which a set of instructions will execute at least once (irrespective of the condition) and then the repetition of loop’s body will depend on the condition passed at the end of the while loop. It is also known as an exit-controlled loop. </br>
+**How to emulate do while loop in python?** </br>
+To create a do while loop in python, we need to modify the while loop a bit in order to get similar behaviors to a do while loop. </br>
+The most common technique to emulate a do-while loop in Python is to use n infinite while loop with a break statement wrapped in an if statement that checks a given condition and breaks the iteration if that condition becomes true: </br>
+
+**Example 1:**
+```
+while True:
+	number = int (input(“enter a positive number: ”))
+	print(number)
+	if not number > 0:
+		break
+
+Output:
+	Enter a positive number: 1
+	1
+	Enter a positive number: 4
+	4
+	Enter a positive number: -1
+	-1
+```	
+**Explanation:** </br>
+This loop uses True as its formal condition. This trick turns the loop into an infinite loop. Before the conditional statement, the loop runs all the required processing and updates the breaking condition. If this condition evaluates to true, then the break statement breaks out of the loop, and the program execution continues its normal path.
+			
+**Example 2:**	
+```
+x=int(input("Write a number.."))
+while (x >= 7):
+    print(x)
+    x=x+1
+    if x >= 15:
+        break
+
+Output:
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+```
+### 3.	range():
+What if we do not want to iterate over a sequence? What if we want to use for loop for a specific number of times ?
+Here, we can use the range() function. </br>
+
+**Example:1**
+```		
+for k in range(5):
+	print(k)
+	
+Output:
+		0
+		1
+		2	
+		3
+		4
+```	
+**Example:2** 
+```		
+for k in range(5):
+	print(k+1)
+	
+Output:
+		1		
+		2	
+		3
+		4
+		5
+```
+**Example:3**
+```			
+for k in range(4,9):
+	print(k)
+
+Output:
+		4
+		5	
+		6	
+		7
+		8
+```
+If we use three numbers in range() method as mentioned in below example:
+```
+for x in range(5, 19, 3):
+   print(x)
+
+Output:
+        5
+        8
+        11
+        14
+        17
+```  
+### 4.	break Statement:
+The break statement enables a program to skip over a part of the code. A break statement terminates the very loop it lies within. </br>
+**i.e**
+```
+for i in range(1, 101, 1):
+	print(i ,end=” “)
+	if(i==50):
+		break
+	else:
+		print(“Mississippi”)
+print(“Thank you”)
+
+	Output:
+
+	1 Mississippi
+	2 Mississippi
+	3 Mississippi
+	4 Mississippi
+	5 Mississippi 
+	.
+	.	
+	.
+	.
+	50 Mississippi 
+```
+### 5.	Continue Statement
+The continue statement skips the rest of the loop statements and causes the next iteration to occur. </br>
+**i.e**
+```
+for i in [2,3,4,5,6,8,0]:
+	if (i%2!=0):
+		continue
+		print(i)
+
+
+Output
+
+		2
+		4
+		6
+		8	
+		0
+```
+**Example of continue & break statements:**
+```
+for i in range(1, 21):
+    if i == 10:
+       print("Here continue statement starts its working")
+       continue
+   print("2 x", i, "=", 2*i)
+   if i== 15:
+       print("Here break statement starts its working")
+       break
+
+Output:
+
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+Here continue statement starts its working
+2 x 11 = 22
+2 x 12 = 24
+2 x 13 = 26
+2 x 14 = 28
+2 x 15 = 30
+Here break statement starts its working
+```
