@@ -888,3 +888,164 @@ He’s Name Is Dan. Dan Is an Honest Man.
 | != | Not equal to | 10!=5 | TRUE | Is this door different from that window? |
 | >= | Greater than or equal to | 10>=10 | TRUE | Can you attend if you are 18 or older? |
 | <= | Less than or equal to | 10<=9 | FALSE | Can you carry a bag 5 kg or lighter? |
+
+### 3.	if-else Statements:
+   Sometimes the programmer needs to check the evaluation of certain expression(s), whether the expression(s) evaluate to True or False. If the expression evaluates to False, then the program execution follows a different path then it would have if the expression had evaluated to True. </br>
+   Based on this, the conditional statements are further classified into following types: </br>
+
+(a)	if </br>
+(b)	if-else </br>
+(c)	if-else-elif </br>
+(d)	nested if-else-elif </br>
+
+An if….else statement evaluates like this: </br>
+
+**if the expression evaluates True:** </br>
+				Executes the block of code inside if statement. After execution it return to the code out of the if…..else block. </br>
+
+**if the expression evaluates False:** </br>
+					Executes the block of code inside else statement. After execution return to the code out of the if…..else block. </br>
+
+**i.e**
+```
+appleprice = 210
+budget = 205
+if (appleprice <= budget):
+  print(“Alexa, add 1 kg Apples to the cart.”)
+else:
+  print(“Alexa, do not add Apples to the cart.”)
+	
+Output:
+		Alexa, do not add Apples to the cart.
+```
+
+### 4.	elif Statements:
+Sometimes, the programmer may want to evaluate more than one condition, this can be done using an elif statement. </br>
+
+**Working on an elif Statement:** </br>
+Execute the block of code inside if statement if the initial expression evaluates to True. After execution return to the code out of the if block. </br>
+Execute the block of code inside the first elif statement if the expression inside if evaluates True. After execution return to the code out of the if block. </br>
+Execute the block of code inside the second elif statement if the expression inside it evaluates True. After execution return to the code out of the if block. </br>
+**.** </br>
+**.** </br>
+**.** </br>
+**.** </br>
+**.** </br>
+**.** </br>
+Execute the block of code inside the nth elif statement if the expression inside if evaluates True. After execution return to the code out of the if block. </br>
+
+ 
+**i.e:**
+```
+num = 0
+if (num < 0):
+		print(“Number is negative.”)
+elif (num == 0):
+		print(“Number is Zero.”)
+elif (num >= 1000):
+		print(“Number reaches thousand figure”)
+else:
+		print(“Number is positive.”)
+print(“Python Programming”)
+
+Output
+	Number is Zero.
+	Python Programming
+```
+
+### 5.	Nested if Statements:
+We can use it, if-else, elif statements inside other if statements as well. </br>
+	
+**i.e:**	
+```
+num = 18
+if (num < 0):
+  print(“Number is negative.”)
+elif (num > 0):
+  if (num <= 10):
+					print(“Number is between 1 to 10.”)
+  elif (num > 10 and num <= 20):
+					print(“Number is between 11 to 20.”)
+  else:
+					print(“Number is greater than 20.”)
+else:
+  print(“Number is zero.”)
+print(Python Programming)
+
+		Output:
+			
+			Number is between 11 to 20.
+			Python Programming
+```
+### Practicing Python Programming 1:
+```
+Stdname = input("Write the name of a person")
+Substudied = input("Which subject he Studied")
+qulifyexam = int(input("Write the qualification"))
+Marksobt = int(input("Write the Persentage"))
+if (qulifyexam < 14):
+    print(Stdname, "may be eligible for the job but needs to focus on the skill")
+elif (qulifyexam == 14):
+    print(Stdname, "qualified the Bechelor program in the field of" , Substudied)
+    if (Marksobt >= 70):
+          print ("He is eligible for the job")
+    elif (Marksobt >= 80):
+          print("He is perfect for the job")
+    elif (Marksobt > 60 & Marksobt < 70):
+         print ("He may get the job but he needs to work hard for getting experience")
+elif (qulifyexam == 16):
+    print(Stdname, "qualified the Bechelor program in the field of" , Substudied)
+    if (Marksobt >= 70):
+          print ("He is eligible for the job")
+    elif (Marksobt >= 80):
+          print("He is perfect for the job")
+    elif (Marksobt > 70):
+         print ("He may get the job but he needs to work hard for getting experience")
+elif (qulifyexam > 16):
+     print(Stdname, "qualified M-Phil or PHD in the field of", Substudied)
+     print("He need not to apply for any job, whereas the job itself coming towards", Stdname)
+else:
+     print("I just practicing Python programming.......")
+
+Output:
+
+    Ali Raza qualified the Bechelor program in the field of Artifical Intelligence
+    He is eligible for the job
+    I just practicing Python programming………
+```
+
+
+ 
+### Practicing Python Programming 2:
+						Create a python program capable of greeting you with Good Morning, Good Afternoon and Good Evening. Your program should use time module to get the current hour. Here is a sample program and documentation link for you: </br>
+import time </br>
+timestamp = time.strftime(‘%H:%M:%S’) </br>
+print(timestamp) </br>
+timestamp = time.strftime(‘%H’) </br>
+print(timestamp) </br>
+timestamp = time.strftime(‘%M’) </br>
+print(timestamp) </br>
+timestamp = time.strftime(‘%S’) </br>
+print(timestamp) </br>
+
+**Practice 1:**
+```
+import time
+tmst = time.strftime("%H:%M:%S")
+tmst1 = int(time.strftime("%H"))
+tchname = input("Write the name of teacher")
+if (tmst1 >= 5) & (tmst1 < 9):
+     print("Good Morning Sir :", tchname)
+elif (tmst1 >= 9) & (tmst1 < 16):
+     print("Good Afternoon Sir :", tchname)
+elif (tmst1 >= 16) & (tmst1 < 20):
+     print("Good Evening Sir:", tchname)
+elif (tmst1 >= 20):
+     print("Good Night Sir:", tchname)
+
+
+Output:
+
+Good Night Sir: Abdul Salam
+```
+
