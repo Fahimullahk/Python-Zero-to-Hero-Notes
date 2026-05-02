@@ -2635,4 +2635,68 @@ As we can see in the below example. </br>
 ```
 **Note: We have to go through the latest documentation of python in which we can see the difference types of methods etc. that we didn’t see or used yet. This documentation can be seen in “[docs.python.org](https://docs.python.org/3/)”.**
 
+# Python – else in Loop:
+As we have learned before, the else clause is used along with the if statement. </br>
+Python allows the else keyword to be used with the for and while loops too. The else block appears after the body of the loop. The statements in the else block will be executed after all iterations are completed. The program exists the loop on after the else block is executed. </br>
+**Syntax:** 
+```
+			for counter in sequence:
+				# Statements inside for loop block
+			else:
+				# Statements inside else block
+```	
+**Example:**
+```
+			for x in range(5):
+				print(“iteration no { } in for loop”.format(x+1))
+			else:
+				print(“else block in loop”)
+			print(“Out of loop”) 
+
+	Output:
+			iteration no 1 in for loop
+			iteration no 2 in for loop
+			iteration no 3 in for loop
+			iteration no 4 in for loop
+			iteration no 5 in for loop
+			else block in loop
+			Out of loop
+```
+Now, here in below example there is an important note, that if we uses if in for loop with also else condition and uses break keyword. </br> </br>
+**Example:**
+```
+		for i in range(6):
+			print(i)
+			if i==4:
+			    break
+		else:
+			print(“Sorry no i”)
+Output:
+		0
+		1
+		2
+		3
+		4
+```
+Here in above example we used break method which breaks the loop when if condition becomes true and our else condition will not be executed. </br>
+We can also do the same thing while using while loop, as shown in below example. </br> </br>
+**Example:**
+```
+		i = 0
+		while i<7:
+		     print(i)
+		     i=i+1
+		else:
+		    print(“Sorry no i”)
+Output:
+		0
+		1
+		2	
+		3
+		4
+		5
+		6
+		Sorry no i
+```
+# Exception Handling, Python try… except, Finally Clause, Raising Custom errors, Custom exceptions:
 
