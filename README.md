@@ -1960,4 +1960,71 @@ Here, if we want to show our curly brackets in our output while using f-strings 
 		Output:
 				Hello, My {name} is Tahir and I’m 23 {years} old.
 ```
-			
+# Docstrings in python, Python Comments vs Docsstrings, Python doc attribute:
+### 1.	Docstrings in python:
+Python docstrings are the string literals that appear right after the definition of a function, method, class, or module. </br>
+**Example:**
+```
+			def square(n):
+				“””Take in a number n, returns the square of n”””
+				print(n**2)
+				square(5)
+
+	Output:
+			25
+```
+Here, in above example: “””Take in a number n, returns the square of n””” is a docstring which will not appear in output. </br> </br>
+				
+**Python Comments vs Docsstrings** </br>
+**Python Comments** </br>
+Comments are descriptions that help programmers better understand the intent and functionality of the program. They are completely ignored by the python interpreter. </br>
+**Python docstrings** </br>
+As mentioned above, Python docstrings are strings used right after the definition of a function, method, class, or module (like in Example 1). They are used to document our code. </br>
+We can access these docstrings using the doc attribute.	</br> </br>
+**Python doc attribute** </br>
+Whenever string literals are present just after the definition of a function, module, class or method, they are associated with the object as their doc attribute. We can later use this attribute to retrieve this docstring. </br>
+**Example:** </br>
+```
+	def square(n):
+		“””Takes in a number n, returns the square of n”””
+		print(n**2)
+		square(5)
+		print(square.__doc__)
+		Output:
+				25
+				Takes in a number n, returns the square of n
+```	
+	So, here in the above example we saw that docstring, that we wrote just after the function def will show in our output. And this will show by running “__doc__” function. So it’s a docstring not a comment because the docstring is written just after the function def or above the function body. If we write it below then it will not remain docstring. It will be a comment.
+
+### 2.	PEP 8 (Python Enhancement Proposal):
+PEP 8 is a document that provides guidelines and best practices on how to write Python code. It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan. The primary focus of PEP 8 is to improve the readability and consistency of Python code. </br>
+PEP stands for Python Enhancement Proposal, and there are several of them. A PEP is a document that describes new features proposal for Python and documents aspects of Python, like design and style, for the community.
+
+### 3.	The Zen of Python:
+Lone time Pythoneer Tim Peters succinctly channels the BDFL’s guiding principles for Python’s design into 20 algorithms, only 19 of which have been written down.
+
+**The below is a Poem named as “Easter Egg”. It appear when we write: import this in the terminal.**
+
+Explicit is better than implicit. </br>
+Simple is better than complex. </br>
+Complex is better than complicated. </br>
+Flat is better than nested. </br>
+Sparse is better than dense. </br>
+Readability counts. </br>
+Special cases aren’t special enough to break the rules. </br>
+Although practicality beats purity. </br>
+Errors should never pass silently. </br>
+Unless explicitly silenced. </br>
+In the face of ambiguity, refuse the temptation to guess. </br>
+There should be one—and preferably only one –obvious way to do it. </br>
+Although that way may not be obvious at first unless you’re Dutch. </br>
+Now is better than never. </br>
+Although never is often better than *right* now. </br>
+If the implementation is hard to explain, It’s a bad idea. </br>
+If the implementation is easy to explain, It’s a good idea. </br>
+Namespaces are one honking great idea –lets do more of those! </br>
+```
+		Easter egg
+
+		Import this	
+```
