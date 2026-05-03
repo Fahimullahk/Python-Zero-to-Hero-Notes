@@ -4392,10 +4392,10 @@ There are five types of inheritance used in python: </br>
 5.	Hybrid inheritance </br> </br>
 We will see the explanation and example of each type of inheritance below. </br> </br>
 		
-1.	Single Inheritance:
-			Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.
-
-	Example:
+**1.	Single Inheritance:** </br>
+Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code. </br>
+**Example:**
+```
 			class Parent:
 				def func1(self):
 					print(“This function is in parent class.”)
@@ -4408,11 +4408,12 @@ We will see the explanation and example of each type of inheritance below. </br>
 	Output:
 			This function is in parent class.
 			This function is in child class.
- 
-2.	Multiple Inheritance:
-		When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class.
-
-Example:
+```
+</br> </br>
+**2.	Multiple Inheritance:** </br>
+When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class. </br>
+**Example:**		
+```
 		class Mother:
 			mothername = “ ”
 			
@@ -4438,11 +4439,12 @@ Example:
 Output:
 		Father name is : Mommy
 		Mother name is : Daddy
-
-3.	Multilevel Inheritance:
-	In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and a grandfather.
-
-		Example:
+```
+</br> </br>
+**3.	Multilevel Inheritance:** </br> 
+In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and a grandfather. </br> </br>
+**Example:**
+```
 				class Grandfather:
 					def __init__(self, grandfathername):
 						self.grandfathername = grandfathername
@@ -4465,15 +4467,16 @@ Output:
 				s1.print_name()
 
 		Output:
-				Liaqat
-				Grandfather name : Liaqat
-				Father name : Zameer
-				Son name : Nouman
-
-4.	Hierarchical Inheritance:
-		When more than one derived class are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two (derived) classes.
-
-Example:
+				Kashif
+				Grandfather name : Kashif
+				Father name : Haris
+				Son name : Saeed
+```
+</br> </br>
+**4.	Hierarchical Inheritance:** </br>
+When more than one derived class are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two (derived) classes. </br>
+**Example:**	
+```
 		Class Parent:
 			def func1(self):
 				print(“This function is in parent class.”)
@@ -4497,11 +4500,12 @@ Output:
 		This function is in child 1.
 		This function is in parent class.
 		This function is in child 2.
- 
-5.	Hybrid Inheritance:
-		Inheritance consisting of multiple types of inheritance is called hybrid inheritance.
-
-Example:
+```
+</br> </br>
+**5.	Hybrid Inheritance:** </br>
+Inheritance consisting of multiple types of inheritance is called hybrid inheritance. </br>
+**Example:**
+```
 		class School:
 			def func1(self):
 				print(“This function is in school.”)
@@ -4524,9 +4528,10 @@ Example:
 Output:
 		This function is in school.
 		This function is in student 1.
-
-Example 1 of Single inheritance:
-
+```
+</br> </br>
+**Example 1 of Single inheritance:** </br>
+```
 class Parent:
     def func1(self):
         print("This function is in parent class.")
@@ -4542,11 +4547,11 @@ object.func2()
 Output:
         This function is in parent class.
         This function is in child class.
- 
-In the above example we called the parent class with the object of child class. Because all the functionalities of parent class bears by the child class.
+``` 
+In the above example we called the parent class with the object of child class. Because all the functionalities of parent class bears by the child class. </br> </br>
  
-Example 2 of Multiple Inheritance:
-
+**Example 2 of Multiple Inheritance:** </br>
+```
 class Mother:
     mothername = ""
  
@@ -4573,11 +4578,11 @@ s1.parents()
 Output:
         Father name is : Mommy
         Mother : Daddy 
-
-In the above example we created two classes of father and mother and then inherit them in the son class. Then we make the object of son class and with the help of son class we can use the functionalities of father and mother class.
+```
+In the above example we created two classes of father and mother and then inherit them in the son class. Then we make the object of son class and with the help of son class we can use the functionalities of father and mother class. </br> </br>
  
-Example 3 of Multi level Inheritance:
-
+**Example 3 of Multi level Inheritance:** </br>
+```
 class Grandfather:
      def __init__(self, grandfathername):
         self.grandfathername = grandfathername
@@ -4603,9 +4608,10 @@ Output:
         Grandfather name : Saeed
         Father name : Liaqat    
         Son name : Haris  
- 
-Example 4 of Hierarchical Inheritance:
-
+```
+</br> </br>
+**Example 4 of Hierarchical Inheritance:** </br>
+```
 class Parent:
     def func1(self):
         print("This function is in parent class.")
@@ -4630,9 +4636,10 @@ Output:
         This function is in child 1.     
         This function is in parent class.
         This function is in child 2.
- 
-Example 5 of Hybrid Inheritance:
-
+```
+</br> </br> 
+**Example 5 of Hybrid Inheritance:** </br>
+```
 class School:
     def func1(self):
         print("This function is in school.")
@@ -4656,3 +4663,5 @@ object.func2()
 Output:
         This function is in school.
         This function is in student 1.
+```
+</br> </br>
