@@ -3465,4 +3465,232 @@ It is important to note that its generally considered good practice to avoid mod
 		print(y) # this will cause an error because y is a local variable and is not accessible outside of the function
 ```
 </br>
-Hence, as we learned earlier that using of global keyword inside the function should avoided because its changes the scope of variable inside the function from local to global.
+Hence, as we learned earlier that using of global keyword inside the function should avoided because its changes the scope of variable inside the function from local to global. </br>
+
+# File IO in Python (File Handling), Opening a File, Modes in file (read, write, append, create, text, binary): 
+### 1.	File IO in Python (File Handling):
+Python provides several ways to manipulate files and how to handle files in python. </br> </br>
+
+**a.	Opening a File:** </br>
+Before we can perform any operations on a file, we must first open it. Python provides the open() function to open a file. It takes two arguments: the name of the file and the mode in which the file should be opened. The mode can be ‘r’ for reading, ‘w’ for writing, or ‘a’ for appending. </br>
+Here’s an example of how to open a file for reading: </br>
+```	
+				f = open(‘myfile.txt’, ‘r’)
+```
+By default, the open() function returns a file object that can be used to read from or write to the file, depending on the mode. </br> </br>
+**b.	Modes in file:** </br>
+There are various modes in which we can open files.</br>
+
+**i.	read (r):** This mode opens the file for reading only and gives an error if the file does not exist. This is the default mode if no mode is passed as a parameter. </br> </br>
+
+**ii.	write (w):** This mode opens the file for writing only and creates a new file if the file does not exist. </br> </br>
+
+**iii.	append (a):** This mode opens the file for appending only and creates a new file if the file dies not exist. </br> </br>
+
+**iv.	create (x):** This mode creates a file and gives an error if the file already exists. </br> </br>
+
+**v.	text (t):** Apart from these modes we also need to specify how the file must be handled. ‘t’ mode is used to handle text files. ‘t’ refers to the text  mode. There is no difference between ‘r’ and ‘rt’ or ‘w’ and ‘wt’ since text mode is the default. The default mode is ‘r’ (open for reading text, synonym of ‘rt’). </br> </br>
+
+**vi.	binary (b):** This mode is used to handle binary files (i.e images, pdfs, etc) </br> </br> </br>
+
+**b.	Reading from a File:** </br>
+Once we have a file object, we can use various methods to read from the file. </br>
+The read() method reads the entire contents of the file and returns it as a string. </br>
+**Example:**		
+```
+				f = open(‘myfile.txt’, ‘r’)
+				contents = f.read()
+				print(content)
+```		
+In the above example we used the read() method. So for using the read() method we must	have the file, then we can be able to read the file. In the above example we first create the 	‘myfile.txt’ file, then we can use the read() method. </br> </br>
+
+**c.	Writing to a File:** </br>
+To write to a file, we first need to open it in write mode. </br>
+**Example:**				
+```
+				f = open(‘myfile.txt’, ‘w’)
+				f.write(‘Hello, World!’)
+				f.close()	
+```
+</br>
+In the above example we used write() method in write ‘w’ mode. It is write the text that we have provided as ‘Hello, World!’ will be written in the file.txt file. If there is already any text available in myfile.txt file and then we use write() method, then it will overwrite the previous text. So, we have to keep in mind that writing to a file will overwrite its contents. If we want to append to a file instead of overwriting it, we can open it in append ‘a’ mode. As we can see below: </br>
+
+**Example:** </br>
+```
+				f = open(‘myfile.txt’, ‘a’)
+				f.write(‘Hello, World!’)
+				f.close()
+```
+Now, in the above example we used the append ‘a’ mode with write() method, it will append the text ‘Hello, World!’ at the end of our already existing text, here we must have to close our file by using the close() method. </br> </br>
+
+**d.	Closing a File:** </br>
+It is important to close a file after we are done with it. This releases the resources used by the file and allows other programs to access it. </br>
+To close a file, we can use the close() method as we used in the above examples. </br> </br>
+
+**e.	The ‘with’ statement:** </br>
+Alternatively, we can use the ‘with’ statement to automatically close the file after we are done with it. </br>
+**Example:**				
+```
+				with open(‘myfile.txt’, ‘a’) as f:
+				f.write(‘Hello, World!’)
+```
+In the above example we used the **‘with’** statement and we write the variable **‘f’** at its end with **‘as’** keyword. We used the append **‘a’** mode with **write()** method, so it will append our text ‘Hello, World!’ and closed it automatically and we did not need write the **close()** method. </br> </br>
+**Example of reading from a file:**
+```
+f = open('myfile.txt', 'r')
+contents = f.read()
+print(contents)
+contents.close()
+
+#Its output is:  Hello bro, how are you >>>>?      # This the content of 'myfile.txt' file
+```
+</br> </br>
+
+**Example of writing a file using ‘w’ mode:**
+```
+f = open('myfile.txt', 'w')
+contents = f.write("Hello bro Hey!!!!!!!!")
+print(contents)
+contents.close()
+
+#Output:
+      #Here we overwrite the already existing text in 'myfile.txt' with 'Hello bro #Hey!!!!!!!' by using the write() method with write 'w' mode
+```
+</br> </br>
+**Example of writing from a file using append ‘a’ mode:**
+```
+f = open('myfile.txt', 'a')
+contents = f.write("Hello bro Hey!!!!!!!!")
+print(contents)
+contents.close()
+
+
+#Output:
+        #Here we used append 'a' mode with write() method. so it will append the text as #much time we are running our program.
+```
+</br> </br>
+**Example of writing from a file using append ‘a’ mode with ‘with’ statement:**
+```
+with open('myfile.txt', 'a') as f:
+  f.write("Hello bro Hyyyy!")
+
+#Output:
+          #Here we used 'with' statement, so here we did not need to use close() method #because its authomatically close our program after execution.
+```				
+</br> </br>
+	
+### 2.	readlines() method:
+The readline() method reads a single line from the file. If we want to read multiple lines, we can use a loop. </br>
+**Example:**			
+```
+			f = open(‘myfile.txt’, ‘r’)
+			while True:
+				line = f.readline()
+				if not line:
+				      break
+				print(line)
+```
+The readlines() method reads all the lines of the file and returns them as a list of strings. </br> </br>
+
+### 3.	writelines() method:
+The writelines() method in python writes a sequence of strings to a file. The sequence can be any iterable object, such as a list or a tuple. </br> </br>
+Here’s an example of how to use the writelines() method: </br>
+**Example:**		
+```
+			f = open(‘myfile.txt’, ‘w’)
+			lines = [‘line 1\n’, ‘line 2\n’, ‘line 3\n’]
+			f.writelines(lines)
+			f.close()
+```
+This will write the strings in the lines list to the file myfile.txt. The \n characters are used to add newline characters to the end of each string. </br>
+Keep in mind that the writelines() method does not add newline characters between the strings in the sequence. If you want to add newlines between the strings, you can use a loop to write each string separately: </br> </br>
+**Example:**
+```
+			f = open(‘myfile.txt’, ‘w’)
+			lines = [‘line 1’, ‘line 2’, ‘line 3’]
+			for line in lines:
+				f.write(line + ‘\n’)
+			f.close()
+```
+It is also a good practice to close the file after you are done with it. </br> </br>
+		
+ 
+**Example of writeline() method:** 
+```
+f = open('myfile.txt', 'w')
+lines = ['line 1\n', 'line 2\n', 'line 3\n']
+f.writelines(lines)
+f.close()
+```
+</br> </br>
+
+**Example of write method:**
+```
+f = open('myfile.txt', 'w')
+lines = ['line 1', 'line 2', 'line 3']
+for line in lines:
+    f.write(line + '\n')
+f.close()
+```
+</br> </br>
+**Example (Elaborated each line of code comment):**
+```
+f = open("myfile.txt", "r")       # Here it will read the file i created
+i = 0 # Here i starting the indexing of my file element with will denote the student name
+while True: # Here i am starting a while loop, so it will continue when the subsequence condition remains true.
+    i = i+1 # Here i am starting the index number from 1 by adding i with 1.
+    line = f.readline() # Here i using readline() method which will be applied on my created file
+    if not line: # Here if no more element exists means here a condition says that the line will continue till the last element in line.
+        break # Here if no more element found, then it will breaks the while from further execution.
+    m1 = line.split(",")[0] # Here its splits very first element which is on 0 index seperated by "," from each line and apply it to every subject.
+    m2 = line.split(",")[1] # Here its splits second element which is on 1 index seperated by "," from each line and apply it to every subject.
+    m3 = line.split(",")[2] # Here its splits third element which is on 2 index seperated by "," from each line and apply it to every subject.
+    print(f"The marks of student {i} in English is : {m1}") # Now here we used the "f" string print the students with marks
+    print(f"The marks of student {i} in Math is : {m2}")
+    print(f"The marks of student {i} in Physics is : {m3}")
+
+ Output:
+          The marks of student 1 in English is : 70
+          The marks of student 1 in Math is :  80   
+          The marks of student 1 in Physics is :  90
+
+          The marks of student 2 in English is : 75 
+          The marks of student 2 in Math is :  85   
+          The marks of student 2 in Physics is :  95
+
+          The marks of student 3 in English is : 78 
+          The marks of student 3 in Math is :  88   
+          The marks of student 3 in Physics is :  98
+```
+</br> </br>
+ 
+**Example (Without elaboration of each line of code):**
+```
+f = open("myfile.txt", "r")       
+i = 0 
+while True: 
+    i = i+1 
+    line = f.readline() 
+    if not line: 
+        break 
+    m1 = line.split(",")[0] 
+    m2 = line.split(",")[1] 
+    m3 = line.split(",")[2] 
+    print(f"The marks of student {i} in English is : {m1}") 
+    print(f"The marks of student {i} in Math is : {m2}")
+    print(f"The marks of student {i} in Physics is : {m3}")
+
+ Output:
+          The marks of student 1 in English is : 70
+          The marks of student 1 in Math is :  80   
+          The marks of student 1 in Physics is :  90
+
+          The marks of student 2 in English is : 75 
+          The marks of student 2 in Math is :  85   
+          The marks of student 2 in Physics is :  95
+
+          The marks of student 3 in English is : 78 
+          The marks of student 3 in Math is :  88   
+          The marks of student 3 in Physics is :  98
+```
+</br>
