@@ -5732,24 +5732,24 @@ Here is the basic syntax for creating a command line utility using argparse in P
 **Examples:** </br>
 Here are a few examples that can help us to get started to creating command line utilities in python: </br> </br>
 **a.	Adding optional arguments:** </br>
-			The following example shows us how toad an optional argument to our command line utility:
-
-		Example:
+The following example shows us how toad an optional argument to our command line utility: </br>
+**Example:** </br>
+```
 				import argparse
 
 				parser = argparse.ArgumentParser()
 
-parser.add_argument("-o", "--optional", help="description of optional argument", default="default_value")
+				parser.add_argument("-o", "--optional", help="description of optional argument", default="default_value")
 
 				args = parser.parse_args()
 
 				print(args.optional)
-
- 
-2.	Adding positional arguments:
-			The following example shows how to add a positional argument to our command line utility:
-
-		Example:
+```
+</br> </br>
+**b.	Adding positional arguments:** </br>
+The following example shows how to add a positional argument to our command line utility: </br>
+**Example:** 
+```
 				import argparse
 
 				parser = argparse.ArgumentParser()
@@ -5759,11 +5759,12 @@ parser.add_argument("-o", "--optional", help="description of optional argument",
 				args = parser.parse_args()
 
 				print(args.positional)
-
-3.	Additing arguments with type:
-			The following example shows how to add an argument with a specified type:
-
-		Example:
+```
+</br> </br>
+**c.	Additing arguments with type:** </br>
+The following example shows how to add an argument with a specified type: </br>
+**Example:**
+```
 				import argparse
 
 				parser = argparse.ArgumentParser()
@@ -5773,33 +5774,32 @@ parser.add_argument("-o", "--optional", help="description of optional argument",
 				args = parser.parse_args()
 
 				print(args.n)
-
-		Creating command line utilities in python is a straightforward and flexible process thanks to the argparse module. With a few lines of code, we can create powerful and customizable command line tools that can make our development workflow easier and more efficient. Whether we are working on small script or large applications, the argparse module must have tool for any python developer.
- 
-3.	The Walrus Operator in python:
-		The Walrus operator is a new addition to python 3.8 and allows us to assign a value to a variable within an expression. This can be useful when we need to use a value multiple times in a loop, but don’t want to repeat the calculation.
-		The Walrus operator is represented by the := syntax and can be used in a variety of contexts including incuding while loops and if statements.
-Here is an example of how we can use the Walrus operator in a while loop:
-
-	Example:
+```
+Creating command line utilities in python is a straightforward and flexible process thanks to the argparse module. With a few lines of code, we can create powerful and customizable command line tools that can make our development workflow easier and more efficient. Whether we are working on small script or large applications, the argparse module must have tool for any python developer. </br> </br>
+### 3.	The Walrus Operator in python:
+The Walrus operator is a new addition to python 3.8 and allows us to assign a value to a variable within an expression. This can be useful when we need to use a value multiple times in a loop, but don’t want to repeat the calculation. </br>
+The Walrus operator is represented by the := syntax and can be used in a variety of contexts including incuding while loops and if statements. </br>
+Here is an example of how we can use the Walrus operator in a while loop: </br>
+**Example:**
+```
 			numbers = [1, 2, 3, 4, 5]
 			while (n := len(numbers)) > 0:
     				print(numbers.pop())
-
-	In this example, the length of the numbers list is assigned to the variable n using the Walrus operator. The value of n is then used in the condition of the while loop, so that the loop will continue to execute until the numbers list is empty.
-	Another example of using the Walrus operator in a if statement:
-
-	Example:
+```
+In this example, the length of the numbers list is assigned to the variable n using the Walrus operator. The value of n is then used in the condition of the while loop, so that the loop will continue to execute until the numbers list is empty. </br>
+Another example of using the Walrus operator in a if statement: </br>
+Example:</br>
+```
 			names = ["John", "Jane", "Jim"]
 			if (name := input("Enter a name: ")) in names:
     				print(f"Hello, {name}!")
 			else:
     				print("Name not found.")
+```
+Here is another example: </br> </br>
 
-Here is another example:
-
-	Example using simple While loop:
-
+**Example using simple While loop:** 
+```
 foods = list()
 while True:
   food = input("What food do you like?: ")
@@ -5807,45 +5807,35 @@ while True:
     break
   foods.append(food)
 print(foods)
-
-In the above example we created an empty list and used a while loop. Inside the loop we created a variable and passed it a user input to write the names of food he likes. After that we used the if statement with the condition that if the user writes the quit then the program will breaks/ends, and the last we append the user input food in the foods list. However we can write the same program in the below form by using the Walrus operators.
-
-	Example using Walrus operator:
-
+```
+In the above example we created an empty list and used a while loop. Inside the loop we created a variable and passed it a user input to write the names of food he likes. After that we used the if statement with the condition that if the user writes the quit then the program will breaks/ends, and the last we append the user input food in the foods list. However we can write the same program in the below form by using the Walrus operators. </br> </br>
+**Example using Walrus operator:**
+```
 foods = list()
 while (food := input("What food do you like?: ")) != "quit":
     foods.append(food)
 print(foods)
- 
-In the above example the user input is assigned to the variable name using the Walrus operator. The value of name is then used in the if statement to determine whether it is in the names list. If it is the corresponding message is printed.
-It is important to note that the Walrus operator should be used sparingly as it can make code les readable if overused.
-In conclusion the Walrus operator is a useful tool for python developers to have in their toolkit. It can help streamline code and reduce duplication, but it should be used with care to ensure code readability and maintainability.
- 
-
-
-4.	Shutil Module in python:
-			Shutil is a python module that provides a higher level interface for working with file and directories. The name “shutil” is short for shell utility. It provides a convenient and efficient way to automate tasks that are commonly performed on files and directories.
-
-1.	Importing shutil:
-	The syntax for importing the shutil module is a follows:
-	
+```
+In the above example the user input is assigned to the variable name using the Walrus operator. The value of name is then used in the if statement to determine whether it is in the names list. If it is the corresponding message is printed. </br>
+It is important to note that the Walrus operator should be used sparingly as it can make code les readable if overused. </br>
+In conclusion the Walrus operator is a useful tool for python developers to have in their toolkit. It can help streamline code and reduce duplication, but it should be used with care to ensure code readability and maintainability. </br> </br>
+### 4.	Shutil Module in python:
+Shutil is a python module that provides a higher level interface for working with file and directories. The name “shutil” is short for shell utility. It provides a convenient and efficient way to automate tasks that are commonly performed on files and directories. </br> </br>
+**a.	Importing shutil:** </br>
+The syntax for importing the shutil module is a follows:
+```	
 	Import shutil
-
-2.	Functions:
-	The following are some of the most commonly used functions in the shutil module:
-
-1.	shutil.copy(src, dst) : This function copies the files located at src to a new location specified by dst. If the destination location already exists, the original file will be overwritten.
-
-2.	shutil.copy2(src, dst) : This function is similar to shutil.copy, but it alse preserves more metadata about the original file, such as the timestamp.
-
-3.	shutil.copytree(src, dst) : This function recursively copies the directly located at src to a new location specified by dst. If the destination location already exists, the original directory will be merged with it.
-
-4.	shutil.move(src, dst) : This function moves the file located at src to a new location specified by dst. This function is equivalent to renaming a file in most cases.
-
-5.	shutil.rmtree(path) : This function recursively deletes the directory located at path, along with all of its contents. This function is similar to using the rm –rf command in a shell.
-	
-	Example:
-		
+```
+</br> </br>
+**b.	Functions:** </br>
+The following are some of the most commonly used functions in the shutil module: </br> </br>
+**i.	shutil.copy(src, dst) :** This function copies the files located at src to a new location specified by dst. If the destination location already exists, the original file will be overwritten. </br>
+**ii.	shutil.copy2(src, dst) :** This function is similar to shutil.copy, but it alse preserves more metadata about the original file, such as the timestamp. </br>
+**iii.	shutil.copytree(src, dst) :** This function recursively copies the directly located at src to a new location specified by dst. If the destination location already exists, the original directory will be merged with it. </br>
+**iv.	shutil.move(src, dst) :** This function moves the file located at src to a new location specified by dst. This function is equivalent to renaming a file in most cases. </br>
+**v.	shutil.rmtree(path) :** This function recursively deletes the directory located at path, along with all of its contents. This function is similar to using the rm –rf command in a shell. </br>
+**Example:**
+```		
 			import shutil
 
 			shutil.copy("src.txt", "dst.txt")		# Copying a file
@@ -5855,32 +5845,27 @@ In conclusion the Walrus operator is a useful tool for python developers to have
 			shutil.move("src.txt", "dst.txt")		# Moving a file
 
 			shutil.rmtree("dir")				# Deleting a directory
-
- 
-	As we can see, the shutil module provides a simple and efficient way to perform common file and directory-related tasks in python. Whether we need to copy, move, delete or preserve metadata about files and directories.
-	In conclusion, the shutil module is a powerful tool for automating file and directory-related tasks in python. Whether we are a beginner or an experienced python developer, the shutil module is an essential tool to have in our toolbox.
-
-
-5.	Requests module in python:
-		The python requests module is an HTTP library that enables developers to send HTTP requests in Python. This module enables us to send HTTP requests using python code and makes it possible to interact with APIs and web services.
-
-1.	Installation:
-	
+```
+As we can see, the shutil module provides a simple and efficient way to perform common file and directory-related tasks in python. Whether we need to copy, move, delete or preserve metadata about files and directories. </br>
+In conclusion, the shutil module is a powerful tool for automating file and directory-related tasks in python. Whether we are a beginner or an experienced python developer, the shutil module is an essential tool to have in our toolbox. </br> </br>
+### 5.	Requests module in python:
+The python requests module is an HTTP library that enables developers to send HTTP requests in Python. This module enables us to send HTTP requests using python code and makes it possible to interact with APIs and web services. </br> </br>
+**i.	Installation:** </br>
+```	
 	pip install requests
-
-2.	Get Request:
-		Once we have installed the requests module, we can start using it to send HTTP requests. Here is a simple example that sends a GET request to the Google homepage:
-
-	Example:
+```
+**ii.		Get Request:** </br>
+Once we have installed the requests module, we can start using it to send HTTP requests. Here is a simple example that sends a GET request to the Google homepage: </br>
+**Example:**
+```
 			import requests
 			response = requests.get("https://www.google.com")
 			print(response.text)
-
-3.	Post Request:
-	Here is another example that sends a POST request to a web service and includes a custom header:
-
-		Example:
-
+```
+**iii.	Post Request:** </br>
+Here is another example that sends a POST request to a web service and includes a custom header: </br>
+**Example:**
+```
 import requests
 url = "https://api.example.com/login"
 headers = {
@@ -5895,8 +5880,7 @@ data = {
 response = requests.post(url, headers=headers, json=data)
 
 print(response.text)
-
-	In this example, we send a POST request to a web service to authenticate a user. We include a custom User-Agent header and JSON palyload with the user’s credentials.
-
-4.	bs4 Module:
-	There is another module called BeautifulSoup which is used for web scraping in Python. 
+```
+In this example, we send a POST request to a web service to authenticate a user. We include a custom User-Agent header and JSON palyload with the user’s credentials. </br> </br>
+**iv.		bs4 Module:** </br>
+There is another module called BeautifulSoup which is used for web scraping in Python.  </br> </br>
