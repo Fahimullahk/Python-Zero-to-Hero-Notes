@@ -5324,3 +5324,360 @@ Output:
             6, 8
 ```
 </br> </br>
+# Details of Single, Multiple, Multilevel, Hybrid, Hierarchical inheritance in Python:
+1.	Single Inheritance in Python:
+			Single inheritance is a type of inheritance where a class inherits properties and behaviors from a single parent class. This is the simplest and most common form of inheritance.
+
+	Syntax:
+		The syntax for single inheritance in python is straightforward and easy to understand. To create a new class that inherits from a parent class, simple specify the parent class in the class definition, inside the parentheses, like this:
+
+	class ChildClass(ParentClass):			# class body
+
+Example:
+		Let’s consider a simple example of single inheritance in python. Consider a class method “Animal” that contains the attributes and behaviors that are common to all animals.
+
+		class Animal:
+    		def __init__(self, name, species):
+        			self.name = name
+        			self.species = species
+        
+    		def make_sound(self):
+        			print("Sound made by the animal")
+
+		If we want to create a new class for a specific type of animal, such as a dog, we can create a new class named “Dog” that inherits from the Animal class.
+
+		class Dog(Animal):
+    		def __init__(self, name, breed):
+        			Animal.__init__(self, name, species="Dog")
+        			self.breed = breed
+        
+    		def make_sound(self):
+        			print("Bark!")
+
+		The Dog class inherits all the attributes and behaviors of the Animal class, including the __init__ method and the make_sound method. Additionally, the Dog class has its own __init__ method that adds a new attribute for the breed of the dog, and it also overrides the make_sound method to specify the sound that a dog makes.
+
+		Single inheritance is a powerful tool in python that allows us to create new classes based on existing classes. It allows us to reuse code, extend it to fit our needs, and make it easier to manage complex systems. Understanding single inheritance is an important step in becoming proficient in object-oriented programming in python.
+ 
+Example of single inheritance:
+
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        
+    def make_sound(self):
+        print("Sound made by the animal")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        Animal.__init__(self, name, species="Dog")
+        self.breed = breed
+        
+    def make_sound(self):
+        print("Bark!")
+
+d = Dog("dog", "meat")
+d.make_sound()
+
+a = Animal("dog", "germanshephard")
+a.make_sound()
+
+Output:
+        Bark!
+        Sound made by the animal
+
+ 
+2.	Multiple inheritance in python:
+		Multiple inheritance is a powerful feature in object-oriented programming that allows a class to inherit attributes and methods from multiple parent classes. This can be useful in situations where a class needs to inherit functionality from multiple sources.
+
+	Syntax:
+		In python, multiple inheritance is implemented by specifying multiple classes in the class definition, separated by commas.
+			
+		class ChildClass(ParentClass1, ParentClass2, ParentClass3):	# class body
+
+In this example, the ChildClass inherits attributes and methods from all three parent classes: ParentClass1, ParentClass2, and ParentClass3.
+
+It is important to note that, in case of multiple inheritance, python follow a method resolution order (MRO) to resolve conflicts between methods or attributes from different parent classes. The MRO determines the order in which parent classes are searched for attributes and methods.
+
+Example:
+			class Animal:
+    			def __init__(self, name, species):
+        				self.name = name
+        				self.species = species
+        
+    			def make_sound(self):
+       				 print("Sound made by the animal")
+        
+			class Mammal:
+    			def __init__(self, name, fur_color):
+        				self.name = name
+        				self.fur_color = fur_color
+        
+			class Dog(Animal, Mammal):
+    			def __init__(self, name, breed, fur_color):
+       				Animal.__init__(self, name, species="Dog")
+        				Mammal.__init__(self, name, fur_color)
+        				self.breed = breed
+        
+    			def make_sound(self):
+        				print("Bark!")
+
+In this example, the Dog class inherits from both the Animal and Mammal classes, so it can use attributes and methods from both parent classes.
+ 
+3.	Multilevel Inheritance in python:
+			Multilevel inheritance is a type of inheritance in object-oriented programming where a derived class inherits from another derived class. This type of inheritance allows us to build a hierarchy of classes where one class builds upon another, leading to a more specialized class.
+			In python, multilevel inheritance is achieved by using the class hierarchy. The syntax for multilevel inheritance is quite simple and follows the same syntax as a single inheritance.
+
+	Syntax:
+			class BaseClass:	   			# Base class code
+    
+			class DerivedClass1(BaseClass):    	# Derived class 1 code
+    
+			class DerivedClass2(DerivedClass1):    # Derived class 2 code
+
+		In the above example, we have three classes: BaseClass, DerivedClass1 and DerivedClass2. The DerivedClass1 class inherits from the BaseClass and the DerivedClass2 class inherits from the DerivedClass1 class. This creates a hierarchy where DerivedClass2 has access to all the attributes and methods of both DerivedClass1 and BaseClass.
+
+	Example:
+			Lets take a look at an example to understand how multilevel inheritance works in Python. Consider the following classes:
+
+			class Animal:
+   			 def __init__(self, name, species):
+        				self.name = name
+        				self.species = species
+        
+    			def show_details(self):
+        				print(f"Name: {self.name}")
+        				print(f"Species: {self.species}")
+        
+			class Dog(Animal):
+    			def __init__(self, name, breed):
+        				Animal.__init__(self, name, species="Dog")
+        				Self.breed = breed
+        
+    			def show_details(self):
+        				Animal.show_details(self)
+        				print(f"Breed: {self.breed}")
+        
+			class GoldenRetriever(Dog):
+    			def __init__(self, name, color):
+        				Dog.__init__(self, name, breed="Golden Retriever")
+        				self.color = color
+        
+    			def show_details(self):
+        				Dog.show_details(self)
+        				print(f"Color: {self.color}")
+ 
+		In this example, we have three classes: Animal, Dog and GoldenRetriever. The Dog class inherits from the Animal class, and the GoldenRetriever class inherits from the Dog class. 
+		Now, when we create an object of the GoldenRetriever class, it has access to all the attributes and methods of the Animal class and the Dog class. We can also see that the GoldenRetriever class has its own attributes and methods that are specific to the class.
+
+			dog = GoldenRetriever("Max", "Golden")
+			dog.show_details()
+
+Output:
+			Name: Max
+			Species: Dog
+			Breed: Golden Retriever
+			Color: Golden
+
+		As we can see from the output, the Golden Retriever object has access to all the attributes and methods of the Animal and Dog classes, and it has also added its own unique attributes and methods. This is a powerful feature of multilevel inheritance, as it allows us to create more coimplex and intricate classes by building upon existing ones.
+
+		Another important aspect of multilevel inheritance is that it allows us to reuse code and avoid repeating the same logic multiple times. This can lead to better maintainability and readability of our code, as we can abstract away complex logic into base classes and build upon them.
+
+		In conclusion, multilevel inheritance is a powerful feature in object-oriented programming that allows us to create complex and intricate classes by building upon existing ones. It provides the benefits of code reuse, maintainability and readability while also requiring careful consideration to avoid potential problems.
+ 
+Example multilevel inheritance:
+
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        
+    def show_details(self):
+        print(f"Name: {self.name}")
+        print(f"Species: {self.species}")
+        
+class Dog(Animal):
+    def __init__(self, name, breed):
+        Animal.__init__(self, name, species="Dog")
+        self.breed = breed
+        
+    def show_details(self):
+        Animal.show_details(self)
+        print(f"Breed: {self.breed}")
+        
+class GoldenRetriever(Dog):
+    def __init__(self, name, color):
+        Dog.__init__(self, name, breed="Golden Retriever")
+        self.color = color
+        
+    def show_details(self):
+        Dog.show_details(self)
+        print(f"Color: {self.color}")
+
+i = Dog("Max", "GoldenRetriever")
+i.show_details()
+print("-----------------------------------")
+o = GoldenRetriever("Max", "Golden")
+o.show_details()  
+
+Output: 
+            Name: Max
+            Species: Dog
+            Breed: GoldenRetriever
+            -----------------------------------
+            Name: Max
+            Species: Dog
+            Breed: Golden Retriever
+            Color: Golden
+ 
+4.	Hybrid Inheritance in Python:
+			Hybrid inheritance is a combination of multiple inheritance and single inheritance in object-oriented programming. It is a type of inheritance which multiple inheritance is used to inherit the properties of multiple base classes into a single derived class, and single inheritance is used to inherit the properties of the derived class into a sub-derived class.
+			In python, hybrid inheritance can implemented by creating a class hierarchy, in which a base class is inherited by multiple derived classes, and one of the derived classes is further inherited by a sub-derived class.
+
+	Syntax:
+			The syntax for implementing hybrid inheritance in pythoin is the same as for implementing Single inheritance, Multiple inheritance or hierarchical inheritance.
+
+	Here’s the syntax for defining a hybrid inheritance class hierarchy:
+
+		class BaseClass1:		 				  # attributes and methods
+
+		class BaseClass2:						  # attributes and methods
+
+		class DerivedClass(BaseClass1, BaseClass2):		  # attributes and methods
+
+	
+
+ 
+Example of Hybrid Inheritance:
+			Consider the example of a Student class that inherits from the Person class, which in turn   inherits from the Human class. The Student class also has a Prgram class that it is associated with.
+			
+class Human:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+    
+  def show_details(self):
+    print("Name:", self.name)
+    print("Age:", self.age)
+    
+class Person(Human):
+  def __init__(self, name, age, address):
+    Human.__init__(self, name, age)
+    self.address = address
+    
+  def show_details(self):
+    Human.show_details(self)
+    print("Address:", self.address)
+    
+class Program:
+  def __init__(self, program_name, duration):
+    self.program_name = program_name
+    self.duration = duration
+    
+  def show_details(self):
+    print("Program Name:", self.program_name)
+    print("Duration:", self.duration)
+    
+class Student(Person):
+  def __init__(self, name, age, address, program):
+    Person.__init__(self, name, age, address)
+    self.program = program
+    
+  def show_details(self):
+    Person.show_details(self)
+    self.program.show_details()
+
+program = Program("Computer Science", 4)
+student = Student("John Doe", 25, "123 Main St.", program)
+student.show_details()
+
+Output:
+            Name: John Doe
+            Age: 25
+            Address: 123 Main St.
+            Program Name: Computer Science
+            Duration: 4
+
+	In this example the student class inherits from the Person class, which in turn inherits from the Human class. The Student class also has an association with the Program class. This is an example of Hybrid Inheritance in action, as it uses both Single Inheritance and Association to achieve the desire inheritance structure.
+		As we can see from the output, the Student object has access to all the attributes and methods of the Person and Human classes, as well as the Program class through association.
+		In this way, hybrid inheritance allows for a flexible and powerful way to inherit attributes and behavior from multiple classes in a hierarchy or chain.
+
+5.	Hierarchical Inheritance:
+			Hierarchical inheritance is a type of inheritance in Object-Oriented programming where multiple subclasses inherit form a single base class. In other words, a single base acts as a parent class for multiple subclasses. This is a way of establishing relationship between classes in a hierarchical manner.
+
+Here’s an example of illustrate the concepts of hierarchical inheritance in python:
+
+	Example of hierarchical inheritance:
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def show_details(self):
+        print("Name:", self.name)
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        Animal.__init__(self, name)
+        self.breed = breed
+
+    def show_details(self):
+        Animal.show_details(self)
+        print("Species: Dog")
+        print("Breed:", self.breed)
+
+class Cat(Animal):
+    def __init__(self, name, color):
+        Animal.__init__(self, name)
+        self.color = color
+
+    def show_details(self):
+        Animal.show_details(self)
+        print("Species: Cat")
+        print("Color:", self.color)
+
+dog = Dog("Max", "Golden Retriever")
+dog.show_details()
+cat = Cat("Luna", "Black")
+cat.show_details()
+
+Output:
+            Name: Max
+            Species: Dog
+            Breed: Golden Retriever
+            Name: Luna
+            Species: Cat
+            Color: Black
+
+ 
+	As we can see from the outputs, the Dog and Cat classes have inherited the attributes and methods of the Animal class, and have also added their own unique attributes and methods.
+	In conclusion, hierarchical inheritance is a way of establishing relationships between classes in hierarchical manner. It allows multiple subclasses to inherit from a single base class, which helps in code reuse and organization of code in a more structured manner.
+
+ 
+Exercise:
+	We have to write a program to pronounce list of names using win32 API. If we are given list l as follows:
+
+l = [“Abdul Salam”, “Fahim Ullah”, “Mudassir”, “Haris Jan”, “Muhammad Yousaf”, “Muhammad Aliyaar Fahim”]
+
+	Our program should pronounce:
+	
+	Salam to Abdul Salam
+	Salam to Fahim Ullah
+	Salam to Mudassir
+	Salam to Haris Jan
+	Salam to Muhammad Yousaf
+	Salam to Muhammad Aliyaar Fahim 
+
+import win32com.client as wincl
+l = ["Abdul Salam", "Fahim Ullah", "Mudassir", "Haris Jan", "Muhammad Yousaf", "Muhammad Aliyaar Fahim"]
+speaker_number = 1
+spk = wincl.Dispatch("SAPI.SpVoice")
+vcs = spk.GetVoices()
+SVSFlag = 11
+print(vcs.Item (speaker_number) .GetAttribute ("Name")) 
+spk.Voice
+spk.SetVoice(vcs.Item(speaker_number)) 
+for item in l:
+    spk.Speak(f"Salam to, {item}")
+
+                                                                                                                                                                                                                                    So, I am using windows that’s why I used this package downloaded from https://stackoverflow.com/questions/31167967/python-3-4-text-to-speech-with-sapi. And by using the above mentioned code with just a minimal editing it could work according to our requirement.
