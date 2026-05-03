@@ -3287,4 +3287,113 @@ It’s important to note that the if __name__==”__main__” idiom is not requi
 
 In summary, the if__name__==”__main__” idiom is a common pattern used in Python scripts to determine whether the script is being run directly or being imported as a module into another script. It allows us to reuse code from a script by importing it as a module in to another script, without running the code in the original script. </br> </br>
 	Hence, the if__name__ == “__main__” idiom is used to run the specific part of the code in a function not all the code inside the function. That’s why we should be carefully and conscious while importing any other function in any other script, and if__name__==”__main__” will be useful at that time. </br>
+# os Module in Python, Interacting with the file system, Running system commands:
+### os Module in Python:
+The os module in Python is built-in library that provides functions for interacting with the operating system. It allows us to perform a wide variety of tasks, such as reading and writing files, interacting with the file system, and running system commands. </br> </br>
+Here, are some common tasks we can perform with the os module: </br> </br>
+Reading and writing files. The os module provides functions for opening, reading and writing files. For example, to open a file for reading, we can use the open function: </br>
+**Example:**
+```
+			import os
 
+			# Open the file in read only mode
+			f = os.open(“myfile.txt”, os.0_RDONLY)
+		
+			# Read the contents of the file
+			contents = os.read(f, 1024)
+
+			# Close the file
+			os.close(f)
+```
+To open a file for writing, we can use the os.O_WRONLY flag: </br> </br>
+**Example:**	
+```
+			import os
+			
+			# Open the file in write-only mode
+			f = os.open(“myfile.txt”, os.0_WRONLY)
+	
+			# Write to the file
+			os.write(f, b”Hello, world!”)
+	
+			# Close the file
+			os.close(f)
+```
+**1.	Interacting with the file system:** </br>
+The os module also provides functions for interacting with the file system. For example we can use the os.listdir to get a list of the files in a directory: </br>
+**Example:**		
+```
+		# Get a list of the files in the current directory
+		files = os.listdir(“.”)
+		print(files)			# Output : [‘myfile.txt’, ‘otherfile.txt’]
+```
+We can also use the os.mkdir function to create a new directory: </br>
+```
+		Import os
+
+		# Create a new directory
+		os.mkdir(“newdir”)
+```
+**2.	Running system commands:** </br>
+Finally, the os module provides functions for running system commands. For example, we can use the os.system function to run a command and get the output: </br>
+**Example:**
+```
+				# Run the “ls” command and print the output
+				output = os.system(“ls”)
+				print(output)		# Output: [‘myfile.txt’, ‘otherfile.txt’]
+```
+We can also use the os.popen function to run a command and get the output as a file like object: </br> </br>
+**Example:**		
+```
+		import os
+		# Run the “ls” command and get the output as a file-like object
+		f = os.popen(“ls”)
+
+		# Read the contents of the output
+		output = f.read()
+		print(output)		# Output : [‘myfile.txt’. ‘otherfile.txt’]
+
+		# Close the file-like object
+		f.close()
+```
+In summary, the os module in Python is a built-in library that provides a wide variety of functions for interacting with the operating system. It allows you to perform tasks such as reading and writing files, interacting with the file system, and running system command. </br> </br>
+**The below code is used for creation of folders**
+```
+		import os
+		if (not os.path.exists("data")):
+		    os.mkdir("data")
+		for i in range(0, 100):
+		    os.mkdir(f"data\Practice {i+1}")
+```
+</br>
+
+**The below code is used for renaming our folders that we created on name “Practice”**
+```
+		import os
+		if (not os.path.exists("data")):
+		    os.mkdir("data")
+		for i in range(0, 100):
+		    os.rename(f"data\Practice {i+1}", f"data\Pract {i+1}")
+```
+</br>  
+
+**To find out how many folders are there in our existing folder**
+```
+		import os
+		Folders = os.listdir("Pract")
+		print(Folders)
+		for Folder in Folders:
+		    print(Folder)
+```
+</br>
+
+**To find out that how many folders we are:**
+```
+		import os
+		Folders = os.listdir("Pract")
+		# print(Folders)
+		for Folder in Folders:
+		    print(Folder)
+		    print(os.listdir(f"data/{Folder}"))
+```
+</br> </br>
