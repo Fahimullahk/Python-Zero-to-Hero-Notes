@@ -4771,7 +4771,7 @@ Output:
             Gullkhan
 ```
 </br> </br> </br>
-**Exercise:** </br>
+## Exercise: </br>
 Write a library class with number of books and books as two instance variables. Write a program to create a library from this library class and show how we can print all books, add a book and get the number of books using different methods. Show that our program does not persist the books after the program is stopped. </br>
 ```
 class Library:
@@ -4801,5 +4801,119 @@ Output:
         Gulistan e Johar
         Salam Software 
         Ek Din Jeo k sath
+```
+</br> </br>
+# Static Methods in Python, Instance vs class variables:
+### 1.	Static Methods in Python:-
+Static methods in Python are methods that belong to a class rather than an instance of the class. They are defined using the @staticmethod decorator and do not have access to the instance of the class (i.e self). They are called on the class itself, not on an instance of the class. Static methods are often used to create utility functions that don’t need access to create utility functions that don’t need access to instance data. </br>
+**Example:**	
+```
+		class Math:
+			@staticmethod 
+			def add(a, b):
+				return a + b
+		
+		result = Math.add(1, 2)
+		print(result) 		# Output : 3
+```
+In this example, the add method is a static method of the Math class. It takes two parameters a and b and returns their sum. The method can be called on the class itself, without the need to create an instance of the class. Hence, if we asked by someone that is there any need of writing self keyword in a method of a class then the answer is No, because if we don’t want to write the self keyword then we can create a static method. </br>
+```
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+result = Math.add(1, 2)
+print(result)
+
+Output:
+        3
+```
+
+ 
+### 2.	Instance vs class variables:
+In python, variables can be defined at the class level or at the instance level. Understanding the difference between these types of variables is crucial for writing efficient and maintainable code. </br> </br>
+**a.	Class Variables:** </br>
+Class variables are defined at the class level and are shared among all instances of the class. They are defined outside of any method and are usually used to store information that is common to all instances of the class. For example, a class variable can be used to store the number of instances of a class that have been created. </br>
+**Example**
+```
+class MyClass:
+    class_variable = 0
+    
+    def __init__(self):
+        MyClass.class_variable += 1
+        
+    def print_class_variable(self):
+        print(MyClass.class_variable)
+        
+
+obj1 = MyClass()
+obj2 = MyClass()
+
+obj1.print_class_variable() # Output: 2
+obj2.print_class_variable() # Output: 2
+```
+In the example above, the class_variable is shared among all instances of the class MyClass. When we create new instances of MyClass, the value of class_variable is incremented. When we call the print_class_variable method on obj1 and obj2, we get the same value of class_variable. </br> </br>
+**b.	Instance Variables:** </br>
+Instance variables are defined at the instance level and are unique to each instance of the class. They are defined inside the init method and are usually used to store information that is specific to each instance of the class. For example, an instance variable can be used to store the name of an employee in a class that represents an employee.	</br>
+**Example**
+```
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+        
+    def print_name(self):
+        print(self.name)
+
+obj1 = MyClass("John")
+obj2 = MyClass("Jane")
+
+obj1.print_name() # Output: John
+obj2.print_name() # Output: Jane
+```
+In the example above, each instance of the class MyClass has its own value for the name variable. When we call the print_name method on obj1 and obj2, we get different values for name. </br> </br>
+**Summary:** </br>
+In summary, class variables are shared among all instances of a class and are used to store information that is common to all instances. Instance variables are unique to each instance of a class and are used to store information that is specific to each instance. Understanding the difference between class variables and instance variables is crucial for writing efficient and maintainable code in python. </br>
+Its also worth noting that, in python class variables are defined outside of any methods and don’t need to be explicitly declared as class variable. They are defined in the class level and can be accessed via classname.variable_name or self.class.variable_name. But instance variables are defined inside the methods and need to be explicitly declared as instance variable by using self.variable_name. </br> </br>
+**Example:** </br>
+```
+class Student:
+    Institute = "CSUniversity"  # This is a class variable.
+    def __init__(self, name):
+        self.name = name
+        self.level = 14
+
+    def show(self):
+        print(f"The name of student is {self.name} and studying in class {self.level} of {self.Institute}")
+
+s1 = Student("Haris")
+s1.show() 
+s2 = Student("Rizwan")
+s2.level = 16
+s2.show()
+
+Output:
+        The name of student is Haris and studying in class 14 of CSUniversity
+        The name of student is Rizwan and studying in class 16 of CSUniversity
+```
+As we can see in the above example that just after the class declaration we created a class variable which is used for all the instances of the classes unless we makes any change for any particular object. </br> </br>
+# Exercise: (Clear the clutter using os module):
+Write a program to clear the clutter inside a folder on our computer. We should use os module to rename all the png images from 1.png all the way till n.png where n is the number of png files in that folder. We have to do the same for other file formats. </br> </br>
+### We can create a file in a folder using under mentioned way:
+```
+import os
+os.makedirs(r"D:\folderi", exist_ok=True)
+# fst_path = "D:\folderi\abc"
+for i in range(0, 100):
+    with open(fr"D:\folderi\abc{i+1}.png", "w") as f:
+        f.write("Hello this file is in folderi!!")
+```
+
+### Now we can rename the already named files in sequence manner:
+```
+import os
+for i in range(0, 100):
+    if os.path.exists(fr"D:\folderi\abc{i+1}.png"):
+        os.rename(fr"D:\folderi\abc{i+1}.png", fr"D:\folderi\{i+1}.png")
 ```
 </br> </br>
