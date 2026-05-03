@@ -2562,7 +2562,7 @@ Output:
         The corresponding value of key age is : 19
         The corresponding value of key eligible is : True
 ```
-### 3.	Dictionary Methods:
+### 2.	Dictionary Methods:
 Dictionary uses several built-in methods for manipulation. They are listed below. </br> </br>
 **a.	update():** </br>
 The update() method updates the value of the key provided to it if the item already exists in thedictionary, elseit creates a new key-value pair. </br>
@@ -3155,17 +3155,17 @@ A virtual environment is a tool used to isolate specific Python environments on 
 
 To create a virtual environment in Python, you can use the venv module that comes with Python. Here’s an example of how to create a virtual environment and activate it: </br> </br>
 ```
-		# create a virtual environment
+		#create a virtual environment
 		Python –m venv myenv
 ```
 </br>
 ```
-		# Activate the virtual environment (This for Linux/macOS)
+		#Activate the virtual environment (This for Linux/macOS)
 		Source myenv/bin/activate
 ```
 </br>
 ```
-		# Activate the virtual environment (This for windows)
+		#Activate the virtual environment (This for windows)
 		Myenv\Script\activate.bat
 ```
 Once the virtual environment is activated, any package that we install using pip will be installed in the virtual environment, rather than in the global Python environment. This allows us to have a separate set of packages for each project, without affecting the packages installed in the global environment.
@@ -3173,6 +3173,7 @@ Once the virtual environment is activated, any package that we install using pip
 		# Deactivate the virtul environment
 		Deactivate
 ```
+</br>
 
 **The “requirements.txt” file:** </br>
 In addition to creating and activating a virtual environment, it can be useful to create a requirements.txt file that lists the packages and their versions that your project depends on. This file can be used to easily install all the required packages in a new environment. </br> 
