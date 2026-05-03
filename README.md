@@ -6129,3 +6129,276 @@ def set_reminder(minutes):
 set_reminder(1)
 ```
 </br> </br>
+# Async IO in Python, Multithreading in Python, Multiprocessing in python:
+### 1.	Async IO in Python:
+Asynchronous I/O, or asyn for short, is a programming pattern that allows for high-performance I/O operations in a concurrent and non-blocking manner. In python, async programming is achieved through the use of the asyncio module and asynchronous funcitons. </br>
+**Syntax:** </br>
+Here is the basic syntax for creating an asynchronous function in python:
+```
+import asyncio
+
+async def my_async_function():
+    # asynchronous code here
+    await asyncio.sleep(1)
+    return "Hello, Async World!"
+
+async def main():
+    result = await my_async_function()
+    print(result)
+
+asyncio.run(main())
+
+Output:
+        Hello, Async World!
+```
+Another way to schedule tasks concurrently is as follows:
+```
+		L = await asyncio.gather(
+        			my_async_function(),
+        			my_async_function(),
+       			my_async_function(),
+    			)
+		print(L)
+```
+Async IO is a powerful programming pattern that allows for high-performance and concurrent I/O operations in python. With the asyncio module and asynchronous functions, we can write efficient and scalable code that can handle large amounts of data and I/O operations without blocking the main thread. Whether we are working on web applications, network services, or data processing pipelines, async IO is an essential tool for any python developer. </br> </br>
+### 2.	Multithreading in Python:
+Multithreading is a technique in programming that allows multiple threads of execution to run concurrently within a single process. In python, we can use the threading module to implement multithreading. </br>
+
+**a.	Importing Threading:** </br>
+We can use threading by importing the threading module. </br>
+```
+	import threading
+```
+</br>
+
+**b.	Creating a thread:** </br>
+To create a thread, we need to create a thread object and then call its start() method. The start() method runs the thread and then to stop the execution, we use the join() method. Here is how we can create a simple thread. </br>
+**Example:**
+```
+import threading
+def my_func():
+  print("Hello from thread", threading.current_thread().name)
+  thread = threading.Thread(target=my_func)
+  thread.start()
+  thread.join()
+```
+**c.	Functions:** </br>
+The following are some of the most commonly used functions in the threading module: </br> </br>
+**i.	threading.Thread(target, args) :** This function creates a new thread that runs the target function with the specified arguments. </br>
+**ii.	threading.Lock() :** This function creates a lock that can be used to used to synchronize access to shared resources between threads. </br> </br>
+**d.	Creating multiple threads:** </br>
+Creating multiple threads is a common approach to using multithreading in python. The idea is to create a pool of worker threads and then assign tasks to them as needed. This allows us to take advantage CPU cores and process tasks in parallel. </br>
+**Example creating multiple threads:**
+```
+import threading
+
+def thread_task(task):
+    # Do some work here
+    print("Task processed:", task)
+
+if __name__ == '__main__':
+    tasks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    threads = []
+    for task in tasks:
+        thread = threading.Thread(target=thread_task, args=(task,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+Output:
+        Task processed: Task processed:1Task processed: 
+        2Task processed:3 
+        Task processed:
+        4 Task processed:
+        5Task processed:
+        6 Task processed: 
+        7Task processed:8
+        Task processed:
+        9 10
+```
+**e.	Using a lock to synchronize access to shared resources:** </br>
+When working with multithreading in python, locks can be used to synchronize access to shared resources using among multiple threads. A lock is an object that acts as a semaphore, allowing only me thread at a time to execute a critical section of code. The lock is released when the thread finishes executing the critical section. </br>
+**Example:**
+```	
+import threading
+
+def increment(counter, lock):
+    for i in range(10000):
+        lock.acquire()
+        counter += 1
+        lock.release()
+
+if __name__ == '__main__':
+    counter = 0
+    lock = threading.Lock()
+
+    threads = []
+    for i in range(2):
+        thread = threading.Thread(target=increment, args=(counter, lock))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    print("Counter value:", counter)
+
+Output:
+        Counter value: 0
+```
+**Conclusion:** </br> 
+As we can see the threading module provides a simple and efficient way to implement multithreading in python. Whether we need to create a new thread, run a function across multiple input values, or synchronize access to shared resources, the threading module has we covered. </br>
+In conclusion, the threading module is a powerful tool for parallelizing code in python. Whether we are a beginner or an experienced python developer, the threading module is an essential tool to have in our toolbox. With multithreading, we can take advantage of multiple CPU cores and significantly improve the performance of our code. </br> </br>
+### 3.	Multiprocessing in python:
+Multiprocessing in python is a module that provides a simple way to run multiple processes in parallel. It allows us to take advantage of multiple cores or processors on our system and can significantly improve the performance of our code.  </br>
+**a.	importing Multiprocessing:** </br>
+We can use multiprocessing by importing the multiprocessing module. </br>
+```
+	import multiprocessing
+```
+Now, to use multiprocessing we need to create a process object which calls a start() method. The start() method runs the process and then stop the execution, we use the join() method. Here is how we can create a simple process. </br>
+**Example:**
+```
+			import multiprocessing
+			def my_func():
+  				print("Hello from process", multiprocessing.current_process().name)
+  				process = multiprocessing.Process(target=my_func)
+  				process.start()
+  				process.join()
+```
+**b.	Functions:** </br>
+The following are some of the most commonly used functions in the multiprocessing module: </br> </br>
+**i.	multiprocessing.Process(target, args) :** This function creates a new process that runs the target function with the specified arguments. </br>
+**ii.	Multiprocessing.Pool(processes) :** This function creates a pool of worker processes that can be used to parallelize the execution of a function across multiple input values. </br>
+**iii.	Multiprocessing.Queue() :** This function creates a queue that can be used to communicate data between processes. </br>
+**iv.	Multiprocessing.Lock() :** This function creates a lock that can be used to synchronize access to shared resources between processes. </br> </br>
+ 
+**c.	Creating a pool of worker processes:** </br>
+Creating a pool of worker processes is a common approach to using multiprocessing in python. The idea is to create a pool of worker processes and then assign tasks to them as needed. This allows us to take advantage of multiple CPU cores and process tasks in parallel. </br>
+**Example:**
+```
+from multiprocessing import Pool
+
+def process_task(task):
+    # Do some work here
+    print("Task processed:", task)
+
+if __name__ == '__main__':
+    tasks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    with Pool(processes=4) as pool:
+        results = pool.map(process_task, tasks)
+
+Output:
+        Task processed: 1
+        Task processed: 2 
+        Task processed: 3 
+        Task processed: 4 
+        Task processed: 5 
+        Task processed: 6 
+        Task processed: 7 
+        Task processed: 8 
+        Task processed: 9 
+        Task processed: 10
+```
+</br> 
+
+**d.	Using a queue to communicate between processes:** </br>
+When working with multiple processes, it is often necessary to pass data between them. One way to do this is by using a queue. A queue is a data structure that allows data to be inserted at one end and removed from the other end. In the context of multiprocessing, a queue can be used to pass data between processes. </br>
+**Example:**
+```
+import multiprocessing
+def producer(queue):
+    for i in range(10):
+        queue.put(i)
+    queue.put(None)
+
+def consumer(queue):
+    while True:
+        item = queue.get() 
+        if item is None:
+            break
+        print(f"consumer : {item}")
+
+if __name__ == "__main__":
+    queue = multiprocessing.Queue()
+    p1 = multiprocessing.Process(target=producer, args=(queue,))
+    p2 = multiprocessing.Process(target=consumer, args=(queue,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    
+Output:
+            consumer : 0
+            consumer : 1
+            consumer : 2
+            consumer : 3
+            consumer : 4
+            consumer : 5
+            consumer : 6
+            consumer : 7
+            consumer : 8
+            consumer : 9
+```
+</br>
+
+**e.	Using a lock to synchronize access to shared resources:** </br>
+When working with multiprocessing in python, locks can be used to synchronize access to shared resources among multiple processes. A lock is an object that acts as a semaphore, allowing only one process at a time to execute a critical section of code. The lock is released when the process finishes executing the critical section. </br>
+**Example:**
+```
+import multiprocessing
+def increment(counter, lock):
+    for i in range(10000):
+        lock.acquire()
+        counter.value += 1
+        lock.release()
+
+if __name__ == '__main__':
+    counter = multiprocessing.Value('i', 0)
+    lock = multiprocessing.Lock()
+
+    p1 = multiprocessing.Process(target=increment, args=(counter, lock))
+    p2 = multiprocessing.Process(target=increment, args=(counter, lock))
+
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()
+
+    print("Counter value:", counter.value)
+
+    Output:
+            Counter value: 20000
+```
+As we can see, the multiprocessing module provides a simple and efficient way to run multiple process in parallel. Whether we need to create a new process, run a function across multiple input values, communicate data between processes, or synchronize access to share resources, the multiprocessing module has we covered. </br>
+In conclusion, the multiprocessing module is a powerful tool for parallelizing code in python. Whether we are a beginner or an experienced python developer the multiprocessing module is an essential tool to have our toolbox. </br> </br>
+**Example of multiprocessing:**
+```
+import multiprocessing
+import requests
+
+def downloadFile(url, name):
+  print(f"Started Downloading {name}")
+  response = requests.get(url)
+  open(f"files/file{name}.jpg", "wb").write(response.content)
+  print(f"Finished Downloading {name}")
+
+if __name__ == "__main__": 
+    url = "https://picsum.photos/2000/3000"
+    pros = []
+    for i in range(50):
+        downloadFile(url, i)
+        p = multiprocessing.Process(target=downloadFile, args=[url, i])
+        p.start()
+        pros.append(p)
+
+    for p in pros:
+        p.join()
+```
+</br>
+In the above example we downloaded the pics from the URL that we mentioned and this could be done by importing requests module. </br>
