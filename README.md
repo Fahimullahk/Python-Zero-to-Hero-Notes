@@ -5884,3 +5884,248 @@ print(response.text)
 In this example, we send a POST request to a web service to authenticate a user. We include a custom User-Agent header and JSON palyload with the user’s credentials. </br> </br>
 **iv.		bs4 Module:** </br>
 There is another module called BeautifulSoup which is used for web scraping in Python.  </br> </br>
+# Generators in python, Function Caching in python, Regular Expressions in Python:
+### 1.	Generators in python:
+Generators in python are special type of functions that allows us to create an iterable sequence of values. A generator function returns a generator object, which can be used to generate the values one-by-one as we iterate over it. Generators are a powerful tool for working with large or complex data sets, as they allows us to generate the values on-the-fly, rather having to create and store the entire sequence in memory. </br>
+**a.	Creating a Generator:** </br>
+In python, we can create a generator by using the yield statement in a function. The yield statement returns a value from the generator and suspends the execution of the function until the next value is requested. Here’s an example: </br>
+**Example:**
+```
+					def my_generator():
+    						for i in range(5):
+       							yield i
+
+					gen = my_generator()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+			Output:
+ 0
+ 1
+ 2
+ 3
+ 4
+```
+As we can see the generator function my_generator() returns a generator object, which can be used to generator the values in the range 0 to 4. The next() function is used to request the next value from the generator, and the generator resumes its execution until it encounters another yield statement or until it reaches the end of the function. </br> </br>
+**b.	Using a Generator:** </br>
+Once we have created a generator we can use it in a variety of ways, such sa in a for loop a list comprehension or a generator expression. Here’s an example: </br>
+**Example:** 
+```
+		gen = my_generator()
+		for i in gen:
+ 		print(i)
+Output:
+		0
+		1
+		2
+		3
+		4
+```
+As we can see, the generator can be used in for loop, just any other iterable sequence. The generator is used to generate the values one-by-one as the loop iterates over it. </br> </br>
+**c.	Benefits of Generators:** </br>
+Generators offer several benefits over other types of sequences, such as lists, tuples, and sets. One of the main benefits of generators is that they allow us to generate the values on-the-fly, rather than having to create and store the entire sequence in memory. This makes generators a powerful tool for working with large or complex data sets, as we can generate the values as we need them, rather than having to store them all in memory at once. </br>
+Another benefit of generator is that they are lazy, which means that the values are generated only when they are requested. This allows us to generate the values in a more efficient and memory-friendly manner, as we don’t have generate all the values up front. </br> </br>
+**Conclusion:** </br>
+Generators in Python are a powerful tool for working with large or complex data sets, allowing us to generate the values on-the-fly and store what we need in memory. Whether we are working with large dataset, performing complex calculations, or generating a sequence of values, generators are a must-have tool in our programming toolkit. So, if we haven’t already be sure to check out generators in python and see how they can help we write better more efficient code.	
+### 2.	Function Caching in python:
+Function caching is a technique for improving the performance of a program by storing the results of a function call so that we can reuse the results instead of computing them every time the function is called. This can be particularly useful when a function is computationally expensive, or when the inputs of the function are unlikely to change frequently. </br>
+In python, function caching can be achieved using the functools.lru_cache decorator. The functools.lru_cache decorator is used to cache the results of a function so that we can reuse the results instead of recomputing them every time the function is called. Here’s an example: </br>
+```
+			import functools
+
+			@functools.lru_cache(maxsize=None)
+			def fib(n):
+   			       if n < 2:
+       				  return n
+    			       return fib(n-1) + fib(n-2)
+
+			print(fib(20))
+
+	Output: 
+			6765
+```
+As we can see, the functools.lru_cache decorator is used to cache the results of the fib function. The maxsize parameter is used to specify the maximum number of results to cache. If max size is set to None, the cache will have an unlimited size. </br> </br>
+**Benefits of Function Caching:** </br>
+Function caching can have a significant impact on the performance of a program, particularly for computationally expensive functions. By caching the results of a function, we can avoid having to recomputed the results every time the function is called, which can save significant amount of time and computational resources. </br>
+Another benefit of function caching is that it can simplify the code of a program by removing the need to manually cache the results of a function. With the functools.lru_cache decorator, the caching is handled automatically, so we can focus on writing the core logic of our program. </br> </br>
+**Conclusion:** </br>
+Function caching is a technique for improving the performance of a program by storing the results of a function so that we can reuse the results instead of recomputing them every time the function is called. In python 3, function caching can be achieved using the functools.lru_cache decorator, which provides an easy and efficient way to cache the results of a function. Whether we are writing a computationally expensive program, or just want ot simplify our code, function caching is a great technique to have in our toolbox. </br> </br>
+**Example of Function caching:**
+```
+from functools import lru_cache
+import time
+
+@lru_cache(maxsize=None)
+def ln(f):
+    time.sleep(5)
+    return f * 2
+
+a = ln(10)
+print(f"Done for 10 which is equal to {a}")
+b = ln(20)
+print(f"Done for 20 which is equal to {b}")
+c = ln(30)
+print(f"Done for 30 which is equal to {c}")
+print ("---------------------------------------")
+d = ln(10)
+print(f"Done for 10 which is equal to {d}")
+e = ln(20)
+print(f"Done for 20 which is equal to {e}")
+f = ln(30)
+print(f"Done for 30 which is equal to {f}")
+g = ln(40)
+print(f"Done for 40 which is equal to {g}")
+
+Output:
+        Done for 10 which is equal to 20
+        Done for 20 which is equal to 40
+        Done for 30 which is equal to 60
+        ---------------------------------------
+        Done for 10 which is equal to 20       
+        Done for 20 which is equal to 40       
+        Done for 30 which is equal to 60       
+        Done for 40 which is equal to 80
+```
+As in the above example we used the Function caching module  in which the caching stores in our memory and the repeated objects executes without delaying 5 sec, however on reaching to the new object it again starts waiting for 5 sec. </br> </br>
+### 3.	Regular Expressions in Python:
+Regular expressions, or “regex” for short, are a powerful tool for working with strings and text data in python. They allow us to match and manipulate strings based on patterns, making it easy to perform complex string operations with just a few lines of code. </br>
+Meta characters in regular expressions: </br>
+```			
+[]  Represent a character class
+^   Matches the beginning
+$   Matches the end
+.   Matches any character except newline
+?   Matches zero or one occurrence.
+|   Means OR (Matches with any of the characters separated by it.
+*   Any number of occurrences (including 0 occurrences)
++   One or more occurrences
+{}  Indicate number of occurrences of a preceding RE to match.
+()  Enclose a group of Res
+```
+**Find list of more meta characters here:** </br> 
+a.	(https://www.ibm.com/docs/en/reational-clearquest/9.0.1?topic=tags-meta-characters-in-regular-expressions) </br>
+b.	(https://regexr.com/)
+</br> </br>
+### 4.	Importing re Package:
+In python regular expression are supported by the re module. The basic syntax for working with regular expressions in python is as follows:
+```
+			import re
+```
+</br>
+
+**a.	Searching for a pattern in re using re.search() Method:** </br>
+re.seach() method either returns None (If the pattern doesn’t match), or a re.MatchObject that contains information about the matching part of the string. This method stops after the first match, so the first match, so this is best suited for testing a regular expression more than extracting data. We can use re.search method like this to search for a pattern in regular expression: </br>
+Example:
+```
+import re
+pattern = r"expression"		# Define a regular expression pattern
+text = "Hello, world!" 		# Match the pattern against a string
+match = re.search(pattern, text)
+if match:
+    print("Match found!")
+else:
+    print("Match not found.")
+
+Output:
+        Match not found.
+```
+</br>
+
+**b.	Searching for a pattern in re using re.findall() Method:** </br>
+We can also use the re.findall function to find all occurrences of the pattern in a string:	</br>
+**Example:** </br>
+```
+import re
+pattern = r"cat"
+text = "The cat is in the hat."
+matches = re.findall(pattern, text)
+print(matches)
+
+Output:
+        ['cat']
+```
+</br>
+
+**c.	Replacing a pattern:** </br>
+The following example shows how to replace a pattern in a string: </br>
+**Example:**
+```
+import re
+pattern = r"[a-z]+at"
+text = "The cat is in the hat."
+
+matches = re.findall(pattern, text)
+
+print(matches)
+
+Output: 
+['cat', 'hat']
+```
+In the below example the c added with at which will become a cat is now replaced with the dog, this can be done with the help of re.sub() module.
+```
+import re
+pattern = r"[a-z]+at"
+text = "The cat is in the hat."
+
+new_text = re.sub(pattern, "dog", text)
+
+print(new_text)
+# Output: "The dog is in the dog."
+```
+</br>
+
+**d.	Extracting information from a string:** </br>
+The following example show how to extract information from a string using regular expressions: </br>
+**Example:**
+```
+import re
+
+text = "The email address is example@example.com."
+pattern = r"\w+@\w+\.\w+"
+
+match = re.search(pattern, text)
+
+if match:
+    email = match.group()
+    print(email)
+    
+Output:
+        example@example.com
+```
+</br>
+So, the regular expressions are a powerful tool for working with strings and text data in python. Whether we are matching patterns, replacing text, or extracting information, regular expressions make it easy to perform complex string operations with just a few lines of code. With a little bit of practice, we will be able to use regular expressions to solve all sorts of string-related problems in python. </br> </br>
+
+## Exercise: Drinking Water Reminder:
+We have to write a python program which reminds us for drinking water every 1 or 2 hour. Our program can either beep or send desktop notifications for a specific operating system. </br> </br>
+**1.	Drinking water reminder program using winsound module by display a beep sound and message.**
+```
+import time
+import winsound
+
+def set_reminder(minutes):
+    seconds = minutes * 60
+    time.sleep(seconds)
+    winsound.Beep(1000, 1000)
+    print("Assalamualaikum Fahim Ullah, It time for drinking a glass of water")
+
+set_reminder(60)
+```
+</br> </br>
+
+**2	Drinking water reminder program using win32 module:**
+```
+import time
+import win32com.client
+
+def set_reminder(minutes):
+    seconds = minutes * 60
+    time.sleep(seconds)
+    speaker = win32com.client.Dispatch("SAPI.SpVoice")
+    speaker.Speak("Assalamualaikum Fahim Ullah, It time for drinking a glass of water")
+
+set_reminder(1)
+```
+</br> </br>
