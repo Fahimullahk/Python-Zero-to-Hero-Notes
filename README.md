@@ -4069,9 +4069,9 @@ Now we can print the values of the class by the help object. </br>
 
 **Example:**
 ```
-				class Details:
-				name = “Zeeshan”
-				age = 20
+			class Details:
+			name = “Zeeshan”
+			age = 20
 
 			obj1 = Details()
 			print(obj1.name)
@@ -4206,5 +4206,170 @@ print(obj1.animal, "belongs to the", obj1.group, "group.")
 
 Output:
         Crab belongs to the Crustaceans group.
+```
+</br> </br>
+# Python Decorators, Getters and Setters in Python:
+### 1.	Python Decorators:-
+Python decorators are a powerful and versatile tool that allow us to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code. </br>
+A decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function. The new function is often referred to as a “decorated” function. The basic syntax for using a decorator is the following: </br>
+**Example:**			
+```		
+			@decordor_function
+			def my_function():
+				pass
+```	
+The @decorator_function notation is just a shorthand for the following code: </br>
+**i.e**
+```
+			def my_function():
+				pass
+			my_function = decorator_function(my_function)
+```
+</br>
+
+**Practical use case:** </br>
+One common use of decorators is to add logging to a function. For example, we could use a decorator to log the arguments and return value of a function each time it is called: </br>
+**Example:**			
+```			
+			Import logging
+				
+			def log_function_call(func):
+				def decorated (*args, **kwargs):
+					logging.info(f”Calling {func.__name__} with args={args}, kwargs={kwargs}”)
+					result = func(*args, **kwargs)
+					logging.info(f”{func.__name__} returned {result}”)
+					return result
+				return decorated
+			
+			@log_function_call
+			def my_function(a, b):
+				return a+b
+``` 
+In the above example, the log_function_call decorator takes a function as an argument and returns a new function that logs the function call before and after the original function is called. </br> </br>
+**Conclusion:**
+Decorators are a powerful and flexible feature in Python that can be used to add functionality to functions and methods without modifying their source code. They are a great tool for separating concerns, reducing code duplication, and making our code more readable and maintainable. </br>
+In conclusion, python decorators are a way to extend the functionality of functions and methods, by modifying its behavior without modifying the source code. They are used for a variety of purposes, such as logging, memorization, access control, and more. They are a powerful tool that can be used to make our code readable, maintainable and extendable.	</br>	
+**Example 1:**
+```
+def hello(ab):
+    def ello(*args, **kwargs):
+        print("Lets start the program...")
+        ab(*args, **kwargs)
+        print("Thanks for comming...")
+    return ello
+@hello    
+def add(a, b):
+    print(a + b, "is the sum of these numbers")
+@hello
+def proud():
+    print("Hello World...")
+
+add(4, 5) 
+proud()
+
+Output:
+        Lets start the program...
+        9 is the sum of these numbers
+        Thanks for comming...        
+        Lets start the program...    
+        Hello World...
+        Thanks for comming...
+```
+So, in the above example we just create a decorator function hello() and then we just pass the name of this function to every subsequent functions as mentioned with its name i.e @hello. And by doing this we can see that the start and ending of every of this function will shows us the given text. </br> </br>
+**Example 2:**
+```
+import logging
+logging.basicConfig(level=logging.INFO)
+def log_function_call(func):
+    def decorated(*args, **kwargs):
+        logging.info(f"Calling {func.__name__} with args={args}, kwargs={kwargs}")
+        result = func(*args, **kwargs)
+        logging.info(f"{func.__name__} returned {result}")
+        return result
+    return decorated
+
+@log_function_call
+def my_function(a, b):
+    return a + b
+my_function(1, 2)
+
+Output:
+        INFO:root:Calling my_function with args=(1, 2), kwargs={}
+        INFO:root:my_function returned 3
+```
+
+Here, in the above example we used the logging function.
+</br> </br> 
+### 2.	Getters and Setters in Python:-
+**a.	Getters:-** </br>
+Getters in Python are methods that are used to access the values of an object’s properties. They are used to return the value of a specific property, and are typically defined using the @property decorator. Here is an example of a simple class with a getter method. </br>
+**Example:**
+```
+		class MyClass:
+			def __init__(self, value):
+				self.value = value
+			
+			@perperty
+			def value(self):
+				return self.value
+```
+In the above example, the MyClass class has a single property, _value, which is initialized in the __init__ method. The value method is defined as a getter using the @property decorator, and is used to return the value of the _value property. </br>
+To use the getter, we can create an instance of the MyClass class, and then access the value property as if it were attribute:
+```
+		obj = MyClass(10)
+		obj.value
+		10
+```
+</br> </br>
+**b.	Setters:-**
+It is important to note that the getters do not take any parameters and we cannot set the value through getter method. For that we need setter method which can be added by decorating method with @property_name.setter. Here is an example of a class with both getter and setter: </br>
+**Example:**
+```
+		class MyClass:
+			def __init__(self, value):
+				self._value = value
+		
+			@property
+			def value(self):
+				return self.value
+
+			@value.setter
+			def value(self, new_value):
+				self._value = new_value
+```
+We can use setter method like this:
+```			
+			obj = MyClass(10)
+			obj.value = 20
+			obj.value
+			20
+```
+In conclusion, getters are a convenient way to access the values of and object’s properties, while keeping the internal representation of the property hidden. This can be useful for encapsulation and data validation. </br>
+
+**Example:**
+```
+class MyClass:
+    def __init__(self, value):
+        self._value = value
+
+    def show(self):
+        print(f"Value is {self._value}")
+
+    @property                # Getting method using @property decorator
+    def ten_value(self):
+        return 10 * self._value
+    
+    @ten_value.setter       # Setter method using getter decorator (its the decorator of getter)
+    def ten_value(self, new_value):
+        self._value = new_value/10
+    
+obj = MyClass(10)
+obj.ten_value = 67
+print(obj.ten_value)
+obj.show()
+
+Output:
+        67.0
+        Value is 6.7
 ```
 </br> </br>
