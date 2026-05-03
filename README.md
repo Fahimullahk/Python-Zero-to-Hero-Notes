@@ -3157,14 +3157,10 @@ To create a virtual environment in Python, you can use the venv module that come
 ```
 		#create a virtual environment
 		Python –m venv myenv
-```
-</br>
-```
+
 		#Activate the virtual environment (This for Linux/macOS)
 		Source myenv/bin/activate
-```
-</br>
-```
+
 		#Activate the virtual environment (This for windows)
 		Myenv\Script\activate.bat
 ```
