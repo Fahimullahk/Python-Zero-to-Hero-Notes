@@ -3397,3 +3397,72 @@ In summary, the os module in Python is a built-in library that provides a wide v
 		    print(os.listdir(f"data/{Folder}"))
 ```
 </br> </br>
+# Local and global variables:
+**1.	Local and global variables:** </br>
+A variable is named location in memory that stores a value. In Python, we can assign values to variables using the assignment operator **=** For example: </br>
+**Example:**			
+```
+			x = 5
+			y = “Hello, World!”
+```
+A local variable is a variable that is defined within a function and is only accessible within that function. It is created when the function is called and is destroyed when the function returns. </br> </br>
+On the other hand, a global variable is a variable that is defined outside of a function and is accessible from within any function in our code. Here below example shows the difference: </br>
+**Example:** </br>
+```
+			x = 10				# global variable
+			def my_function():
+				y = 5			# local variable
+				print(y)
+			my_function()
+			print(x)
+			print(y)	# this will cause an error because y is a local variable and is not accessible outside the function.
+```
+In the above example, we have a global variable x and a local variable y. We can access the value of the global variable x from within the function, but we cannot access the value of the local variable y outside of the function. </br> </br>
+
+**2.	The global keyword:** </br>
+If we want to modify a global variable from within a function? This is where the global keyword comes in.
+The global keyword is used to declare that a variable is a global variable and should be accessed from the global scope. </br> 
+**Here’s example:**
+```
+			x = 10				# global variable
+			def my_function():
+				global x 
+				x = 5			# this will change the value of the global variable x
+				y = 5 			# local variable
+
+			my_function()
+			print(x)			# It prints 5
+			print(y)			# This will cause an error because y is a local 
+							variable and is not accessible outside the function.
+```
+In the above example, we used the global keyword to declare that we want to modify the global variable x from within the function. As a result, the value of x is change to 5. </br> </br>
+It is important to note that its generally considered good practice to avoid modifying global variable from within functions, as it can lead to unexpected behavior and make our code harder to debug. </br> </br>
+**Example of accessing local and global variable without using “global” keyword:**
+```
+		x = 10 # global variable
+		
+		def my_function():
+		  y = 5 # local variable
+		  print(y)
+		
+		my_function()
+		print(x)
+		print(y) # this will cause an error because y is a local variable and is not accessible outside of the function
+```
+</br>
+
+**Example of accessing local and global variable by using “global” keyword:**
+```
+		x = 10 # global variable
+		
+		def my_function():
+		  global x
+		  x = 5 # this will change the value of the global variable x
+		  y = 5 # local variable
+		
+		my_function()
+		print(x) # prints 5
+		print(y) # this will cause an error because y is a local variable and is not accessible outside of the function
+```
+</br>
+Hence, as we learned earlier that using of global keyword inside the function should avoided because its changes the scope of variable inside the function from local to global.
