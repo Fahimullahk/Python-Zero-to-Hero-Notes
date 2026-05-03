@@ -5061,7 +5061,7 @@ The dir() function returns a list of all the attributes and methods (including d
 
 Output:
 
-['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', </br>'__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', </br>'__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', </br>'__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', </br>'__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', </br>'sort']
 ```
 </br>
 
@@ -5104,3 +5104,229 @@ str
 </br>
 In conclusion, dir(), dict, and help() methods are useful built-in functions in Python that can be used to get information about objects. They are valuable tools for introspection and discovery. </br>
 </br>
+
+# Super keyword in Python, Magic - Dunder Method in Python, Method Overriding in Python, Operator Overloading in Python:
+1.	Super keyword in Python:
+		In super() keyword in Python is used to refer to the parent class. It is especially useful when a class inherits from multiple parent classes and we want to call a method from one of the parent classes.
+		When a class inherits from a parent class, it can override or extend the methods defined in the parent class method in the child class. This is where the super() keyword comes in handy.
+
+Here’s an example of how to use the super() keyword in a simple inheritance scenario:
+
+	Example:
+			class ParentClass:
+    				def parent_method(self):
+       				 print("This is the parent method.")
+
+			class ChildClass(ParentClass):
+    				def child_method(self):
+       				print("This is the child method.")
+        				super().parent_method()
+
+			child_object = ChildClass()
+			child_object.child_method()
+
+Output:
+			This is the child method.
+			This is the parent method.
+
+	In this example, we have a ParentClass with a parent_method and ChildClass that inherits from ParentClass and overrides the child_method. When the child_method is called, its first prints “This is the child method.” and then calls the parent_method using the super() keyword.
+	The super() keyword is also useful when a class inherits from multiple parent classes. In this case, we can specify the parent class from which we want to call the method.
+
+Example:
+			class ParentClass1:
+    				def parent_method(self):
+        				print("This is the parent method of ParentClass1.")
+
+			class ParentClass2:
+   				def parent_method(self):
+        				print("This is the parent method of ParentClass2.")
+
+			class ChildClass(ParentClass1, ParentClass2):
+    				def child_method(self):
+       				print("This is the child method.")
+        				super().parent_method()
+
+			child_object = ChildClass()
+			child_object.child_method()
+Output:
+			This is the child method.
+			This is the parent method of ParentClass1.
+
+In the this example, the ChildClass inherits both ParentClass1 and ParentClass2. The child_method calls the parent_method of the first parent class using the super() keyword.
+	In conclusion, the super() keyword is a useful tool in python when we want to call a parent class method in a child class. It can be used in inheritance scenarios with a single parent class or multiple parent classes.
+
+
+Example of Super keyword:
+
+class Manager:
+    def __init__(self, name, age, id):
+        self.name = name
+        self.age = age
+        self.id = id
+
+class Employee(Manager):
+    def __init__(self, name, age, id, lang):
+        super().__init__(name, age, id)
+        self.lang = lang
+
+a = Manager("Abdul Salam", "38", "1")
+print(a.name)
+print(a.age)
+print(a.id)
+print("------------------")
+b = Employee("Fahim Ullah", "37", "5", "Python")
+print(b.name)
+print(b.age)
+print(b.id)
+print(b.lang)
+
+Output:
+            Abdul Salam
+            38
+            1
+            ------------------
+            Fahim Ullah
+            37
+            5
+            Python
+ 
+2.	Magic / Dunder Method in Python:
+			These are special methods that we can define in our classes, and when invoked, they give us a powerful way to manipulate objects and their behavior.
+Magic methods, also known as “dunders” from the double underscores surrounding their names, are powerful tools that allow us to customize the behavior of our classes. They are used to implement special methods such as the addition, subtraction and comparison operators, as well as some more advanced techniques like descriptors and properties.
+Let’s take a look at some of the most commonly used magic methods in Python.
+
+1.	__init__ methods:
+		The init method is a special method that is automatically invoked when we create a new instance of a class. This method is responsible for setting up the object’s initial state, and it is where we would typically define any instance variables that we need. Also called “constructor”, we have discussed this method already.
+
+2.	__str__ and __repr__ methods:
+	The str and repr methods are both used to convert an object to a string representation. The Str method is used when we want to print out an object, while the repr method is used when we want to get a string representation of an object that can be used to recreate the object.
+
+3.	__len__ method:
+	The len method is used to get the length of an object. This is useful when we want to be able to find the size of a data structure, such as a list or dictionary.
+
+4.	__call__ method:
+	The call method is used to make an object callable, meaning that we can pass it as a parameter to a function and it will be executed when the function is called. This is an incredibly powerful tool that allows us to create objects that behave like functions.
+These are just a few of the many magic methods available in Python. They are incredibly powerful tools that allow us to customize the behavior of our objects, and can make our code much cleaner and easier to understand. So if we are looking for a way to take our python code to the next level, we have to take some time to learn about these magic methods.
+ 
+3.	Method Overriding in Python:
+			Method overriding is a powerful feature in object-oriented programming that allows us to redefine a method in a derived class. The method in the derived class is said to override the method in the base class. When we create an instance of the derived class and call the overridden method, the version of the method in the derived class is executed, rather than the version in the base class.
+			In Python, method overriding is a way to customize the behavior of a class based on its specific needs. For example the following base class.
+
+Example:
+		class Shape:
+			def area(self):
+				pass
+
+In this base class, the area method is defined, but does not have any implementation. If we want to create a derived class that represents a circle, we can override the area method and provide an implementation that calculates the area of a circle:
+
+Example:
+		class Circle(Shape):
+    			def __init__(self, radius):
+        				self.radius = radius
+
+    		def area(self):
+        			return 3.14 * self.radius * self.radius
+
+In this example, the Circle class inherits from the Shape class, and overrides the area method. The new implementation of the area method calculates the area of a circle, based on its radius.
+It’s important to note that when we override a method, the new implementation must have the same method signature as the original method. This means that the number and type of arguments, as well as the return type, must be the same.
+Another way to customize the behavior of a class is to call the base class method from the derived class method. To do this, we can use the super function. The super function allows us to call the base class method from the derived class method, and can be useful when we want extend the behavior of the base class method, rather than replace it.
+For example, consider the following base class:
+
+Example:
+		class Shape:
+    			def area(self):
+       				print("Calculating area...")
+
+In this base class, the area method prints a message indicating that the area is being calculated. If we want to create a derived class that represents a circle, and we also want to print a message indicating the type of shape, we can use the super function to call the base class method, and add our own message.
+
+ 
+Example:
+		class Circle(Shape):
+    			def __init__(self, radius):
+        				self.radius = radius
+
+    			def area(self):
+        				print("Calculating area of a circle...")
+        				super().area()
+        				return 3.14 * self.radius * self.radius
+
+In this example, the circle class overrides the area method, and calls the base class method using the super function. This allows us to extend the behavior of the base class method, while still maintaining its original behavior.
+In conclusion, method overriding is a powerful feature in Python that allows us to customize the behavior of a class based on its specific needs. By using method overriding, we can create more robust and reliable code, and ensure that our classes behave in the way that we need them to. Additionally, by using the super function, we can extend the behavior of a base class method, rather than replace it, giving us even greater flexibility and control over the behavior of our classes.
+ 
+Exercise : Write a program to manipulate pdf files using pyPDF. Our programs should be able to merge multiple pdf files into a single pdf. We are welcome to add more functionality.
+Pypdf is a free and open-source pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. Pypdf can retrieve text metadata from PDFs as well.
+
+from pypdf import PdfWriter
+
+merger = PdfWriter()
+pdfs = ["Deep-01.pdf", "Deep-02.pdf"]
+for pdf in pdfs:
+    merger.append(pdf)
+
+merger.write("finalpdf.pdf")
+merger.close()
+print("Your merger is successfully done...")
+
+In the above example we have two files “Deep-01.pdf” and “Deep-02.pdf”. So with the help of pypdf library we import PdfWriter which is used to access the pdf module. How with such simple lines of code we can merge our pdf files.
+ 
+4.	Operator Overloading in Python:
+		Operator overloading is a feature in Python that allows us to redefine the behavior of mathematical and comparison operators for custom data types. This means that we can use the standard mathematical operators (+, -, *, / etc) and comparison operators (>, <, ==, etc) in our own classes, just as we do for built-in data types like int, float, and str.
+
+	1.	Why do we need operator overloading ?  
+			Operator overloading allows us to create more readable and intuitive code. For instance, consider a custom class that represents a point in 2D space. We could define a method called ‘add’ to add two points together, but using the + operator makes the code more concise and readable.
+
+			p1 = Point(1, 2)
+			p2 = Point(3, 4)
+			p3 = p1 + p2
+			print(p3.x, p3.y)	 # prints 4, 6
+
+	2.	How to overload an operator in Python ?
+			We can overload an operator in python by defining special methods in our class. These methods are identified by their names, which start and end with double underscores ( __ ). Here are some of the most commonly overloaded operators and their corresponding special methods.
+
+			+ : __add__
+			- : __sub__
+			* : __mul__
+			/ : __truediv__
+			< : __lt__
+			> : __gt__
+			== : __eq__
+	
+For example, if we want to overload the + operator to add two instances of a custom class, we would define the add method.
+	
+	Example:
+			class Point:
+    				def __init__(self, x, y):
+        					self.x = x
+        					self.y = y
+
+    				def __add__(self, other):
+        					return Point(self.x + other.x, self.y + other.y)	
+
+It’s important to note that operator overloading is not limited to the built-in operators, we can overload any user-defined operator as well.
+
+Conclusion:
+		Operator overloading is a powerful feature in python that allows us to create more readable and intuitive code. By redefining the behavior of mathematical and comparison operators for custom data types, we can write code that is both concise and expressive. However, its important to use operator overloading wisely, as overloading the wrong operator or using it inappropriately can lead to confusing or unexpected behavior.
+
+Exercise:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+    
+    def __str__(self):
+        return (f"{self.x}, {self.y}")
+
+a = Point(2, 3)
+print(a)
+b = Point(4, 5)
+print(b)
+print(a + b)
+
+Output:
+            2, 3
+            4, 5
+            6, 8
