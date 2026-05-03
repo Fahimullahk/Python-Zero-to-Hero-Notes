@@ -4665,3 +4665,141 @@ Output:
         This function is in student 1.
 ```
 </br> </br>
+# Access Specifiers – Modifiers (Public, Private, Protected Access Modifier), Name mangling in python:
+### Access Specifiers / Modifiers:
+Access specifiers or acces modifiers in python programming are used to limit the acces of class variables and class methods outside of class while implementing the concepts of inheritance. </br> </br>
+**Types of access specifiers:** </br>
+There are three types of access specifiers. </br> </br>
+1.	Public access modifiers </br>
+2.	Private access modifiers </br>
+3.	Protected access modifiers </br> </br>
+
+**1.	Public Access specifier in Python:** </br> </br>
+All the variables and methods (member functions) in python are by default public. Any instance variable in a class followed by the ‘self’ keyword i.e self.var_name are public accessed. </br>
+**Example:**
+```
+class Student:
+    # constructor is defined
+    def __init__(self, age, name):
+        self.age = age               # public variable
+        self.name = name             # public variable
+
+obj = Student(21,"Haris")
+print(obj.age)
+print(obj.name)
+
+Output:
+        21
+        Haris
+```
+</br> </br>
+**2.	Private Access Modifiers:** </br>
+By definition, Private members of a class (variables or methods) are those members which are only accessible inside the class. We cannot use private members outside of class. </br>
+In Python, there is no strict concept of “private” access modifiers like in some other programming languages. However, a convention has been established to indicate that a variable or method should be considered private by prefixing its name with a double underscore (__). This is known as a “weak internal use indicator” and it is a convention only, not a strict rule. Code outside the class can still access these “private” variables and methods, but it is generally understood that they should be accessed or modified. </br>
+**Example:**	
+```
+class Student: 
+    def __init__(self, age, name): 
+        self.__age = age      # An indication of private variable
+        
+        def __funName(self):  # An indication of private function
+            self.y = 34
+            print(self.y)
+
+class Subject(Student):
+    pass
+
+obj = Student(21,"Haris")
+obj1 = Subject
+
+# calling by object of class Student
+print(obj.__age)
+print(obj.__funName())
+
+# calling by object  of class Subject
+print(obj1.__age)
+print(obj1.__funName())
+
+Output:
+        AttributeError: 'Student' object has no attribute '__age'
+```
+Private members of a class cannot be accessed or inherited outside of class. If we try to access or to inherit the properties of private members to child class (derived class). Then it will show the error. </br> </br>
+**Name mangling:-**		Name mangling in Python is a technique used to protect class-private and superclass-private attributes from being accidentally overwritten by subclasses. Names of class-private and superclass-private attributes are transformed by the addition of a single leading underscore and a double leading underscore respectively. Note: if want to check about the requirement of name mangling in any variable name then we can do this by printing it as “variable_name.__dir__”. </br>
+**Example:**
+```
+class MyClass:
+    def __init__(self):
+        self._nonmangled_attribute = "I am a nonmangled attribute"
+        self.__mangled_attribute = "I am a mangled attribute"
+
+my_object = MyClass()
+
+print(my_object._nonmangled_attribute) # Output: I am a nonmangled attribute
+print(my_object.__mangled_attribute) # Throws an AttributeError
+print(my_object._MyClass__mangled_attribute) # Output: I am a mangled attribute
+```
+In the example above, the attribute _nonmangled_attribute is marked as nonmangled by convention, but can still be accessed from outside the class. The attribute __mangled _attribute is private and its name is “mangled” to _MyClass__mangled_attribute, so it can’t be accessed directly from outside the class, but you can access it by calling _MyClass__mangled_attribute. </br> </br>
+**3.	Protected Access Modifier:-** </br>
+In object-oriented programming (OOP), the term “protected” is used to describe a member (i.e, a method or attribute) of a class that is intended to be accessed only by the class itself and its subclasses. In python, the convention for indicating that a member is protected is to prefix its name with a single underscore (_). For example, if a class has a method called _my_method, it is indicating that the method should only be accessed by the class itself and its subclasses. </br>
+Its important to note that the single underscoreis just a naming convention, and does not actually provide any protection or restrict access to the member. The syntax we follow to make any variable protected is to write variable name followed by a single underscore (_) ie. _varName. </br>
+**Example:** 
+```
+class Student:
+    def __init__(self):
+        self._name = "Haris"
+
+    def _funName(self):      # protected method
+        return "Gullkhan"
+
+class Subject(Student):       #inherited class
+    pass
+
+obj = Student()
+obj1 = Subject()
+
+# calling by object of Student class
+print(obj._name)      
+print(obj._funName())     
+# calling by object of Subject class
+print(obj1._name)    
+print(obj1._funName())
+
+Output:
+            Haris
+            Gullkhan
+            Haris   
+            Gullkhan
+```
+</br> </br> </br>
+**Exercise:** </br>
+Write a library class with number of books and books as two instance variables. Write a program to create a library from this library class and show how we can print all books, add a book and get the number of books using different methods. Show that our program does not persist the books after the program is stopped. </br>
+```
+class Library:
+    def __init__(self):
+        self.nbooks = 0
+        self.books = []
+     
+    def addbooks(self, book):
+        self.books.append(book)
+        self.nbooks = len(self.books)
+
+    def show(self):
+        print(f"The total books in the library is : {self.nbooks}") 
+        print("The name of the books are : ")
+        for i in self.books:
+            print(i)
+
+l1 = Library()
+l1.addbooks("Gulistan e Johar")
+l1.addbooks("Salam Software")
+l1.addbooks("Ek Din Jeo k sath")
+l1.show()
+
+Output:
+        The total books in the library is : 3
+        The name of the books are :
+        Gulistan e Johar
+        Salam Software 
+        Ek Din Jeo k sath
+```
+</br> </br>
