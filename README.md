@@ -3949,3 +3949,88 @@ In the above example, the reduce function applies the lambda function “lambda 
 
 It is important to note that the reduce function requires the functools module to be imported in order to use it. </br>
 </br>
+# ‘is’ vs ‘==’ in Python & Snake, Water, Gun Game:
+### 1.	‘is’ vs ‘==’ in Python:
+In Python, “is” and “==” are both comparison operators that can be used to check if two values are equals. However, there are some important differences between the two that you should be aware of. </br>
+The “is “ operator compares the identity of two objects, while the “==” operator compares the value of the objects. This means that “is” will only return True if the object being compared are the exact same object in memory, while “==” will return True if the objects have the same value. </br>
+**For example:**
+```
+			a = [1, 2, 3]
+			b = [1, 2, 3]
+			print(a == b)		# True
+			print(a is b)		# False
+```
+In this case, a and b are two separate lists that have the same values, so “==” returns True. However, a and b are not the same object in memory, so is returns False. </br> </br>
+One important thing to note is that, in Python, strings and integers are immutable, which means that once they are created, their value cannot be changed. This means that, for strings and integers, “is” and “==” will always return the same result: </br>
+**For example:**
+```
+			a = “hello”
+			b = “hello”
+			print(a == b)		# True
+			print(a is b)		# True
+
+			a = 5
+			b = 5
+			print(a == b)		# True
+			print(a is b)		# True
+```
+In these cases, a and b are both pointing to the same object in memory, so “is” and “==” both return True. </br>
+For mutable objects such as lists and dictionaries, **“is”** and **“==”** can behave differently. In general, we should use **“==”** when we want to compare the values of two objects, and use **“is”** when we want to check if two objects are the same object in memory. </br>
+
+Hence, the “is” keyword locates the exact location of an object inside the memory, whereas the “==” compares the values of our object. </br> </br>
+ 
+## Exercise: Creating a game:
+Snake, Water and Gun is a variation of the children’s game “rock-paper-scissors” where players use hand gestures to represent a snake, water, or a gun. The gun beats the snake, the water beats the gun, and the snake beats the water. Write a python program to create a snake, water, gun game in Python using if-else statements. Do not create any fancy GUI. Use proper functions to check for win. </br> </br>
+**Game solution (Using if-else statements):**
+```
+import random
+try:
+    choices = {0 : "Snake", 1 : "Water", -1 : "Gun"}
+    Sn = input("Choose your selection: For Snake press 0, for Water press 1, and for Gun press -1")
+    snn = int(Sn)
+    cin = random.choice([0, 1, -1])
+    print(f"Your selection is : {choices[snn]} , and computer selection is : {choices[cin]}")
+    if (snn == cin):
+        print("Game is : draw")
+    elif (snn == 0) and (cin == 1) or (snn == 1) and (cin == -1) or (snn == -1) and (cin == 0):
+        print ("You Win the game")
+    else:
+        print("Your loss the game")
+except KeyError:
+    print("You entered an incorrect command, please enter the correct choices")
+```
+</br> </br>
+
+**Game solution (Without using if-else statements):**
+```
+import random
+try:
+    gamere = [["Draw", "Win", "Loss"], ["Loss", "Draw", "Win"], ["Win", "Loss", "Draw"]]
+    game = ["Snake", "Water", "Gun"]
+    usinp = int(input("Enter Your choice 0 for snake, 1 for Water and 2 for gun : \n"))
+    compinp = random.randint(0, 2)
+    fingame = gamere[usinp][compinp]
+    print(f"\n Your selection is : {game[usinp]}, and Computer selection is : {game[compinp]}")
+    print(f"\n You : {fingame}")
+except KeyError:1
+print("You entered an incorrect command, please enter the correct choices")
+```
+</br> </br> 
+**Game solution (In While-Loop)**
+```
+import random
+try:
+    while True:
+        gamere = [["Draw", "Win", "Loss"], ["Loss", "Draw", "Win"], ["Win", "Loss", "Draw"]]
+        game = ["Snake", "Water", "Gun"]
+        usinp = int(input("Enter Your choice 0 for snake, 1 for Water and 2 for gun : \n if You Want to Quit the game press Q \n"))
+        compinp = random.randint(0, 2)
+        fingame = gamere[usinp][compinp]
+        print(f"\n Your selection is : {game[usinp]}, and Computer selection is : {game[compinp]}")
+        print(f"\n You : {fingame}")
+except ValueError:
+    print("Thanks for playing the Game")
+except Exception as e:
+    print(f"Thanks for playing the Game {e}")
+```
+</br> </br>
