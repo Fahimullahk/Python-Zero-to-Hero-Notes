@@ -4909,7 +4909,7 @@ for i in range(0, 100):
         f.write("Hello this file is in folderi!!")
 ```
 
-### Now we can rename the already named files in sequence manner:
+### Now we can rename the already named files in sequential manner:
 ```
 import os
 for i in range(0, 100):
@@ -4917,3 +4917,190 @@ for i in range(0, 100):
         os.rename(fr"D:\folderi\abc{i+1}.png", fr"D:\folderi\{i+1}.png")
 ```
 </br> </br>
+# Python Class Methods, Class Methods as Alternative Constructors, dir(), __dict__ and help() methods in python:
+### 1.	Python Class Methods:
+In Python, classes are a way to define custom data types that can store data and define functions that can manipulate that data. One type of function that can be defined within a class is called a “method”. </br> </br>
+**a.	What are Python Class Methods ?** </br>
+A class method is a type of method that is bound to the class and not the instance of the class. In other words, it operates on the class as a whole, rather than on a specific instance of the class. Class methods are defined using the “@classmethod” decorator, followed by a function definition. The first argument of the function is always “cls,” which represents the class itself. </br> </br>
+**b.	Why Use Python Class Methods ?** </br>
+Class methods are useful in several situations. For example, you might want to create a factory method that creates instances of our class in a specific way. We could define a class method that creates the instance and returns it to the caller. Another common use case is to provide alternative constructors for your class. This can be useful if we want to create instances of our class in multiple ways, but still have a consistent interface for doing so. </br> </br>
+**c.	How to Use Python Class Methods ?** </br>
+To define a class method, we simply use the “@classmethod” decorator before the method definition. The first argument of the method should always be “cls,” which represents the class itself. Here is an example of how to define a class method: </br>
+**Example:**		
+```
+		class ExampleClass:
+			@classmethod
+			def factory_method(cls, argument1, argument2):
+				return cls(argument1, argument2)
+```
+In this example, the “factory_method” is a class method that takes two arguments, “argument1” and “argument2”. It creates a new instance of the class “ExampleClass” using the “cls” keyword, and returns the new instance to the caller. </br>
+It is important to note that class methods cannot modify the class in any way. If we need to modify the class, we should use a class level variable instead. </br> </br>
+**Conclusion:**	</br>	
+Python class methods are a powerful tool for defining functions that operate on the class as a whole, rather than on a specific instance of the class. They are useful for creating factory methods, alternative constructors, and other types of methods that operate at the class level. With the knowledge of how to define and use class methods, we can start writing more complex and organized code in python. </br> </br>
+**Example: (Use of @classmethod):** 
+```
+class employee:
+    company = "Apple"
+    def show(self):
+        print(f"The employee name is {self.name} and a hardworking in {self.company} company")
+    
+    @classmethod
+    def anothercomp(cls, anocomp):
+        cls.company = anocomp
+    
+emp1 = employee()
+emp1.name = "Fahim"
+emp1.show()
+emp1.anothercomp("Amazon")
+emp1.show()
+print(employee.company)
+
+Output:
+        The employee name is Fahim and a hardworking in Apple company
+        The employee name is Fahim and a hardworking in Amazon company
+        Amazon
+```
+Here, in the above example we created a simple class and defined a show() method. Here in the class we create a variable company=Apple, so when we access this class with anothermehod() method we can change the company with given changed company name. But here the class variable company name will remains Apple will never effect any change in the class variable. However, if we use the @classmethod decorator we can change the class variable as we can see in the above example the class variable has been changed. </br> </br>
+### 2.	Class Methods as Alternative Constructors:
+In object-oriented programming, the term “constructor” refers to a special type of method that is automatically executed when an object is created from a class. The purpose of a constructor is to initialize the object’s attributes, allowing the object attributes, allowing the object to be fully functional and ready to use. </br>
+However, there are times when we may want to create an object in a different way, or with different initial values, than what is provided by the default constructor. This is where class methods can be used as alternative constructors. </br>
+A class method belongs to the class rather than to an instance of the class. One common use case for class methods as alternative constructors is when we want to create an object from data that is stored in a different format, such as a string or a dictionary. For example, consider a class name “Person” that has two attributes “name” and “age”. The default constructor for the class might look like this: </br> </br>
+**Example:**
+```
+	class Person:
+    		def __init__(self, name, age):
+        			self.name = name
+        			self.age = age
+```
+But what if we want to create a Person object from a string that contains the person’s name and age, separated by a comma? We can define a class method named “from_string” to do this: </br> </br>
+**Example:**
+```
+		class Person:
+    		def __init__(self, name, age):
+      			self.name = name
+        		self.age = age
+
+    	@classmethod
+   		def from_string(cls, string):
+        			name, age = string.split(',')
+      				return cls(name, int(age))
+```
+</br>
+Now we can create a Person object from a string like this: </br>
+
+**Example:**
+```
+	person = Person.from_string(“Fahim, 36”)
+```
+</br>
+Another common use case for class methods as alternative constructors is when we want to create an object with a different set of default values than what is provided by the default constructor. For example, consider a class named “Rectangle” that has two attributes: “width” and “height”. The default constructor for the class might look like this: </br>
+
+**Example:**
+```
+		class Rectangle:
+    		def __init__(self, width, height):
+        			self.width = width
+        			self.height = height
+```
+</br>
+But what if we want to create a rectangle object with a default width of 10 and a default height of 5? We can define a class method named “square” to do this: </br>
+
+**Example:**
+```
+	class Rectangle:
+ 		 def __init__(self, width, height):
+    			self.width = width
+    			self.height = height
+
+  		@classmethod
+  		def square(cls, size):
+    			return cls(size, size)
+```
+</br>
+Now we can create a square rectangle like this:
+```
+	rectangle = Rectangle.square(10) 
+```
+</br> </br>
+
+**Example of Alt Constructors (Alternative Constructors):**
+```
+class employee:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def fstri(cls, stri):
+        return cls(stri.split("-")[0], int(stri.split("-")[1]))
+
+emp1 = employee("Fahim Ullah", 36)
+print(emp1.name)
+print(emp1.age)
+
+stri = ("Haris Jan-30")
+emp2 = employee.fstri(stri)
+print(emp2.name)
+print(emp2.age)
+
+Output:
+        Fahim Ullah
+        36       
+        Haris Jan
+        30 
+``` 
+</br> </br>
+### 3.	dir(), __dict__ and help() methods in python:
+The above mentioned methods makes it easy for us to understand how classes resolve various functions and executes code. In python, there are three built-in functions that are commonly used to get information about objects: dir(), dict, and help(). Lets take a look at each of them: </br> </br>
+**a.	The dir() method:** </br>
+The dir() function returns a list of all the attributes and methods (including dunder methods) available for an object. It is a useful tool for discovering what we can do with an object. </br>
+**Example:**
+```
+		x = [1, 2, 3]
+		print(dir(x))
+
+Output:
+
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+```
+</br>
+
+**a.	The __dict__ attribute:** </br>
+The __dict__ attribute returns a dictionary representation of an object’s attributes. It is a useful tool for introspection. </br>
+**Example:**
+```
+class Person:
+    def __init__(self, name, age):
+    self.name = name
+    self.age = age
+ 
+p = Person("John", 30)
+p.__dict__
+
+Output:
+		{'name': 'John', 'age': 30}
+```
+</br> </br>
+**3.	The help() method:** </br>
+The help() function is used to get help documentation for an object, including a description of its attributes and methods. </br> 
+**Example:**
+```
+help(str)
+ 	Help on class str in module builtins:
+
+ 	class str(object)
+ 	| str(object='') -> str
+ 	| str(bytes_or_buffer[, encoding[, errors]]) -> 
+str
+|
+| Create a new string object from the given object. If encoding or
+| errors is specified, then the object must expose a data buffer
+| that will be decoded using the given encoding and error handler.
+| Otherwise, returns the result of object.__str__() (if defined)
+| or repr(object).
+| encoding defaults to sys.getdefaultencoding().
+| errors defaults to 'strict'.
+```
+</br>
+In conclusion, dir(), dict, and help() methods are useful built-in functions in Python that can be used to get information about objects. They are valuable tools for introspection and discovery. </br>
+</br>
