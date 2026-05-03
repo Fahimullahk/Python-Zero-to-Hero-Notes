@@ -4034,3 +4034,177 @@ except Exception as e:
     print(f"Thanks for playing the Game {e}")
 ```
 </br> </br>
+ # Introduction to Object-oriented programming, Classes and Objects in Python, Constructors:
+ ### 1.	Introduction to Object-oriented programming:
+In programming languages, mainly there are two approaches that are used to write program or code. </br> </br>
+1.	Procedural Programming </br>
+2.	Object-Oriented Programming </br> </br>
+The procedure we are following till now is the “Procedural Programming” approach. So, in this session, we will learn about Object Oriented Programming (OOP). The basic idea of object-oriented programming (OOP) in Python is to use classes and objects to represent real world concepts and entities. </br> </br>
+A class is a blueprint or template for creating objects. It defines the properties and methods that an object of that class will have. Properties are the date or state of an object and methods are the actions or behaviors that an object can perform. </br> </br>
+An object is an instance of a class, and it contains its own data and methods. For example, we could create a class called “Person” that has properties such as name and age, and methods such as speak() and walk(). Each instance of the Person class would be a unique object with its own name and age, but they would all have the same methods to speak and walk. </br> </br>
+One of the key features of OOP in Python is encapsulation, which means that the internal state fo an object is hidden and can only be accessed or modified through the objects methods. This helps to protect the object’s data and prevent it from being modified in unexpected ways. </br> </br>
+Another key feature of OOP in Python in inheritance, which allows new classes to be created that inherit the properties and methods of an existing class. This allows for code reuse and makes it easy to create new classes that have similar functionality to existing classes. </br> </br>
+Polymorphism is also supported in Python, which means that objects of different classes can be treated as if they were objects of a common class. This allows for greater flexibility in code and makes it easier to write code that can work with multiple types of objects. </br> </br>
+In summary, OOP in Python allows developers to model real-world concepts and entities using classes and objects, encapsulate data, reuse code through inheritance, and write more flexible code through polymorphism. </br> </br>
+### 2.	Classes and Objects in Python:
+A class is a blueprint or a template for creating objects, providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods). The user-defined objects are created using the class keyword. </br> </br>
+**a.	Creating a Class:** </br>
+Let us now create a class using the class keyword. </br>
+**Example:**
+```
+			Class Details:
+				name = “Zeeshan”
+				age = 20
+```
+</br>
+
+**b.	Creating an Object:** </br>
+Object is the instance of the class used to access the properties of the class.  </br>
+**Example:**
+```
+			obj1 = Details()
+```
+</br>
+Now we can print the values of the class by the help object. </br>
+
+**Example:**
+```
+				class Details:
+				name = “Zeeshan”
+				age = 20
+
+			obj1 = Details()
+			print(obj1.name)
+			print(obj1.age)
+	Output:
+			Zeeshan
+			20
+```
+**c.	self parameter:** </br>
+The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class. </br>
+It must be provided as the extra parameter inside the method definition. </br>
+**Example:**
+```
+			class Details:
+				name = “Zeeshan”
+				age = 20
+
+				def desc(self):
+					print(“My name is”, self.name, “and I’m”, self.age, “years old.”)
+			obj1 = Details()
+			obj1.desc()
+	Output:
+			My name is Zeeshan and I’m 20 years old.
+```
+</br>
+
+**Practice:**
+```
+class banda():
+    name = "Zeeshan"
+    age = 35
+    occupation = "developer"
+    def insan(self):
+        print("The employee name is",self.name, "he is ", self.age, "years old. And he is working as a", self.occupation,".")
+a = banda()
+b = banda()
+b.name = "Fahim Ullah"
+b.age = 37
+b.occupation = "programmer"
+c = banda()
+c.name = "Abdul Salam"
+c.age = 37
+c.occupation = "Entrepreneur"
+a.insan()
+b.insan()
+c.insan()
+
+Output:
+        The employee name is Zeeshan he is  35 years old. And he is working as a developer .       
+        The employee name is Fahim Ullah he is  37 years old. And he is working as a programmer .  
+        The employee name is Abdul Salam he is  37 years old. And he is working as a Entrepreneur .
+``` 
+</br> </br> 
+### 3.	Constructors:
+A constructor is a special method in a class used to create and initialize an object of a class. There are different types of constructors. Constructor is invoked automatically when a object of a class is created. </br>
+A constructor is a unique function that gets called automatically when an object is created of a class. The main purpose of a constructor is to initialize or assign values to the data members of the class. It cannot return any value other than None. </br>
+**Syntax of Python Constructor:**
+```
+							def __init__(self):	# initializations (Dendor method)
+```
+</br>
+init is one of the reserved functions in python. In object oriented programming, it is known as a constructor. We can also create constructor by defining the function name with same class name. </br>
+
+**Syntax:**
+```
+				Class ABC:
+				def ABC(self):	# initializations
+```
+**Types of Constructors in Python:** </br> 
+There are two types of constructors. </br> </br>
+a.	Parameterized Constructor </br> 
+b.	Default Constructor </br> </br>
+
+**a.	Parameterized Constructor in Python:-** </br>
+When the constructor accepts arguments along with self, it is known as parameterized constructor. </br>
+These arguments can be used inside the class to assign the values to the data members. </br>
+**Example:-**
+```
+			class Details:
+				def __init__(self, animal, group)
+					self.animal = animal
+					self.group = group
+			obj1 = Details(“Crab”, “Crustaceans”)
+			print(obj1.animal, “belongs to the”, obj1.group, “group.”)
+	Output:
+			Crab belongs to the Crustaceans group.
+```
+**b.	Default Constructor in Python:** </br>
+When the constructor doesn’t accept any arguments from the object and has only one argument, self, in the constructor, it is known as a Default constructor. </br>
+**Example:**
+```
+			class Details:
+				def __init__(self):
+					print(“animal Crab belongs to Crustaceans group”)
+			obj1 = Details()
+
+	Output:
+			Animal Crab belongs to Crustaceans group
+```
+</br> </br>
+**Example 1 of parameterized constructor :**
+```
+class banda():
+    def __init__(self, a, b, c):
+        self.name = a
+        self.age = b
+        self.occupation = c
+    def insan(self):
+        print("The employee name is",self.name, "he is ", self.age, "years old. And he is working as a", self.occupation,".")
+ab = banda("Fahim Ullah", 37, "Developer")
+bb = banda("Zeeshan", 38, "developer")
+cb = banda("Abdul Salam", 38, "HR")
+ab.insan()
+bb.insan()
+cb.insan()
+
+Output:
+        The employee name is Fahim Ullah he is  37 years old. And he is working as a Developer .
+        The employee name is Zeeshan he is  38 years old. And he is working as a developer .    
+        The employee name is Abdul Salam he is  38 years old. And he is working as a HR . 
+```
+</br> </br>
+**Example 2 of parameterized constructor :**
+```
+class Details:
+    def __init__(self, animal, group):
+        self.animal = animal
+        self.group = group
+
+obj1 = Details("Crab", "Crustaceans")
+print(obj1.animal, "belongs to the", obj1.group, "group.")
+
+Output:
+        Crab belongs to the Crustaceans group.
+```
+</br> </br>
