@@ -4373,3 +4373,286 @@ Output:
         Value is 6.7
 ```
 </br> </br>
+# Inheritance in python, Types of Inheritance (Single, Multiple, Multilevel, Hierarchical & Hybrid Inheritance in python):
+### Inheritance in python:
+When a class derives from another class. The child class will inherit all the public and protected properties and methods from the parent class. In addition, it can have its own properties and methods, this is called as inheritance. </br>
+**Python Inheritance Syntax:**
+```
+		Class BaseClass:
+			Body of base class
+		Class DerivedClass(BaseClass):
+			Body of derived class
+```
+**Types of Inheritance:** </br> </br>
+There are five types of inheritance used in python: </br>
+1.	Single inheritance </br>
+2.	Multiple inheritance </br>
+3.	Multilevel inheritance </br>
+4.	Hierarchical inheritance </br>
+5.	Hybrid inheritance </br> </br>
+We will see the explanation and example of each type of inheritance below. </br> </br>
+		
+1.	Single Inheritance:
+			Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.
+
+	Example:
+			class Parent:
+				def func1(self):
+					print(“This function is in parent class.”)
+			class Child(Parent):
+				def func2(self):
+					print(“This function is in child class.”)
+			object = Child()
+			object = func1()
+			object = func2()
+	Output:
+			This function is in parent class.
+			This function is in child class.
+ 
+2.	Multiple Inheritance:
+		When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class.
+
+Example:
+		class Mother:
+			mothername = “ ”
+			
+			def mother(self):
+				print(self.mothername)
+		
+		class Father:
+			fathername = “ “
+
+			def father(self):
+				print(self.fathername)
+
+		class Son(Mother, Father):
+			def parents(self):
+				print(“Father name is :”, self.fathername)
+				print(“Mother :”, self.mothername)
+
+		s1 = Son()
+		s1.fathername = “Mommy”
+		s1.mothername = “Daddy”
+		s1.parents()
+
+Output:
+		Father name is : Mommy
+		Mother name is : Daddy
+
+3.	Multilevel Inheritance:
+	In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and a grandfather.
+
+		Example:
+				class Grandfather:
+					def __init__(self, grandfathername):
+						self.grandfathername = grandfathername
+			
+				class Father(Grandfather):
+					def __init__(self, fathername, grandfathername):
+						self.fathername = fathername
+						Grandfather.__init__(self, grandfathername)
+
+				Class Son(Father):
+					def __init__(self, sonname, fathername, grandfathername):
+						self.sonname = sonname
+						Father.__init__(self, fathername, grandfathername)
+					def print_name(self):
+						print(‘Grandfather name :’, self.grandfathername)
+						print(“Father name :”, self.fathername)
+						print(“Son name :”, self.sonname)
+				s1 = Son(‘Kashif’, ‘Haris’, ‘Saeed’)
+				print(s1.grandfathername)
+				s1.print_name()
+
+		Output:
+				Liaqat
+				Grandfather name : Liaqat
+				Father name : Zameer
+				Son name : Nouman
+
+4.	Hierarchical Inheritance:
+		When more than one derived class are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two (derived) classes.
+
+Example:
+		Class Parent:
+			def func1(self):
+				print(“This function is in parent class.”)
+			
+		class Child1(Parent):
+			def func2(self):
+				print(“This function is in child 1.”)
+
+		class child2(Parent):
+			def func3(self):
+				print(“This function is in child 2.”)
+
+		object1 = Child1()
+		object2 = Child2()
+		object1.func1()
+		object1.func2()
+		object2.func1()
+		object2.func3()
+Output:
+		This function is in parent class.
+		This function is in child 1.
+		This function is in parent class.
+		This function is in child 2.
+ 
+5.	Hybrid Inheritance:
+		Inheritance consisting of multiple types of inheritance is called hybrid inheritance.
+
+Example:
+		class School:
+			def func1(self):
+				print(“This function is in school.”)
+
+		class Student1(School):
+			def func2(self):
+				print(“This function is in student 1. ”)
+		
+		class Student2(School):
+			def func3(self):
+				print(“This function is in student 2. ”)
+
+		class Student3(Student1, School):
+			def func4(self):
+				print(“This function is in student 3. ”)	
+
+		object = Student3()
+		object.func1()
+		object.func2()
+Output:
+		This function is in school.
+		This function is in student 1.
+
+Example 1 of Single inheritance:
+
+class Parent:
+    def func1(self):
+        print("This function is in parent class.")
+ 
+class Child(Parent):
+    def func2(self):
+        print("This function is in child class.")
+ 
+object = Child()
+object.func1()
+object.func2()
+
+Output:
+        This function is in parent class.
+        This function is in child class.
+ 
+In the above example we called the parent class with the object of child class. Because all the functionalities of parent class bears by the child class.
+ 
+Example 2 of Multiple Inheritance:
+
+class Mother:
+    mothername = ""
+ 
+    def mother(self):
+        print(self.mothername)
+ 
+ 
+class Father:
+    fathername = ""
+ 
+    def father(self):
+        print(self.fathername)
+ 
+ 
+class Son(Mother, Father):
+    def parents(self):
+        print("Father name is :", self.fathername)
+        print("Mother :", self.mothername)
+s1 = Son()
+s1.fathername = "Mommy"
+s1.mothername = "Daddy"
+s1.parents()
+
+Output:
+        Father name is : Mommy
+        Mother : Daddy 
+
+In the above example we created two classes of father and mother and then inherit them in the son class. Then we make the object of son class and with the help of son class we can use the functionalities of father and mother class.
+ 
+Example 3 of Multi level Inheritance:
+
+class Grandfather:
+     def __init__(self, grandfathername):
+        self.grandfathername = grandfathername
+  
+class Father(Grandfather):
+    def __init__(self, fathername, grandfathername):
+        self.fathername = fathername
+        Grandfather.__init__(self, grandfathername)
+class Son(Father):
+    def __init__(self, sonname, fathername, grandfathername):
+        self.sonname = sonname
+        Father.__init__(self, fathername, grandfathername)
+ 
+    def print_name(self):
+        print('Grandfather name :', self.grandfathername)
+        print("Father name :", self.fathername)
+        print("Son name :", self.sonname)
+s1 = Son('Haris', 'Liaqat', 'Saeed')
+print(s1.grandfathername)
+s1.print_name()
+
+Output:
+        Grandfather name : Saeed
+        Father name : Liaqat    
+        Son name : Haris  
+ 
+Example 4 of Hierarchical Inheritance:
+
+class Parent:
+    def func1(self):
+        print("This function is in parent class.")
+
+class Child1(Parent):
+    def func2(self):
+        print("This function is in child 1.")
+      
+class Child2(Parent):
+    def func3(self):
+        print("This function is in child 2.")
+ 
+object1 = Child1()
+object2 = Child2()
+object1.func1()
+object1.func2()
+object2.func1()
+object2.func3()
+
+Output:
+        This function is in parent class.
+        This function is in child 1.     
+        This function is in parent class.
+        This function is in child 2.
+ 
+Example 5 of Hybrid Inheritance:
+
+class School:
+    def func1(self):
+        print("This function is in school.")
+  
+class Student1(School):
+    def func2(self):
+        print("This function is in student 1. ")
+  
+class Student2(School):
+    def func3(self):
+        print("This function is in student 2.")
+  
+class Student3(Student1, School):
+    def func4(self):
+        print("This function is in student 3.")
+ 
+object = Student3()
+object.func1()
+object.func2()
+
+Output:
+        This function is in school.
+        This function is in student 1.
