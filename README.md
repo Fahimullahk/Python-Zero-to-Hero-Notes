@@ -3694,3 +3694,258 @@ while True:
           The marks of student 3 in Physics is :  98
 ```
 </br>
+
+# seek() and tell() functions, truncate() function, Lambda Functions in Python, Map, Filter and Reduce:
+### 1.	seek() and tell() functions:
+In python, the seek() and tell() functions are used to work with file objects and their positions within a file. These functions are part of the built-in io module, which provides a consistent Interface for reading and writing to various file-like objects such as files, pipes, and in-memory buffers.  </br>
+
+**a.	seek() functions:** </br>
+The seek() function allows you to move the current position within a file to a specific point. The position is specified in bytes, and we can move either forward or backward from the current position. </br>
+**Example:**
+```
+				with open (‘file.txt’, r) as f:
+					f.seek(10)	# Move to the 10th byte in the file
+				data = f.read(5)	# Read the next 5 bytes
+```
+</br> </br>
+
+**b.	tell () function:** </br>
+The tell() function returns the current position within the file, in bytes. This can be useful for keeping track of our location within the file or for seeking to a specific position relative to the current position. </br>
+**Example:**
+```
+				with open(‘file.txt’, ‘r’) as f:   	
+				      data = f.read(10)	   	# Read the first 10 bytes
+      			current_position = f.tell()	# Save the current position
+      			f.seek(current_position)	# Seek to the saved position
+```
+**c.	truncate() function:** </br>
+When we open a file in Python using the open function, we can specify the mode in which we want to open the file. If we specify the mode as ‘w’ or ‘a’, the file is opened in write mode and we can write to the file. However, if we want to truncate the file to a specific size, we can use the truncate function. </br>
+
+Here is an example of how to use the truncate function: </br>
+**Example:**
+```
+				with open(‘sample.txt’, ‘w’) as f:
+			    		 f.write(‘Hello World!’)
+			    		 f.truncate(5)
+				with open(‘sample.txt’, ‘r’) as f:
+			     		print(f.read())
+```
+ 
+**2.	Lambda Functions in Python:** </br>
+In Python, a lambda function is a small anonymous function without a name. It is defined using the lambda keyword and has the following syntax: 
+```
+		lambda arguments: expression
+```
+Lambda functions are often used in situations where a small function is required for a short period of time. They are commonly used as arguments to higher-order function, such as map, filter, and reduce. </br>
+
+Here, is an example of how to use a lambda function: </br>
+**Example:**
+```
+			def double(x):	# Function to double the input
+			    return x * 2
+			lambda x: x * 2	# Lambda function to double the input
+```
+The above lambda function has the same functionality as the double function defined earlier. However, the lambda function is anonymous, as it does not have a name. </br>
+
+Lambda functions can have multiple arguments, just like regular functions. Here is an example of a lambda function with simple arguments: </br>
+**Example:**
+```
+			def multiply(x, y):	# Function to calculate the product of two numbers 
+			    return x * y
+			lambda x, y: x * y	# Lambda function to calculate the product of two numbers
+```
+</br>
+
+Lambda functions can also include multiple statements, but they are limited to a single expression. For example:
+**Example:**
+```
+			# Lambda function to calculate the product of two numbers, 
+			# with additional print statement
+			lambda x, y: print(f’{x} * {y} = {x * y}’)
+```
+
+In the above example, the lambda function includes a print statement, but it is still limited to a single expression. </br>
+
+Lambda functions are often used in conjunction with higher-order functions, such as map, filter, and reduce which we will look into later. </br>
+
+So, the lambda function is an anonymous function or mini function used for a short period of time. We can use it if we have to build multiple functions in our program so there in that case lambda function can become feasible. </br>
+
+As we see in the above example of lambda function we can have a look in code editor. </br> </br>
+ 
+**We know that when we can create a normal regular function in under mentioned way by using “def” keyword**
+```
+def fun(x, y):
+    return x * y
+print(fun(5, 10))
+
+Output:
+        50
+```
+
+**OR** </br>
+
+```
+def fun(x):
+    return x * x
+print(fun(5))
+
+Output:
+        25
+```
+</br> </br>
+
+**So, when we use a lambda function inside def function as mentioned below, we called and defined a function into function:**
+```
+def fun(fx, x):
+    return 6 + fx(x)
+y = lambda x: x*x*x
+print(fun(y, 3))
+
+Output:
+        33
+```
+</br>  </br>
+
+**So, When we use lambda function only, and here we did’nt need define a function using “def” keyword. As mentioned below:**
+```
+cube = lambda x: x*x*x
+Avg = lambda x, y, z: (x+y+z)/3
+double = lambda x: x * 2 * 3 
+print(cube(2))
+print(Avg(2, 3, 4))
+print(double(5))
+
+Output:
+            8
+            3.0
+            30
+```
+
+ 
+### 3.	Map, Filter and Reduce:
+In Python, the map, filter, and reduce functions are built-in functions that allow us to apply a function to a sequence of elements and return a new sequence. These functions are known as higher-order functions, as they take other functions as arguments. Here, the higher-order functions means that we can call a function inside a function.
+
+**a.	map:** </br>
+The map function applies a function to each element in a sequence and returns a new sequence containing the transformed elements. The map function has the following syntax:
+```
+			map(function, iterable)
+```
+The function argument is a function that is applied to each element in the iterable argument. The iterable argument can be a list, tuple, or any other iterable object. </br> </br>
+
+As we know that when we want to find the cube of our list we can do so by defining any function and can call that function by the help of for loop as we can see in the below example:
+```
+def myfunc(x):
+    return x*x*x
+l = [1, 2, 3, 4, 5, 7, 8]
+li = []
+for i in l:
+    li.append(myfunc(i))
+print(li)
+
+Output:
+        [1, 8, 27, 64, 125, 343, 512]
+```
+</br> </br>
+But the above process became little bit complex and we can do the same thing by the help of map function As we can see in the below example. 
+```
+def myfunc(x):
+    return x*x*x
+l = [1, 2, 3, 4, 5, 7, 8]
+li = list(map(myfunc, l))
+print(li)
+
+Output:
+        [1, 8, 27, 64, 125, 343, 512]
+```
+</br> </br>
+So, in the above example we used map function, moreover we can make the above code more readable and simple by using lambda function as we can see in the below example:
+```
+l = [1, 2, 3, 4, 5, 7, 8]
+li = list(map(lambda x: x * x * x, l))
+print(li)
+
+Output:
+        [1, 8, 27, 64, 125, 343, 512]
+```
+
+In the above example, the lambda function “lambda x: x * x” is used to square each element in the numbers list. The map function applies the lambda function to each element in the list and returns a new list containing the square of numbers. </br> </br>
+
+**b.	filter:** </br>
+The filter function filters a sequence of elements based on a given predicate (a function that returns a Boolean value) and returns a new sequence containing only the elements that meet the predicate. The filter function has the following syntax:
+```
+filter(predicate, iterable)
+```
+
+The predicate argument is a function that returns a Boolean value and is applied to each element in the iterable argument. The iterable argument can be a list, tuple, or any other iterable object. </br> </br>
+
+So, the filter function is used to filter our list according our defined condition. As we can see in the below example:
+```
+def myfunc(x):
+    return x > 2
+l = [1, 2, 3, 4, 5, 7, 8]
+li = list(filter(myfunc, l))
+print(li)
+
+Output:
+        [3, 4, 5, 7, 8]
+```
+</br> </br>
+In the above example we used filter function inside the defined function. We can also do the same thing by using the lambda function.
+```
+l = [1, 2, 3, 4, 5, 7, 8]
+li = list(filter(lambda x: x > 2, l))
+print(li)
+
+Output:
+        [3, 4, 5, 7, 8]
+```
+And here, below one more example:
+```
+l = [1, 2, 3, 4, 5, 7, 8]
+li = list(filter(lambda x: x % 2 == 0, l))
+print(li)
+
+Output:
+        [2, 4, 8]
+```
+In the above example, the lambda function lambda “x: x % 2 == 0” is used to filter the numbers list and return only the even numbers. The filter function applies the lambda function to each element in the list and returns a new list containing only the even numbers. </br> </br>
+
+**c.	reduce:** </br>
+The reduce function is a higher-order function that applies function to a sequence and returns a single value. It is a part of the functools module in Python and has the following syntax: </br>
+```
+reduce(function, iterable)
+```
+</br>
+The function argument is a function that takes in two arguments and returns a single value. The iterable argument is a sequence of elements, such as a list or tuple. </br> </br>
+
+The reduce function applies the function to the first two elements in the iterable and then applies the function to the result and the next element, and so on. The reduce function returns the final result. </br> </br>
+
+Here is an example of how to use the reduce function:
+```
+from functools import reduce
+def myfunc(x, y):
+    return x + y
+l = [1, 2, 3, 4, 5, 7, 8]
+li = reduce(myfunc, l)
+print(li)
+
+Output:
+        30
+```
+</br> </br>
+So, in the above example we used the reduce function by defining a function, and we know that while using the reduce function we have to first import it from functools otherwise it will throw error. The same thing can be done by using the lambda function, as we can see in the below example:
+```
+from functools import reduce
+l = [1, 2, 3, 4, 5, 7, 8]
+li = reduce(lambda x, y: x + y, l)
+print(li)
+
+Output:
+        30
+```
+</br> </br>
+
+In the above example, the reduce function applies the lambda function “lambda x, y: x + y” to the elements in the numbers list. The lambda function adds the two arguments x and y and returns the result. The reduce function applies the lambda function to the first two elements in the list (1 and 2), then applies the function to the result (3) and the next element (3), and so on. The final result is the sum of the elements in the list which is 15. </br>
+
+It is important to note that the reduce function requires the functools module to be imported in order to use it. </br>
+</br>
